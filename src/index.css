@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-matcha: #809671;
+  --color-almond: #e5e0d8;
+  --color-espresso: #2e2a20;
+  --color-terracota: #b4552d;
+  --color-vanilla: #e5d2b8;
+
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Times New Roman', Georgia, serif;
+  --font-display-serif: 'Times New Roman', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-panel: 2.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-almond);
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-terracota);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------
+   Ruido global — overlay SVG turbulence, opacidad 0.05.
+   Evita que los fondos planos se vean "digitales".
+------------------------------------------------------------ */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------
+   Botón magnético: scale sutil + capa deslizante interna
+------------------------------------------------------------ */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  isolation: isolate;
+}
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+.btn-magnetic:active {
+  transform: scale(0.98);
+}
+.btn-magnetic .btn-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-101%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-magnetic:hover .btn-sheen {
+  transform: translateX(0);
+}
+
+/* Cursor intermitente de la telemetría */
+@keyframes ll-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.cursor-blink {
+  animation: ll-blink 1s steps(1) infinite;
+}
+
+/* Punto "en vivo" que late */
+@keyframes ll-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.live-dot {
+  position: relative;
+}
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: inherit;
+  animation: ll-pulse-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Electrocardiograma — trazo que se dibuja en loop */
+@keyframes ll-ecg {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+.ecg-path {
+  stroke-dasharray: 300 300;
+  animation: ll-ecg 3.2s linear infinite;
+}
+
+/* Láser de escaneo — barrido vertical sobre la rejilla */
+@keyframes ll-scan {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10.5rem);
+  }
+}
+.scan-laser {
+  animation: ll-scan 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Doble hélice — rotación continua estilo engranaje */
+@keyframes ll-helix {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.helix-rotate {
+  animation: ll-helix 14s linear infinite;
+  transform-origin: center;
+}
+
+/* Accesibilidad: sin animaciones para quien lo prefiera */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Punto verde pulsante del footer */
+@keyframes ll-soft-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.status-pulse {
+  animation: ll-soft-pulse 2.2s ease-in-out infinite;
+}
+
