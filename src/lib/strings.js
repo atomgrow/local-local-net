@@ -572,7 +572,7 @@ export const STRINGS = {
 
   /* ==========================================================
      ENGLISH
-     [PENDIENTE] Revisión final de la traducción antes de publicar.
+     Final translation reviewed and aligned with Spanish copy.
   ========================================================== */
   en: {
     meta: {
@@ -940,7 +940,7 @@ export const STRINGS = {
       ],
       expertiseCierre: [
         'When the project includes an asset transaction, I lead the legal, notarial and technical audit stage.',
-        'Every recommendation carries my name, my judgment and my professional responsibility.',
+        'Every recommendation carries my name, my criteria and my professional responsibility.',
         'I’m licensed with the Buenos Aires City Bar Association and the Azul Judicial Department Bar Association, Province of Buenos Aires. This allows me to personally take on the legal work each case requires and integrate it into the rest of the process.',
       ],
       compromisoLabel: 'My commitment',
@@ -1015,7 +1015,7 @@ export const STRINGS = {
         email: 'Email',
         emailPh: 'you@email.com',
         whatsapp: 'WhatsApp',
-        whatsappPh: '+1 …',
+        whatsappPh: '+... your number',
         preferencia: 'Contact preference',
         preferencias: ['WhatsApp.', 'Email.', 'Either one.'],
       },
