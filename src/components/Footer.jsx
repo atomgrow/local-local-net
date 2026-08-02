@@ -45,16 +45,24 @@ export default function Footer() {
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/40">
               {ft.legalLabel}
             </p>
-            {/* [PENDIENTE] href="#" hasta contar con las páginas/modales legales */}
-            {ft.legales.map((link) => (
+            {Array.isArray(ft.legales) ? (
+              ft.legales.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-almond/75 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))
+            ) : (
               <a
-                key={link.label}
-                href={link.href}
+                href="#"
                 className="text-sm text-almond/75 transition-colors hover:text-white"
               >
-                {link.label}
+                {ft.legalLink || 'Legal'}
               </a>
-            ))}
+            )}
           </nav>
 
           <div className="flex flex-col gap-3">

@@ -85,41 +85,44 @@ export default function Metodo() {
           </div>
         </div>
 
-        {/* Acordeón de etapas (mantenido igual) */}
-        <div data-reveal className="mt-16">
-          <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/50">
-            {m.etapasLabel}
-          </p>
-          <ol className="divide-y divide-almond/10 rounded-[2rem] border border-almond/15">
-            {m.etapas.map((etapa, i) => {
-              const open = abierta === i
-              return (
-                <li key={etapa.t}>
-                  <button
-                    type="button"
-                    aria-expanded={open}
-                    onClick={() => setAbierta(open ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-almond/[0.04] focus-visible:bg-almond/[0.06] focus-visible:outline-none"
-                  >
-                    <span className="flex items-center gap-4">
-                      <span className="font-mono text-xs text-terracota">{String(i + 1).padStart(2, '0')}</span>
-                      <span className="font-display text-sm font-semibold text-almond sm:text-base">{etapa.t}</span>
-                    </span>
-                    <ChevronDown
-                      size={16}
-                      aria-hidden="true"
-                      className={`shrink-0 text-almond/50 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  {open && (
-                    <p className="px-6 pb-5 pl-[4.25rem] text-sm leading-relaxed text-almond/60">{etapa.d}</p>
-                  )}
-                </li>
-              )
-            })}
-          </ol>
-          <p className="mt-5 text-sm italic text-vanilla/80">{m.aclaracion}</p>
-        </div>
+        {m?.etapas && (
+          <div data-reveal className="mt-16">
+            {m.etapasLabel && (
+              <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/50">
+                {m.etapasLabel}
+              </p>
+            )}
+            <ol className="divide-y divide-almond/10 rounded-[2rem] border border-almond/15">
+              {m.etapas.map((etapa, i) => {
+                const open = abierta === i
+                return (
+                  <li key={etapa.t}>
+                    <button
+                      type="button"
+                      aria-expanded={open}
+                      onClick={() => setAbierta(open ? -1 : i)}
+                      className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-almond/[0.04] focus-visible:bg-almond/[0.06] focus-visible:outline-none"
+                    >
+                      <span className="flex items-center gap-4">
+                        <span className="font-mono text-xs text-terracota">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="font-display text-sm font-semibold text-almond sm:text-base">{etapa.t}</span>
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        aria-hidden="true"
+                        className={`shrink-0 text-almond/50 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {open && (
+                      <p className="px-6 pb-5 pl-[4.25rem] text-sm leading-relaxed text-almond/60">{etapa.d}</p>
+                    )}
+                  </li>
+                )
+              })}
+            </ol>
+            {m.aclaracion && <p className="mt-5 text-sm italic text-vanilla/80">{m.aclaracion}</p>}
+          </div>
+        )}
 
         <div data-reveal className="mt-12">
           <CtaButton source="method">{m.cta}</CtaButton>
