@@ -45,11 +45,11 @@ export const STRINGS = {
     },
 
     trustbar: [
-      { t: 'Mirada local', d: 'Vivimos en Tandil. Conocemos la ciudad de primera mano.' },
-      { t: 'Criterio independiente', d: 'Nuestro único compromiso es ayudarte a tomar la mejor decisión.' },
-      { t: 'Red validada', d: 'Profesionales seleccionados por su trayectoria, estándares de servicio y calidad humana.' },
-      { t: 'Auditoría preventiva', d: 'Antes de comprometer tiempo o dinero, revisamos los aspectos legales y técnicos de cada operación para detectar riesgos, inconsistencias y costos ocultos.' },
-      { t: 'Confidencialidad', d: 'Tu proyecto no circula por toda la ciudad: tus decisiones y tus tiempos se manejan con absoluta reserva. Nada se comparte sin que lo sepas y lo autorices.' },
+      { t: 'MIRADA LOCAL', d: 'Vivimos en Tandil. Conocemos la ciudad de primera mano.' },
+      { t: 'CRITERIO INDEPENDIENTE', d: 'Nuestro único compromiso es ayudarte a tomar la mejor decisión.' },
+      { t: 'RED VALIDADA', d: 'Profesionales seleccionados por su trayectoria, estándares de servicio y calidad humana.' },
+      { t: 'AUDITORÍA PREVENTIVA', d: 'Antes de comprometer tiempo o dinero, revisamos los aspectos legales y técnicos de cada operación para detectar riesgos, inconsistencias y costos ocultos.' },
+      { t: 'CONFIDENCIALIDAD', d: 'Tu proyecto no circula por toda la ciudad: tus decisiones y tus tiempos se manejan con absoluta reserva. Nada se comparte sin que lo sepas y lo autorices.' },
     ],
 
     microDecision: {
@@ -103,11 +103,11 @@ export const STRINGS = {
         },
         {
           titulo: 'Sorpresas legales y técnicas',
-          sinLabel: 'Sin método · Riesgo alto',
+          sinLabel: 'Sin método · Riesgo alto (acá si hay riesgo, que resalte)',
           conLabel: 'Con Local Local · Riesgo mitigado',
           riesgo: true,
           sin: [
-            '“Contrato y después me voy enterando…”',
+            '"Contrato y después me voy enterando…"',
             'Problemas que no se detectaron a tiempo y aparecen cuando la decisión ya está tomada',
           ],
           con: [
@@ -235,11 +235,12 @@ export const STRINGS = {
         },
         {
           num: '04',
-          titulo: 'Llegaste. Sos parte.',
+          titulo: 'Integración. De llegar a ser parte.',
           modalidad: '',
           parrafos: [
-            'Una vez en Tandil, seguís contando con la red de Local Local para hacer consultas, pedir recomendaciones y conectarte con personas y servicios de confianza en la ciudad.',
-            'El recorrido inicial termina; tu acceso a la red continúa. Este acompañamiento está incluido y no tiene fecha de vencimiento.',
+            'Mudarse a una ciudad no es lo mismo que integrarse a ella. Llegar resuelve una parte; sentirse parte lleva tiempo. Implica construir rutinas y vínculos, entender cómo funciona la ciudad y saber a quién recurrir cuando aparece una necesidad.',
+            'En Local Local conocemos la complejidad de ese proceso y sabemos que muchas preguntas surgen recién después de la mudanza. Por eso, una vez en Tandil, seguís contando con nosotros para hacer consultas, pedir recomendaciones y conectarte con personas, profesionales y servicios de confianza.',
+            'El recorrido inicial termina, pero tu acceso a la red continúa. Este acompañamiento de integración está incluido en el servicio, sin costo adicional y sin fecha de vencimiento.',
           ],
           incluyeLabel: '',
           incluye: [],
@@ -298,6 +299,22 @@ export const STRINGS = {
         'Cuidamos tanto a quienes llegan a través de Local Local como a los profesionales que integran nuestra red. Por eso, cada conexión comienza con contexto, expectativas claras y respeto por el tiempo de ambas partes.',
     },
 
+    queRecibis: {
+      titulo: 'Qué recibís',
+      subtitulo: 'No comprás una reunión. Recibís claridad para avanzar',
+      items: [
+        'Entrevista de diagnóstico de aproximadamente 44 minutos',
+        'Análisis personalizado de tu situación',
+        'Identificación de prioridades y riesgos',
+        'Relevamiento necesario para tu caso',
+        'Documento de diagnóstico',
+        'Hoja de ruta concreta',
+        'Recomendación de próximos pasos',
+        'Propuesta opcional para continuar por etapas',
+      ],
+      nota: 'El diagnóstico es una etapa independiente. Después de recibirlo, podés avanzar por tu cuenta o continuar con Local Local.',
+    },
+
     paraQuien: {
       kicker: 'Para quién es Local Local',
       titleSans: 'Para quienes reconocen el valor del asesoramiento preventivo:',
@@ -350,6 +367,29 @@ export const STRINGS = {
       ],
     },
 
+    porQue: {
+      kicker: '¿Por qué contratar Local Local?',
+      titleSans: 'Porque hay errores',
+      titleSerif: 'que se pagan caro',
+      intro: 'A la distancia, muchas decisiones parecen más sencillas de lo que realmente son, en Local Local te ayudamos a evitar:',
+      items: [
+        'Elegir una zona que parecía perfecta durante el fin de semana y descubrir después que no funciona para tu rutina diaria.',
+        'Definir un colegio por referencias generales sin evaluar vacantes, distancias, propuesta educativa y compatibilidad con tu familia.',
+        'Viajar varias veces a Tandil por reuniones desordenadas, visitas improductivas o información que podía obtenerse antes.',
+        'Entregar una seña o poner tus ahorros en una "oportunidad" sin comprobar quién está detrás, qué se está vendiendo realmente y si los papeles respaldan lo prometido.',
+        'Avanzar con un inmueble, lote o proyecto sin conocer sus limitaciones legales, técnicas, urbanísticas o de servicios.',
+        'Contratar a alguien solo porque "lo conoce todo el mundo" y terminar con presupuestos que cambian, trabajos mal hechos o plazos que nunca se cumplen.',
+        'Descubrir demasiado tarde gastos, obras, trámites o condicionantes que cambian por completo el costo de la decisión.',
+        'Organizar mal los tiempos y terminar pagando alquileres superpuestos, estadías, depósitos, viajes o mudanzas innecesarias.',
+        'Resolver vivienda, colegios, trabajo y vida cotidiana por separado, para descubrir después que las piezas no encajan.',
+        'Exponer tu proyecto por toda la ciudad y quedar rodeado de llamados, recomendaciones interesadas y presión para decidir rápido.',
+      ],
+      cierre1: 'Cada profesional conoce su parte. Nosotros integramos las variables, hacemos las preguntas incómodas y te ayudamos a detectar lo que todavía no estás viendo.',
+      cierre2Intro: 'Muchas veces, el mejor resultado de nuestro trabajo es lo que no ocurrió:',
+      cierre2Destacado: 'la seña que no perdiste, el viaje que no hiciste, el proveedor que no contrataste y la decisión que no tuviste que lamentar.',
+      cta: 'Evaluá tu proyecto →',
+    },
+
     nosotros: {
       kicker: 'Nosotros',
       titleSans: 'Una mirada local,',
@@ -392,7 +432,28 @@ export const STRINGS = {
       kicker: 'Testimonios',
       titleSans: 'Experiencias que construyeron',
       titleSerif: 'Local Local',
-      demoBadge: 'TESTIMONIO DEMO — REEMPLAZAR ANTES DE PUBLICAR',
+      items: [
+        {
+          texto: 'Estábamos bastante decididos, pero teníamos muchas dudas sueltas. Bernardo nos ayudó a ponerlas sobre la mesa y nos conectó con gente que nos dio mucha confianza.',
+          autor: 'Rodrigo Zubillaga y flia.',
+          ubicacion: 'CABA',
+        },
+        {
+          texto: 'Llegué a Bernardo con una consulta bastante puntual y, hablando, aparecieron varias cosas que no había tenido en cuenta. Me ayudó a ordenar todo y a decidir con más tranquilidad.',
+          autor: 'Mónica Guastella',
+          ubicacion: 'inversora, Olivos',
+        },
+        {
+          texto: 'Bernardo y equipo conocen muy bien Tandil, pero, sobre todo, saben quién es quién y cómo trabaja cada uno. Eso fue lo que más confianza nos dio.',
+          autor: 'Andrea Arévalo y flia.',
+          ubicacion: 'CABA',
+        },
+        {
+          texto: 'Estábamos por poner plata en un proyecto que parecía una buena oportunidad. Bernardo empezó a hacer preguntas que nadie había hecho y aparecieron varias cosas que no cerraban. Frenamos a tiempo. Viéndolo ahora, nos evitó un problema enorme.',
+          autor: 'Francisco Bravo',
+          ubicacion: 'inversor, CABA',
+        },
+      ],
     },
 
     ctaFinal: {
@@ -487,9 +548,9 @@ export const STRINGS = {
         'Elegir una zona que parecía perfecta durante el fin de semana y descubrir después que no funciona para tu rutina diaria.',
         'Definir un colegio por referencias generales sin evaluar vacantes, distancias, propuesta educativa y compatibilidad con tu familia.',
         'Viajar varias veces a Tandil por reuniones desordenadas, visitas improductivas o información que podía obtenerse antes.',
-        'Entregar una seña o poner tus ahorros en una “oportunidad” sin comprobar quién está detrás, qué se está vendiendo realmente y si los papeles respaldan lo prometido.',
+        'Entregar una seña o poner tus ahorros en una "oportunidad" sin comprobar quién está detrás, qué se está vendiendo realmente y si los papeles respaldan lo prometido.',
         'Avanzar con un inmueble, lote o proyecto sin conocer sus limitaciones legales, técnicas, urbanísticas o de servicios.',
-        'Contratar a alguien solo porque “lo conoce todo el mundo” y terminar con presupuestos que cambian, trabajos mal hechos o plazos que nunca se cumplen.',
+        'Contratar a alguien solo porque "lo conoce todo el mundo" y terminar con presupuestos que cambian, trabajos mal hechos o plazos que nunca se cumplen.',
         'Descubrir demasiado tarde gastos, obras, trámites o condicionantes que cambian por completo el costo de la decisión.',
         'Organizar mal los tiempos y terminar pagando alquileres superpuestos, estadías, depósitos, viajes o mudanzas innecesarias.',
         'Resolver vivienda, colegios, trabajo y vida cotidiana por separado, para descubrir después que las piezas no encajan.',
@@ -554,6 +615,90 @@ export const STRINGS = {
       cta: 'Evaluar mi proyecto',
     },
 
+    legales: {
+      ultimaActualizacion: 'Última actualización: 23 de julio de 2026',
+      nombreComercial: 'Local Local es el nombre comercial bajo el cual Bernardo Gabriel Cisterna, CUIT N° 20-32643773-6, presta sus servicios. Su domicilio legal se encuentra en Mitre 767, piso 1, departamento "A", Tandil, Provincia de Buenos Aires.',
+      correoContacto: 'Correo de contacto: bernardo@locallocal.net',
+      matriculasTitulo: 'Matrículas profesionales:',
+      matriculas: [
+        'Colegio de Abogados del Departamento Judicial de Azul: T° XIII, F° 214.',
+        'Colegio Público de la Abogacía de la Capital Federal: T° 116, F° 620.',
+        'Matrícula Federal: T° 701, F° 856.',
+      ],
+    },
+
+    terminosCondiciones: {
+      titulo: 'Términos y condiciones',
+      elServicio: {
+        titulo: 'El servicio',
+        contenido: 'Local Local brinda servicios de análisis, planificación, orientación y acompañamiento para personas, familias y empresas que evalúan instalarse, invertir o desarrollar un proyecto en Tandil. El servicio se organiza por etapas y puede incluir un diagnóstico inicial, la elaboración de una hoja de ruta, la organización de visitas y encuentros, la activación de una red local y la auditoría integral de una o varias operaciones, con intervención jurídica, notarial o técnica. Cada etapa tiene un alcance propio y puede contratarse de manera independiente. Antes de comenzar se informan las tareas incluidas, la modalidad, los plazos, los honorarios y los costos adicionales que pudieran corresponder. Cuando exista una propuesta particular, sus condiciones complementarán estos términos y prevalecerán respecto de los aspectos específicos del servicio contratado, sin afectar los derechos que resulten legalmente irrenunciables.',
+      },
+      contratacionHonorarios: {
+        titulo: 'Contratación y honorarios',
+        contenido: 'Cada etapa comienza una vez que el cliente acepta expresamente su alcance, sus honorarios y las condiciones de pago. El precio aplicable será el informado al momento de la contratación. Se emitirá el comprobante fiscal correspondiente y ningún costo adicional será asumido sin conocimiento y aprobación previa del cliente.',
+      },
+      decisionesResultados: {
+        titulo: 'Decisiones y resultados',
+        contenido: 'Local Local analiza la información disponible y formula recomendaciones con criterio profesional y conocimiento local. Sin embargo, no garantiza un resultado determinado ni reemplaza la decisión final del cliente. El cliente debe proporcionar información completa y verdadera, comunicar cualquier cambio relevante y revisar las condiciones antes de asumir compromisos con terceros.',
+      },
+      profesionalesProveedores: {
+        titulo: 'Profesionales y proveedores',
+        contenido: 'Cuando el proyecto lo requiere, Local Local puede presentar o coordinar la intervención de profesionales y proveedores externos. Salvo que una propuesta indique expresamente otra modalidad, esos servicios se contratan y facturan directamente con cada tercero. Cada profesional o proveedor responde por su propia actuación, mientras que Local Local conserva la responsabilidad sobre las tareas de análisis, coordinación o asesoramiento que haya asumido expresamente. El cliente mantiene plena libertad para contratar al tercero recomendado o elegir otra alternativa.',
+      },
+      transparenciaEconomica: {
+        titulo: 'Transparencia económica',
+        contenido: 'Los honorarios de Local Local y los gastos incluidos o excluidos se informan antes de comenzar cada etapa. Si existiera un acuerdo económico vinculado con un profesional, proveedor o servicio recomendado, se informará al cliente por escrito antes de que tome una decisión, indicando quién realiza el pago, su concepto y su importe o forma de cálculo.',
+      },
+      confidencialidad: {
+        titulo: 'Confidencialidad',
+        contenido: 'Local Local aplica un criterio de mínima exposición. La información del proyecto sólo se comparte cuando resulta necesario, con conocimiento del cliente y en la medida indispensable para cada intervención. Las actuaciones jurídicas se encuentran además alcanzadas por el secreto profesional. La confidencialidad puede ceder únicamente ante una autorización del cliente, una obligación legal o una orden de autoridad competente.',
+      },
+      garantiadiagnostico: {
+        titulo: 'Garantía del diagnóstico',
+        contenido: 'El diagnóstico inicial debe aportar claridad, criterio y una hoja de ruta útil. Si dentro de las 48 horas de recibirla el cliente considera que no cumplió con esa finalidad, puede solicitar la devolución total del importe abonado por esa etapa. Sólo le pediremos que nos indique brevemente los motivos de su disconformidad, con el único propósito de mejorar el servicio. La devolución no quedará condicionada a esa respuesta. La garantía corresponde exclusivamente al diagnóstico inicial y no se extiende a servicios posteriores ya prestados ni a gastos o prestaciones de terceros.',
+      },
+      cancelaciones: {
+        titulo: 'Cancelaciones y reprogramaciones',
+        contenido: 'Las condiciones particulares para cancelar o reprogramar visitas, reservas o servicios personalizados se informarán antes de la contratación. Las reservas y prestaciones de terceros estarán sujetas a sus propias condiciones de cancelación, que serán informadas antes de su confirmación. Si Local Local no pudiera prestar un servicio ya contratado, el cliente podrá optar entre reprogramarlo o solicitar la devolución del importe correspondiente a la parte no prestada.',
+      },
+      cambios: {
+        titulo: 'Cambios y legislación aplicable',
+        contenido: 'Estos términos pueden actualizarse para reflejar cambios en los servicios o en la normativa. Las modificaciones no alterarán las condiciones de una propuesta ya aceptada. Se aplica la legislación argentina y, en las relaciones de consumo, las normas de protección y competencia que resulten obligatorias.',
+      },
+    },
+
+    politicaPrivacidad: {
+      titulo: 'Política de privacidad',
+      responsable: {
+        titulo: 'Responsable de los datos',
+        contenido: 'El responsable del tratamiento de los datos personales es Bernardo Gabriel Cisterna, CUIT 20-32643773-6, con domicilio en Mitre 767, piso 1, departamento "A", Tandil, Provincia de Buenos Aires. Las consultas relacionadas con el tratamiento de datos personales pueden enviarse a bernardo@locallocal.net.',
+      },
+      queInformacion: {
+        titulo: 'Qué información recopilamos y para qué',
+        contenido: 'Podemos recibir datos de identificación y contacto, respuestas enviadas mediante formularios, información suministrada durante entrevistas y comunicaciones, datos necesarios para la facturación, información relacionada con el proyecto del cliente y, cuando corresponda, datos técnicos de navegación. Los utilizamos para: responder consultas y contactar a la persona interesada; comprender, analizar y ejecutar el servicio solicitado; elaborar diagnósticos, propuestas y hojas de ruta; coordinar intervenciones previamente autorizadas; cumplir obligaciones profesionales, contables y legales; proteger la seguridad y el funcionamiento del sitio. Los datos necesarios para responder o prestar el servicio se identifican en cada instancia. Si no son proporcionados, es posible que no podamos atender la consulta o ejecutar la tarea solicitada. Las comunicaciones comerciales o newsletters sólo se enviarán cuando exista consentimiento y siempre permitirán solicitar la baja.',
+      },
+      datosSensibles: {
+        titulo: 'Datos sensibles y de menores de edad',
+        contenido: 'El formulario inicial no solicita datos sensibles. Si el desarrollo del proyecto hiciera necesario conocer información de esa naturaleza, se solicitará únicamente la indispensable, con una finalidad específica y bajo especiales condiciones de reserva. El sitio está dirigido a personas mayores de edad. Los datos relacionados con niños, niñas o adolescentes sólo podrán ser proporcionados por sus padres, representantes o responsables y cuando resulten necesarios para el proyecto.',
+      },
+      conQuienComparten: {
+        titulo: 'Con quién se comparten',
+        contenido: 'La información no se vende ni se entrega a terceros para fines ajenos al servicio. Puede compartirse, en la medida necesaria, con profesionales o proveedores cuya intervención haya sido informada y autorizada; con prestadores tecnológicos de alojamiento, formularios, correo, mensajería o analítica; y con autoridades públicas cuando exista una obligación legal o una orden válida.',
+      },
+      conservacionSeguridad: {
+        titulo: 'Conservación y seguridad',
+        contenido: 'Los datos se conservan durante el tiempo necesario para atender la consulta, prestar el servicio y cumplir las obligaciones profesionales, contables o legales aplicables. Local Local adopta medidas razonables para evitar su acceso, modificación, pérdida o divulgación no autorizada.',
+      },
+      derechosDatos: {
+        titulo: 'Derechos sobre los datos',
+        contenido: 'Cada persona puede solicitar el acceso, actualización o rectificación de sus datos y, cuando corresponda, su supresión. También puede retirar su consentimiento para tratamientos futuros o dejar de recibir comunicaciones comerciales. Determinada información podrá conservarse cuando resulte necesaria para cumplir obligaciones profesionales, contables o legales. Las solicitudes pueden enviarse a bernardo@locallocal.net.',
+      },
+      cookies: {
+        titulo: 'Cookies y herramientas de medición',
+        contenido: 'El sitio puede utilizar cookies técnicas necesarias para funcionar y, con el consentimiento correspondiente, herramientas de medición o publicidad como Google Analytics y Meta Pixel. El usuario podrá aceptar, rechazar o modificar esas preferencias desde el panel de cookies, excepto respecto de aquellas estrictamente necesarias para el funcionamiento del sitio.',
+      },
+    },
+
     footer: {
       blurb: 'Relocalización y soft landing en Tandil.',
       navLabel: 'Navegación',
@@ -610,20 +755,20 @@ export const STRINGS = {
     },
 
     trustbar: [
-      { t: 'Local insight', d: 'We live in Tandil. We know the city first-hand.' },
-      { t: 'Independent judgment', d: 'Our only commitment is helping you make the best decision.' },
-      { t: 'Vetted network', d: 'Professionals selected for their track record, service standards and human quality.' },
-      { t: 'Preventive audit', d: 'Before you commit time or money, we review the legal and technical aspects of each transaction to detect risks, inconsistencies and hidden costs.' },
-      { t: 'Confidentiality', d: 'Your project doesn’t travel around town: your decisions and your timing are handled with absolute discretion. Nothing is shared without your knowledge and authorization.' },
+      { t: 'LOCAL INSIGHT', d: 'We live in Tandil. We know the city first-hand.' },
+      { t: 'INDEPENDENT JUDGMENT', d: 'Our only commitment is helping you make the best decision.' },
+      { t: 'VETTED NETWORK', d: 'Professionals selected for their track record, service standards and human quality.' },
+      { t: 'PREVENTIVE AUDIT', d: 'Before you commit time or money, we review the legal and technical aspects of each transaction to detect risks, inconsistencies and hidden costs.' },
+      { t: 'CONFIDENTIALITY', d: 'Your project doesn\'t travel around town: your decisions and your timing are handled with absolute discretion. Nothing is shared without your knowledge and authorization.' },
     ],
 
     microDecision: {
       title: 'Where are you in your decision process?',
-      sub: 'Choose the option that best reflects your situation today and we’ll propose a path forward. Then we adjust it together.',
+      sub: 'Choose the option that best reflects your situation today and we'll propose a path forward. Then we adjust it together.',
       explorando: 'Still exploring',
       avanzando: 'Already moving forward',
       msgExplorando:
-        'Great. We’ll help you explore Tandil with real information, at your own pace and with full freedom to decide.',
+        'Great. We'll help you explore Tandil with real information, at your own pace and with full freedom to decide.',
       msgAvanzando:
         'Great. We bring order to your process: personalized diagnosis, tailored strategy and a local network to activate the plan.',
       ctaExplorando: 'Send me the Tandil guide',
@@ -644,7 +789,7 @@ export const STRINGS = {
           conLabel: 'With Local Local · A search with criteria',
           riesgo: false,
           sin: [
-            '"I’ll go look at properties in Tandil" — three trips or more',
+            '"I'll go look at properties in Tandil" — three trips or more',
             'Hotels, fuel, lost working days',
           ],
           con: [
@@ -659,7 +804,7 @@ export const STRINGS = {
           riesgo: false,
           sin: [
             'Information arrives from different sources, with different criteria and levels of detail',
-            'Without an overall view, it’s hard to know what to compare, what’s missing and what should be verified.',
+            'Without an overall view, it's hard to know what to compare, what's missing and what should be verified.',
           ],
           con: [
             'We analyze every alternative under the same criteria',
@@ -672,12 +817,12 @@ export const STRINGS = {
           conLabel: 'With Local Local · Risk mitigated',
           riesgo: true,
           sin: [
-            '“I sign first, then find things out…”',
-            'Problems that weren’t detected in time and surface once the decision is already made',
+            '"I sign first, then find things out…"',
+            'Problems that weren't detected in time and surface once the decision is already made',
           ],
           con: [
             'Before moving forward, we audit the deal from a legal and technical standpoint',
-            'So you know what you’re signing, under what conditions and with what limits.',
+            'So you know what you're signing, under what conditions and with what limits.',
           ],
         },
         {
@@ -696,7 +841,7 @@ export const STRINGS = {
         },
       ],
       cierre:
-        'Local Local doesn’t remove your responsibility to decide. But it does prevent the chaos of deciding alone, from afar and without complete information.',
+        'Local Local doesn't remove your responsibility to decide. But it does prevent the chaos of deciding alone, from afar and without complete information.',
     },
 
     metodo: {
@@ -710,7 +855,7 @@ export const STRINGS = {
         {
           num: '01',
           titulo: 'Diagnosis',
-          copy: 'We analyze your personal situation and concrete priorities, and deliver a detailed written diagnosis. The goal isn’t a prefabricated solution — it’s understanding which decision to make first.',
+          copy: 'We analyze your personal situation and concrete priorities, and deliver a detailed written diagnosis. The goal isn't a prefabricated solution — it's understanding which decision to make first.',
         },
         {
           num: '02',
@@ -720,7 +865,7 @@ export const STRINGS = {
         {
           num: '03',
           titulo: 'Network',
-          copy: 'When your project requires it, we activate a local network of professionals and providers selected for their experience, work standards and human quality. We don’t pass along contacts: we build relevant relationships',
+          copy: 'When your project requires it, we activate a local network of professionals and providers selected for their experience, work standards and human quality. We don't pass along contacts: we build relevant relationships',
         },
       ],
       cta: 'Evaluate my project',
@@ -737,7 +882,7 @@ export const STRINGS = {
           modalidad: 'Format: 100% remote',
           parrafos: [
             'We start with a personalized video-call interview to get to know each other and understand your move to Tandil in detail: your current situation, needs, wishes, priorities and timing.',
-            'With that information we analyze the project as a whole and identify what’s defined, what remains to be solved and which alternatives may fit your reality.',
+            'With that information we analyze the project as a whole and identify what's defined, what remains to be solved and which alternatives may fit your reality.',
           ],
           incluyeLabel: 'Includes:',
           incluye: [
@@ -779,7 +924,7 @@ export const STRINGS = {
           modalidad: 'Format: hybrid. The analysis is done remotely, with in-person instances when the transaction requires it',
           parrafos: [
             'When an alternative becomes concrete, we define the scope of the audit according to the type and complexity of the transaction.',
-            'Our legal and notarial team reviews the available documentation and records, the agreed conditions, the contracts you’re about to sign and the obligations you’re about to assume. We identify the risks that may affect your decision, your money or the project’s timing, and we explain clearly what’s in order, what deserves attention and what should be resolved before moving forward.',
+            'Our legal and notarial team reviews the available documentation and records, the agreed conditions, the contracts you're about to sign and the obligations you're about to assume. We identify the risks that may affect your decision, your money or the project's timing, and we explain clearly what's in order, what deserves attention and what should be resolved before moving forward.',
             'When a technical evaluation is needed, we coordinate the involvement of specialized professionals and incorporate their conclusions into the analysis. Their fees and any additional expenses are informed in advance and quoted separately, unless the proposal expressly states otherwise.',
             'Before we begin, you receive a proposal detailing the scope of the review, the professionals involved, estimated timelines, fees and possible third-party costs.',
           ],
@@ -794,17 +939,18 @@ export const STRINGS = {
           valor: 'Price: personalized quote based on the type, scope and complexity of the transaction. Informed and agreed before starting.',
           notas: [
             'The service includes a meeting with our team to explain the conclusions, answer your questions and evaluate next steps.',
-            'With that information you’ll be able to decide whether to move forward, request adjustments, renegotiate terms or consider another alternative.',
+            'With that information you'll be able to decide whether to move forward, request adjustments, renegotiate terms or consider another alternative.',
             'Before moving forward, we present a clear, complete breakdown of the professional fees and costs involved, indicating what each amount corresponds to and which tasks it covers.',
           ],
         },
         {
           num: '04',
-          titulo: 'You arrived. You belong.',
+          titulo: 'Integration. From arriving to belonging.',
           modalidad: '',
           parrafos: [
-            'Once in Tandil, you keep counting on the Local Local network for questions, recommendations and connections with trusted people and services in the city.',
-            'The initial journey ends; your access to the network continues. This support is included and has no expiration date.',
+            'Moving to a city is not the same as integrating into it. Arriving solves one part; feeling like part of the community takes time. It means building routines and relationships, understanding how the city works and knowing who to turn to when a need arises.',
+            'At Local Local we understand the complexity of that process, and we know that many questions come up only after the move. That's why, once you're in Tandil, you can count on us for questions, recommendations and connections with trusted people, professionals and services.',
+            'The initial journey ends, but your access to the network continues. This integration support is included in the service, at no additional cost and with no expiration date.',
           ],
           incluyeLabel: '',
           incluye: [],
@@ -814,19 +960,19 @@ export const STRINGS = {
       ],
       flexibleTitulo: 'A flexible journey',
       flexible: [
-        'The service is designed to move forward in stages: each one orders and prepares the next. That’s the journey we recommend to avoid isolated decisions and move forward with greater clarity.',
-        'If your project is already underway and you need a specific intervention, we can join at whatever stage you’re in.',
+        'The service is designed to move forward in stages: each one orders and prepares the next. That's the journey we recommend to avoid isolated decisions and move forward with greater clarity.',
+        'If your project is already underway and you need a specific intervention, we can join at whatever stage you're in.',
       ],
       cta: 'Tell us your case on WhatsApp',
     },
 
     confidencialidad: {
       kicker: 'Confidentiality',
-      titleSans: 'Your project doesn’t need to',
+      titleSans: 'Your project doesn't need to',
       titleSerif: 'travel around town',
       copy: 'A move, a property search, an investment or a business project involves sensitive family, professional, strategic and financial information. Its circulation can expose decisions, condition negotiations and attract interests foreign to the project.',
       copy2:
-        'At Local Local we apply a minimum-exposure principle. Before activating each contact, we agree with you on what information is shared, with whom and for what purpose. Each professional receives only what’s indispensable for their intervention.',
+        'At Local Local we apply a minimum-exposure principle. Before activating each contact, we agree with you on what information is shared, with whom and for what purpose. Each professional receives only what's indispensable for their intervention.',
       puntos: [
         'Your payment capacity and maximum budget remain undisclosed.',
         'Any release of information happens with your prior knowledge and approval.',
@@ -842,7 +988,7 @@ export const STRINGS = {
       kicker: 'Local Local Network',
       titleSans: 'We know who to call,',
       titleSerif: 'for what and when',
-      copy: 'Our network’s strength lies in the criteria with which it was built and the quality of those who belong to it.',
+      copy: 'Our network's strength lies in the criteria with which it was built and the quality of those who belong to it.',
       copy2:
         'We select professionals and providers for their track record, references, work standards, responsiveness and human quality. When several trustworthy alternatives exist within the same field, we propose the one we consider best suited to the needs and characteristics of each project.',
       statsTitle: 'The network in numbers',
@@ -853,14 +999,30 @@ export const STRINGS = {
       ],
       statsFoot: 'Selected by criteria, not by volume.',
       statsNote:
-        'Each introduction happens when there’s a concrete need and we have the information required for the meeting to make sense. The selected person receives the indispensable context, and you know why we recommend them and what role they’ll play in your project.',
+        'Each introduction happens when there's a concrete need and we have the information required for the meeting to make sense. The selected person receives the indispensable context, and you know why we recommend them and what role they'll play in your project.',
       principios: [
         { t: 'Prior selection', d: 'Every professional or provider is evaluated before joining the network.' },
         { t: 'Fit for each project', d: 'Each introduction responds to a concrete need, at the right moment and with a defined purpose.' },
         { t: 'Continuous evaluation', d: 'We review experiences and outcomes to keep the network up to date and uphold its quality standards.' },
       ],
       bilateral:
-        'We look after both those who arrive through Local Local and the professionals who make up our network. That’s why every connection starts with context, clear expectations and respect for both parties’ time.',
+        'We look after both those who arrive through Local Local and the professionals who make up our network. That's why every connection starts with context, clear expectations and respect for both parties' time.',
+    },
+
+    queRecibis: {
+      titulo: 'What you get',
+      subtitulo: 'You don't buy a meeting. You get clarity to move forward',
+      items: [
+        'Diagnostic interview of approximately 44 minutes',
+        'Personalized analysis of your situation',
+        'Identification of priorities and risks',
+        'Information gathering needed for your case',
+        'Diagnostic document',
+        'Concrete roadmap',
+        'Recommendation of next steps',
+        'Optional proposal to continue by stages',
+      ],
+      nota: 'The diagnosis is an independent stage. After receiving it, you can proceed on your own or continue with Local Local.',
     },
 
     paraQuien: {
@@ -894,17 +1056,17 @@ export const STRINGS = {
       parrafos: [
         'How much time you want to spend commuting. Where you want your kids to grow up. The distance between home, school and work. How you want your days to feel.',
         'Tandil combines something hard to find: nature, activity and a still-human scale.',
-        'It has schools, a university, healthcare, culture, gastronomy, sports and an economy that doesn’t depend on a single activity. There are companies, professionals, industry, tourism, farmland and a tech ecosystem that keeps growing.',
-        'But there’s also fresh air, hills and another relationship with time.',
-        'Here, nature isn’t reserved for vacations. It can appear on a walk after work, an afternoon with the kids or a trail that starts a few minutes from your home.',
+        'It has schools, a university, healthcare, culture, gastronomy, sports and an economy that doesn't depend on a single activity. There are companies, professionals, industry, tourism, farmland and a tech ecosystem that keeps growing.',
+        'But there's also fresh air, hills and another relationship with time.',
+        'Here, nature isn't reserved for vacations. It can appear on a walk after work, an afternoon with the kids or a trail that starts a few minutes from your home.',
         'Tandil offers the possibility of living with more space, building closer relationships and recovering part of the time big cities consume every day.',
-        'It isn’t a frozen city or a promise of a perfect life. It’s an active city, with an identity of its own and enough size for a family, professional or business project to develop without becoming isolated.',
+        'It isn't a frozen city or a promise of a perfect life. It's an active city, with an identity of its own and enough size for a family, professional or business project to develop without becoming isolated.',
         'Of course, moving also means reviewing work, income, schools, housing and your relationship with the city you leave behind. Not every area or way of living Tandil offers the same experience.',
-        'But if you’re looking for a life with more nature, more proximity and greater control over your days, Tandil deserves more than a visit.',
+        'But if you're looking for a life with more nature, more proximity and greater control over your days, Tandil deserves more than a visit.',
         'It deserves to become a concrete possibility.',
       ],
-      cierre1: 'Maybe it’s not about escaping a city.',
-      cierre2: 'Maybe it’s about choosing the next one better.',
+      cierre1: 'Maybe it's not about escaping a city.',
+      cierre2: 'Maybe it's about choosing the next one better.',
       credito: 'Photography: @santiarbeoph',
       galleryAlts: [
         'Hillside town among rocks and groves in Tandil',
@@ -915,24 +1077,49 @@ export const STRINGS = {
       ],
     },
 
+    porQue: {
+      kicker: 'Why hire Local Local?',
+      titleSans: 'Because some mistakes',
+      titleSerif: 'are paid dearly',
+      intro: 'From a distance, many decisions look simpler than they really are. At Local Local we help you avoid:',
+      items: [
+        'Choosing an area that seemed perfect over the weekend, only to find it doesn't work for your daily routine.',
+        'Picking a school on general references without evaluating openings, distances, educational approach and fit with your family.',
+        'Traveling to Tandil several times for disorganized meetings, unproductive visits or information that could have been obtained beforehand.',
+        'Handing over a deposit or putting your savings into an "opportunity" without checking who's behind it, what's actually being sold and whether the paperwork backs up the promises.',
+        'Moving forward with a property, lot or project without knowing its legal, technical, zoning or utility limitations.',
+        'Hiring someone just because "everyone knows them" and ending up with shifting quotes, poor workmanship or deadlines that are never met.',
+        'Discovering too late expenses, works, procedures or constraints that completely change the cost of the decision.',
+        'Mismanaging the timing and ending up paying overlapping rents, stays, deposits, trips or unnecessary moves.',
+        'Solving housing, schools, work and daily life separately, only to discover later that the pieces don't fit.',
+        'Exposing your project all over town and ending up surrounded by calls, self-interested recommendations and pressure to decide fast.',
+      ],
+      cierre1:
+        'Each professional knows their part. We integrate the variables, ask the uncomfortable questions and help you detect what you're not yet seeing.',
+      cierre2Intro: 'Often, the best outcome of our work is what didn't happen:',
+      cierre2Destacado:
+        'the deposit you didn't lose, the trip you didn't take, the provider you didn't hire and the decision you didn't have to regret.',
+      cta: 'Evaluate your project →',
+    },
+
     nosotros: {
       kicker: 'About',
       titleSans: 'A local eye,',
       titleSerif: 'a personal responsibility',
       nombre: 'Bernardo G. Cisterna',
       rol: 'Lawyer (UBA – 2012) · Founder and coordinator of the Local Local network · Tandil',
-      saludo: 'Hi, I’m Bernardo.',
+      saludo: 'Hi, I'm Bernardo.',
       historia: [
         'I grew up in Tandil and moved to Buenos Aires to study law. Then I chose to live abroad to experience other cultures and ways of living. Today I choose Tandil again, to grow and raise my children.',
         'Each move taught me — first-hand — what it means to build a life somewhere else: coordinating decisions from afar, moving forward without a trusted network, and building new routines, relationships and points of reference.',
         'I also learned that information that seems definitive is often incomplete, that recommendations usually reflect partial views, and that hasty decisions can be costly to fix.',
         'As a lawyer, I see that same pattern repeat in families, professionals and companies facing the consequences of important decisions made with fragmented information and without preventive advice.',
-        'That’s how Local Local was born: the service I wish I’d had in every move.',
+        'That's how Local Local was born: the service I wish I'd had in every move.',
       ],
       expertiseLabel: 'My role',
-      expertiseIntro: 'I’m the main point of contact for every project and I personally coordinate our network’s involvement:',
+      expertiseIntro: 'I'm the main point of contact for every project and I personally coordinate our network's involvement:',
       expertise: [
-        'I listen to what you’re looking for and what’s at stake for you.',
+        'I listen to what you're looking for and what's at stake for you.',
         'I help you order priorities and define what to solve first.',
         'I bring in the right people at the right time.',
         'I protect your position during negotiations.',
@@ -941,12 +1128,12 @@ export const STRINGS = {
       expertiseCierre: [
         'When the project includes an asset transaction, I lead the legal, notarial and technical audit stage.',
         'Every recommendation carries my name, my criteria and my professional responsibility.',
-        'I’m licensed with the Buenos Aires City Bar Association and the Azul Judicial Department Bar Association, Province of Buenos Aires. This allows me to personally take on the legal work each case requires and integrate it into the rest of the process.',
+        'I'm licensed with the Buenos Aires City Bar Association and the Azul Judicial Department Bar Association, Province of Buenos Aires. This allows me to personally take on the legal work each case requires and integrate it into the rest of the process.',
       ],
       compromisoLabel: 'My commitment',
       compromiso: [
         'The initial diagnosis must provide clarity and judgment.',
-        'If within 48 hours of receiving your roadmap you feel it didn’t deliver on that promise, you can request a full refund of the amount paid for the diagnosis.',
+        'If within 48 hours of receiving your roadmap you feel it didn't deliver on that promise, you can request a full refund of the amount paid for the diagnosis.',
       ],
       ctaEvaluar: 'I want to evaluate my project',
       cta: 'Meet me on LinkedIn',
@@ -957,14 +1144,35 @@ export const STRINGS = {
       kicker: 'Testimonials',
       titleSans: 'Experiences that built',
       titleSerif: 'Local Local',
-      demoBadge: 'DEMO TESTIMONIAL — REPLACE BEFORE PUBLISHING',
+      items: [
+        {
+          texto: 'We were fairly decided, but we had a lot of loose doubts. Bernardo helped us put them on the table and connected us with people who gave us a lot of confidence.',
+          autor: 'Rodrigo Zubillaga and family',
+          ubicacion: 'Buenos Aires',
+        },
+        {
+          texto: 'I came to Bernardo with a fairly specific question and, in talking, several things came up that I hadn't considered. He helped me organize everything and decide with more peace of mind.',
+          autor: 'Mónica Guastella',
+          ubicacion: 'investor, Olivos',
+        },
+        {
+          texto: 'Bernardo and his team know Tandil very well, but most importantly, they know who's who and how each person works. That gave us the most confidence.',
+          autor: 'Andrea Arévalo and family',
+          ubicacion: 'Buenos Aires',
+        },
+        {
+          texto: 'We were about to invest money in a project that seemed like a good opportunity. Bernardo started asking questions that no one else had asked and several things came up that didn't add up. We stopped in time. Looking at it now, it saved us from a huge problem.',
+          autor: 'Francisco Bravo',
+          ubicacion: 'investor, Buenos Aires',
+        },
+      ],
     },
 
     ctaFinal: {
-      kicker: 'Let’s begin',
+      kicker: 'Let's begin',
       titleSans: 'If Tandil is in your plans:',
       titleSerif: 'three questions, two minutes, one concrete first step',
-      copy: 'Tell us where your project stands and I’ll contact you within 24 hours to define the next step.',
+      copy: 'Tell us where your project stands and I'll contact you within 24 hours to define the next step.',
       cta: 'Tell us about your project',
       ctaSec: 'See the method',
       micro: 'Confidentiality from the very first contact.',
@@ -990,7 +1198,7 @@ export const STRINGS = {
       atras: 'Back',
       q1: {
         label: 'Where does your project stand?',
-        opciones: ['I’m just exploring.', 'Tandil is already a concrete option.', 'I’ve decided to move forward.'],
+        opciones: ['I'm just exploring.', 'Tandil is already a concrete option.', 'I've decided to move forward.'],
       },
       q2: {
         label: 'What are you evaluating?',
@@ -1005,7 +1213,7 @@ export const STRINGS = {
         opciones: [
           'Within the next three months.',
           'Between three and six months.',
-          'Later on; I’m still defining the timing.',
+          'Later on; I'm still defining the timing.',
         ],
       },
       datos: {
@@ -1027,9 +1235,9 @@ export const STRINGS = {
       directoCta: 'Message me on WhatsApp',
       graciasTitulo: 'Got it,',
       graciasCopy:
-        'WhatsApp opened with your summary ready to send. If it didn’t, write to us directly and we’ll take it from there. We reply within 24 hours.',
+        'WhatsApp opened with your summary ready to send. If it didn't, write to us directly and we'll take it from there. We reply within 24 hours.',
       postCtaPrincipal: 'I want my diagnostic interview',
-      postCtaSecundario: 'I’m still exploring',
+      postCtaSecundario: 'I'm still exploring',
       leadLabels: {
         momento: 'Project stage',
         evaluando: 'Evaluating',
@@ -1049,28 +1257,28 @@ export const STRINGS = {
       intro:
         'From a distance, many decisions look simpler than they really are. At Local Local we help you avoid:',
       items: [
-        'Choosing an area that seemed perfect over the weekend, only to find it doesn’t work for your daily routine.',
+        'Choosing an area that seemed perfect over the weekend, only to find it doesn't work for your daily routine.',
         'Picking a school on general references without evaluating openings, distances, educational approach and fit with your family.',
         'Traveling to Tandil several times for disorganized meetings, unproductive visits or information that could have been obtained beforehand.',
-        'Handing over a deposit or putting your savings into an “opportunity” without checking who’s behind it, what’s actually being sold and whether the paperwork backs up the promises.',
+        'Handing over a deposit or putting your savings into an "opportunity" without checking who's behind it, what's actually being sold and whether the paperwork backs up the promises.',
         'Moving forward with a property, lot or project without knowing its legal, technical, zoning or utility limitations.',
-        'Hiring someone just because “everyone knows them” and ending up with shifting quotes, poor workmanship or deadlines that are never met.',
+        'Hiring someone just because "everyone knows them" and ending up with shifting quotes, poor workmanship or deadlines that are never met.',
         'Discovering too late expenses, works, procedures or constraints that completely change the cost of the decision.',
         'Mismanaging the timing and ending up paying overlapping rents, stays, deposits, trips or unnecessary moves.',
-        'Solving housing, schools, work and daily life separately, only to discover later that the pieces don’t fit.',
+        'Solving housing, schools, work and daily life separately, only to discover later that the pieces don't fit.',
         'Exposing your project all over town and ending up surrounded by calls, self-interested recommendations and pressure to decide fast.',
       ],
       cierre1:
-        'Each professional knows their part. We integrate the variables, ask the uncomfortable questions and help you detect what you’re not yet seeing.',
-      cierre2Intro: 'Often, the best outcome of our work is what didn’t happen:',
+        'Each professional knows their part. We integrate the variables, ask the uncomfortable questions and help you detect what you're not yet seeing.',
+      cierre2Intro: 'Often, the best outcome of our work is what didn't happen:',
       cierre2Destacado:
-        'the deposit you didn’t lose, the trip you didn’t take, the provider you didn’t hire and the decision you didn’t have to regret.',
+        'the deposit you didn't lose, the trip you didn't take, the provider you didn't hire and the decision you didn't have to regret.',
       cta: 'Evaluate your project →',
     },
 
     newsletter: {
       kicker: 'Newsletter',
-      title: 'Let’s keep thinking together',
+      title: 'Let's keep thinking together',
       copy: 'We share ideas, experiences and tools for those going through a move, evaluating a change of city or imagining a new stage for their family or their project.',
       cta: 'Subscribe to receive our upcoming stories and news',
     },
@@ -1085,10 +1293,10 @@ export const STRINGS = {
         },
         {
           q: 'How is it different from a real estate agency?',
-          a: 'We don’t sell property or take third-party commissions. Our only interest is that you make a good decision. An agency works on its own portfolio; we work on your whole project: housing, schools, legal matters, timing and daily life.',
+          a: 'We don't sell property or take third-party commissions. Our only interest is that you make a good decision. An agency works on its own portfolio; we work on your whole project: housing, schools, legal matters, timing and daily life.',
         },
         {
-          q: 'Can you help me if I haven’t decided to move yet?',
+          q: 'Can you help me if I haven't decided to move yet?',
           a: 'Yes. Much of the value is precisely in the evaluation stage: understanding whether Tandil is for you, which area makes sense and what the change would involve — before committing time or money.',
         },
         {
@@ -1097,11 +1305,11 @@ export const STRINGS = {
         },
         {
           q: 'Can I hire just one stage?',
-          a: 'Yes. The service is designed to move forward in stages: each one orders and prepares the next. If your project is already underway and you need a specific intervention, we can join at whatever stage you’re in.',
+          a: 'Yes. The service is designed to move forward in stages: each one orders and prepares the next. If your project is already underway and you need a specific intervention, we can join at whatever stage you're in.',
         },
         {
           q: 'How do you select the professionals in the network?',
-          a: 'By their track record, references, work standards, responsiveness and human quality, through relationships built over years in Tandil. It’s not a single list: we recommend per project and evaluate the network continuously.',
+          a: 'By their track record, references, work standards, responsiveness and human quality, through relationships built over years in Tandil. It's not a single list: we recommend per project and evaluate the network continuously.',
         },
         {
           q: 'Is the information I share confidential?',
