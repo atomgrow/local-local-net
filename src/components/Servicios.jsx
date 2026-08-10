@@ -123,6 +123,48 @@ export default function Servicios() {
             </button>
           </div>
         </div>
+
+        {/* Confidencialidad */}
+        {s.confidencialidad && (
+          <div data-reveal className="mt-20">
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/50 mb-4">
+                {s.confidencialidad.kicker}
+              </p>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight text-espresso">
+                {s.confidencialidad.titleSans}{' '}
+                <span className="font-serif font-medium italic text-terracota">{s.confidencialidad.titleSerif}</span>
+              </h2>
+            </div>
+
+            <div className="mx-auto max-w-2xl space-y-6">
+              <p className="text-sm leading-relaxed text-espresso/70">{s.confidencialidad.copy}</p>
+              <p className="text-sm leading-relaxed text-espresso/70">{s.confidencialidad.copy2}</p>
+
+              {s.confidencialidad.puntos.length > 0 && (
+                <ul className="space-y-3">
+                  {s.confidencialidad.puntos.map((punto, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-espresso/70"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-terracota" />
+                      {punto}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <p className="text-sm italic leading-relaxed text-espresso/60 pt-4 border-t border-espresso/10">
+                {s.confidencialidad.cierre}
+              </p>
+
+              <div className="pt-4">
+                <CtaButton source="confidentiality">{s.confidencialidad.cta}</CtaButton>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
