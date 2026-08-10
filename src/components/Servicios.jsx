@@ -8,6 +8,7 @@ export default function Servicios() {
   const scope = useReveal()
   const { t, lang } = useLang()
   const s = t.servicios
+  const c = t.confidencialidad
 
   const handleWhatsApp = () => {
     trackEvent('servicios_whatsapp_click')
@@ -125,25 +126,25 @@ export default function Servicios() {
         </div>
 
         {/* Confidencialidad */}
-        {s.confidencialidad && (
+        {c && (
           <div data-reveal className="mt-20">
             <div className="mx-auto max-w-3xl text-center mb-12">
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/50 mb-4">
-                {s.confidencialidad.kicker}
+                {c.kicker}
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight text-espresso">
-                {s.confidencialidad.titleSans}{' '}
-                <span className="font-serif font-medium italic text-terracota">{s.confidencialidad.titleSerif}</span>
+                {c.titleSans}{' '}
+                <span className="font-serif font-medium italic text-terracota">{c.titleSerif}</span>
               </h2>
             </div>
 
             <div className="mx-auto max-w-2xl space-y-6">
-              <p className="text-sm leading-relaxed text-espresso/70">{s.confidencialidad.copy}</p>
-              <p className="text-sm leading-relaxed text-espresso/70">{s.confidencialidad.copy2}</p>
+              <p className="text-sm leading-relaxed text-espresso/70">{c.copy}</p>
+              <p className="text-sm leading-relaxed text-espresso/70">{c.copy2}</p>
 
-              {s.confidencialidad.puntos.length > 0 && (
+              {c.puntos.length > 0 && (
                 <ul className="space-y-3">
-                  {s.confidencialidad.puntos.map((punto, i) => (
+                  {c.puntos.map((punto, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-3 text-sm leading-relaxed text-espresso/70"
@@ -156,11 +157,11 @@ export default function Servicios() {
               )}
 
               <p className="text-sm italic leading-relaxed text-espresso/60 pt-4 border-t border-espresso/10">
-                {s.confidencialidad.cierre}
+                {c.cierre}
               </p>
 
               <div className="pt-4">
-                <CtaButton source="confidentiality">{s.confidencialidad.cta}</CtaButton>
+                <CtaButton source="confidentiality">{c.cta}</CtaButton>
               </div>
             </div>
           </div>
