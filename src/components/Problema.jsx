@@ -65,19 +65,22 @@ export default function Problema() {
                   transitionDelay: `${i * 100}ms`,
                 }}
               >
-                <h3 className="font-display text-lg font-bold text-white mb-4">
+                <h3 className="font-display text-lg font-bold text-white mb-8 text-center">
                   {esc.titulo}
                 </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-8">
                   {/* Sin */}
-                  <div>
-                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-terracota font-semibold bg-black/50 px-2.5 py-1.5 rounded-md inline-block">
-                      {esc.sinLabel}
+                  <div className="text-center">
+                    <p className="mb-3 font-mono text-[10px] tracking-[0.2em] text-terracota font-semibold">
+                      {esc.sinLabel.split(' · ')[0]}
+                    </p>
+                    <p className="mb-4 text-sm font-medium text-almond/90">
+                      {esc.sinLabel.split(' · ')[1]}
                     </p>
                     <ul className="space-y-2">
                       {esc.sin.slice(0, 2).map((linea) => (
-                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-almond/75">
+                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-almond/75 justify-center">
                           <X size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-terracota/70" aria-hidden="true" />
                           <span>{linea}</span>
                         </li>
@@ -86,13 +89,16 @@ export default function Problema() {
                   </div>
 
                   {/* Con */}
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-matcha font-semibold bg-black/50 px-2.5 py-1.5 rounded-md inline-block">
-                      {esc.conLabel}
+                  <div className="border-t border-white/10 pt-8 text-center">
+                    <p className="mb-3 font-mono text-[10px] tracking-[0.2em] text-matcha font-semibold">
+                      {esc.conLabel.split(' · ')[0]}
+                    </p>
+                    <p className="mb-4 text-sm font-medium text-white/90">
+                      {esc.conLabel.split(' · ')[1]}
                     </p>
                     <ul className="space-y-2">
                       {esc.con.slice(0, 2).map((linea) => (
-                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-white/80">
+                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-white/80 justify-center">
                           <Check size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-matcha" aria-hidden="true" />
                           <span>{linea}</span>
                         </li>
