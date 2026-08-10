@@ -186,7 +186,8 @@ export const STRINGS = {
         {
           num: '02',
           titulo: 'Visita estratégica a Tandil y activación de la red local',
-          modalidad: 'Modalidad: presencial · Estadía estimada: de uno a tres días, preferentemente entre lunes y miércoles.',
+          modalidad: 'presencial',
+          estadiaEstimada: 'de uno a tres días, preferentemente entre lunes y miércoles.',
           parrafos: [
             'Con la hoja de ruta como base, diseñamos antes de tu llegada una agenda personalizada para conocer y evaluar en Tandil las alternativas identificadas durante el diagnóstico.',
             'Priorizamos los días de semana para que conozcas la ciudad en su ritmo cotidiano y aproveches mejor cada jornada. Según tu proyecto, la agenda puede incluir visitas a colegios e inmuebles, recorridos por barrios y encuentros con profesionales y proveedores.',

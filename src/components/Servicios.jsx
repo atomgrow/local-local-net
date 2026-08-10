@@ -33,9 +33,18 @@ export default function Servicios() {
                 <h3 className="mt-2 font-display text-2xl font-bold text-espresso">
                   {etapa.titulo}
                 </h3>
-                {etapa.modalidad && (
-                  <p className="mt-2 text-sm font-medium text-espresso/70">{etapa.modalidad}</p>
-                )}
+                <div className="mt-3 space-y-1">
+                  {etapa.modalidad && (
+                    <p className="text-sm text-espresso/70">
+                      <span className="font-bold">Modalidad:</span> {etapa.modalidad}
+                    </p>
+                  )}
+                  {etapa.estadiaEstimada && (
+                    <p className="text-sm text-espresso/70">
+                      <span className="font-bold">Estadía estimada:</span> {etapa.estadiaEstimada}
+                    </p>
+                  )}
+                </div>
               </div>
 
               {/* Párrafos de descripción */}
