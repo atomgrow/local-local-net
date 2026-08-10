@@ -77,20 +77,23 @@ export default function Nosotros() {
               <p className="mt-4 text-sm italic leading-relaxed text-espresso/60">{n.expertiseCierre}</p>
             </div>
 
-            <blockquote data-reveal className="rounded-[2rem] bg-espresso p-8 text-almond">
-              {n.compromiso.map((p, i) => (
-                <p
-                  key={p.slice(0, 24)}
-                  className={
-                    i === n.compromiso.length - 1
-                      ? 'mt-4 font-serif text-xl italic text-vanilla'
-                      : `text-sm leading-relaxed text-almond/80 ${i > 0 ? 'mt-3' : ''}`
-                  }
-                >
-                  {p}
-                </p>
-              ))}
-            </blockquote>
+            <div data-reveal>
+              <p className="font-display text-sm font-bold text-espresso">{n.compromisoLabel}</p>
+              <blockquote className="mt-4 rounded-[2rem] bg-espresso p-8 text-almond">
+                {n.compromiso.map((p, i) => (
+                  <p
+                    key={p.slice(0, 24)}
+                    className={
+                      i === n.compromiso.length - 1
+                        ? 'mt-4 font-serif text-xl italic text-vanilla'
+                        : `text-sm leading-relaxed text-almond/80 ${i > 0 ? 'mt-3' : ''}`
+                    }
+                  >
+                    {p}
+                  </p>
+                ))}
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
