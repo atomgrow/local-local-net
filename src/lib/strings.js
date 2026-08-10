@@ -236,11 +236,12 @@ export const STRINGS = {
         },
         {
           num: '04',
-          titulo: 'Llegaste. Sos parte.',
+          titulo: 'Integración. De llegar a ser parte.',
           modalidad: '',
           parrafos: [
-            'Una vez en Tandil, seguís contando con la red de Local Local para hacer consultas, pedir recomendaciones y conectarte con personas y servicios de confianza en la ciudad.',
-            'El recorrido inicial termina; tu acceso a la red continúa. Este acompañamiento está incluido y no tiene fecha de vencimiento.',
+            'Mudarse a una ciudad no es lo mismo que integrarse a ella. Llegar resuelve una parte; sentirse parte lleva tiempo. Implica construir rutinas y vínculos, entender cómo funciona la ciudad y saber a quién recurrir cuando aparece una necesidad.',
+            'En Local Local conocemos la complejidad de ese proceso y sabemos que muchas preguntas surgen recién después de la mudanza. Por eso, una vez en Tandil, seguís contando con nosotros para hacer consultas, pedir recomendaciones y conectarte con personas, profesionales y servicios de confianza.',
+            'El recorrido inicial termina, pero tu acceso a la red continúa. Este acompañamiento de integración está incluido en el servicio, sin costo adicional y sin fecha de vencimiento.',
           ],
           incluyeLabel: '',
           incluye: [],
