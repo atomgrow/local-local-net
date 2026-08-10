@@ -75,8 +75,8 @@ export const STRINGS = {
       escenarios: [
         {
           titulo: 'Viajes ineficientes',
-          sinLabel: 'Sin método · Riesgo alto Costos y desgaste evitables',
-          conLabel: 'Con Local Local · Riesgo mitigado Búsqueda con criterio',
+          sinLabel: 'Sin método · Costos y desgaste evitables',
+          conLabel: 'Con Local Local · Búsqueda con criterio',
           riesgo: false,
           sin: [
             '"Voy a ver propiedades a Tandil" — tres viajes o más',

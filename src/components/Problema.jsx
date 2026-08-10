@@ -72,7 +72,10 @@ export default function Problema() {
                 <div className="space-y-4">
                   {/* Sin */}
                   <div>
-                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-terracota font-semibold">
+                    <p
+                      className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-terracota font-semibold"
+                      style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.6)' }}
+                    >
                       {esc.sinLabel}
                     </p>
                     <ul className="space-y-2">
@@ -87,7 +90,10 @@ export default function Problema() {
 
                   {/* Con */}
                   <div className="border-t border-white/10 pt-4">
-                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-matcha font-semibold">
+                    <p
+                      className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-matcha font-semibold"
+                      style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.6)' }}
+                    >
                       {esc.conLabel}
                     </p>
                     <ul className="space-y-2">
