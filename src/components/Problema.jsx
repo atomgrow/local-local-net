@@ -69,41 +69,46 @@ export default function Problema() {
                   {esc.titulo}
                 </h3>
 
-                <div className="space-y-8">
-                  {/* Sin */}
-                  <div className="text-center px-3 py-4 rounded-lg" style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.35)', mixBlendMode: 'multiply' }}>
-                    <p className="mb-3 font-mono text-[10px] tracking-[0.2em] text-terracota font-semibold">
-                      {esc.sinLabel.split(' · ')[0]}
-                    </p>
-                    <p className="mb-4 text-sm font-medium text-almond/95">
-                      {esc.sinLabel.split(' · ')[1]}
-                    </p>
-                    <ul className="space-y-2">
-                      {esc.sin.slice(0, 2).map((linea) => (
-                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-almond/85 justify-center">
-                          <X size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-terracota" aria-hidden="true" />
-                          <span>{linea}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="px-5 py-6 rounded-2xl text-center" style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.5)', mixBlendMode: 'multiply' }}>
+                  <div className="space-y-6">
+                    {/* Sin */}
+                    <div>
+                      <p className="mb-2 font-mono text-[10px] tracking-[0.2em] text-terracota font-semibold">
+                        {esc.sinLabel.split(' · ')[0]}
+                      </p>
+                      <p className="mb-3 text-sm font-medium text-almond/95">
+                        {esc.sinLabel.split(' · ')[1]}
+                      </p>
+                      <ul className="space-y-2">
+                        {esc.sin.slice(0, 2).map((linea) => (
+                          <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-almond/85 justify-center">
+                            <X size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-terracota" aria-hidden="true" />
+                            <span>{linea}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  {/* Con */}
-                  <div className="border-t border-white/10 pt-8 px-3 py-4 rounded-lg text-center" style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.35)', mixBlendMode: 'multiply' }}>
-                    <p className="mb-3 font-mono text-[10px] tracking-[0.2em] text-matcha font-semibold">
-                      {esc.conLabel.split(' · ')[0]}
-                    </p>
-                    <p className="mb-4 text-sm font-medium text-white/95">
-                      {esc.conLabel.split(' · ')[1]}
-                    </p>
-                    <ul className="space-y-2">
-                      {esc.con.slice(0, 2).map((linea) => (
-                        <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-white/85 justify-center">
-                          <Check size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-matcha" aria-hidden="true" />
-                          <span>{linea}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Divisor sutil */}
+                    <div className="border-t border-white/15" />
+
+                    {/* Con */}
+                    <div>
+                      <p className="mb-2 font-mono text-[10px] tracking-[0.2em] text-matcha font-semibold">
+                        {esc.conLabel.split(' · ')[0]}
+                      </p>
+                      <p className="mb-3 text-sm font-medium text-white/95">
+                        {esc.conLabel.split(' · ')[1]}
+                      </p>
+                      <ul className="space-y-2">
+                        {esc.con.slice(0, 2).map((linea) => (
+                          <li key={linea} className="flex items-start gap-2.5 text-sm leading-snug text-white/85 justify-center">
+                            <Check size={14} strokeWidth={2.5} className="mt-0.5 shrink-0 text-matcha" aria-hidden="true" />
+                            <span>{linea}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </article>
