@@ -42,8 +42,8 @@ export default function Red() {
               {r.stats.map((s) => (
                 <div key={s.d} className="flex items-baseline gap-4">
                   <dt className="sr-only">{s.d}</dt>
-                  <dd className="font-display text-4xl font-bold tracking-tight">{s.n}</dd>
-                  <dd className="text-sm text-white/80">{s.d}</dd>
+                  <dd className="font-display text-4xl font-bold tracking-tight shrink-0">{s.n}</dd>
+                  <dd className="text-sm text-white/80 whitespace-nowrap">{s.d}</dd>
                 </div>
               ))}
             </dl>
