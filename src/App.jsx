@@ -10,7 +10,6 @@ import Problema from './components/Problema'
 import Metodo from './components/Metodo'
 import Servicios from './components/Servicios'
 import Red from './components/Red'
-import Confidencialidad from './components/Confidencialidad'
 import ParaQuien from './components/ParaQuien'
 import Nosotros from './components/Nosotros'
 import Testimonios from './components/Testimonios'
@@ -40,7 +39,6 @@ function Landing() {
         <Metodo />
         <Servicios />
         <Red />
-        <Confidencialidad />
         <ParaQuien />
         <Nosotros />
         <Testimonios />
