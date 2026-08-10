@@ -75,8 +75,8 @@ export const STRINGS = {
       escenarios: [
         {
           titulo: 'Viajes ineficientes',
-          sinLabel: 'Sin método · Costos y desgaste evitables',
-          conLabel: 'Con Local Local · Búsqueda con criterio',
+          sinLabel: 'Sin método · Riesgo alto Costos y desgaste evitables',
+          conLabel: 'Con Local Local · Riesgo mitigado Búsqueda con criterio',
           riesgo: false,
           sin: [
             '"Voy a ver propiedades a Tandil" — tres viajes o más',
@@ -235,12 +235,11 @@ export const STRINGS = {
         },
         {
           num: '04',
-          titulo: 'Integración. De llegar a ser parte.',
+          titulo: 'Llegaste. Sos parte.',
           modalidad: '',
           parrafos: [
-            'Mudarse a una ciudad no es lo mismo que integrarse a ella. Llegar resuelve una parte; sentirse parte lleva tiempo. Implica construir rutinas y vínculos, entender cómo funciona la ciudad y saber a quién recurrir cuando aparece una necesidad.',
-            'En Local Local conocemos la complejidad de ese proceso y sabemos que muchas preguntas surgen recién después de la mudanza. Por eso, una vez en Tandil, seguís contando con nosotros para hacer consultas, pedir recomendaciones y conectarte con personas, profesionales y servicios de confianza.',
-            'El recorrido inicial termina, pero tu acceso a la red continúa. Este acompañamiento de integración está incluido en el servicio, sin costo adicional y sin fecha de vencimiento.',
+            'Una vez en Tandil, seguís contando con la red de Local Local para hacer consultas, pedir recomendaciones y conectarte con personas y servicios de confianza en la ciudad.',
+            'El recorrido inicial termina; tu acceso a la red continúa. Este acompañamiento está incluido y no tiene fecha de vencimiento.',
           ],
           incluyeLabel: '',
           incluye: [],
@@ -283,9 +282,9 @@ export const STRINGS = {
         'Seleccionamos profesionales y proveedores por su trayectoria, referencias, estándares de trabajo, capacidad de respuesta y calidad humana. Cuando existen distintas alternativas confiables dentro de una misma área, proponemos la que consideramos más adecuada para las necesidades y características de cada proyecto.',
       statsTitle: 'La red en números',
       stats: [
-        { n: '+20', d: 'profesionales y proveedores seleccionados' },
-        { n: '+8', d: 'rubros esenciales reunidos en una mirada integral' },
-        { n: '+15', d: 'años de vínculos profesionales construidos en Tandil' },
+        { n: '+ de 20', d: 'profesionales y proveedores seleccionados' },
+        { n: '+ de 8', d: 'rubros esenciales reunidos en una mirada integral' },
+        { n: '+ de 15', d: 'años de vínculos profesionales construidos en Tandil' },
       ],
       statsFoot: 'Selección por criterio, no por cantidad.',
       statsNote:
@@ -436,22 +435,22 @@ export const STRINGS = {
         {
           texto: 'Estábamos bastante decididos, pero teníamos muchas dudas sueltas. Bernardo nos ayudó a ponerlas sobre la mesa y nos conectó con gente que nos dio mucha confianza.',
           autor: 'Rodrigo Zubillaga y flia.',
-          ubicacion: 'CABA',
+          ubicacion: '',
         },
         {
           texto: 'Llegué a Bernardo con una consulta bastante puntual y, hablando, aparecieron varias cosas que no había tenido en cuenta. Me ayudó a ordenar todo y a decidir con más tranquilidad.',
           autor: 'Mónica Guastella',
-          ubicacion: 'inversora, Olivos',
+          ubicacion: 'inversora',
         },
         {
           texto: 'Bernardo y equipo conocen muy bien Tandil, pero, sobre todo, saben quién es quién y cómo trabaja cada uno. Eso fue lo que más confianza nos dio.',
           autor: 'Andrea Arévalo y flia.',
-          ubicacion: 'CABA',
+          ubicacion: '',
         },
         {
           texto: 'Estábamos por poner plata en un proyecto que parecía una buena oportunidad. Bernardo empezó a hacer preguntas que nadie había hecho y aparecieron varias cosas que no cerraban. Frenamos a tiempo. Viéndolo ahora, nos evitó un problema enorme.',
           autor: 'Francisco Bravo',
-          ubicacion: 'inversor, CABA',
+          ubicacion: 'inversor CABA',
         },
       ],
     },

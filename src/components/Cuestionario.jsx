@@ -239,20 +239,6 @@ export default function Cuestionario() {
                   />
                 </div>
                 <div>
-                  <label className={LABEL_CLASS} htmlFor="ll-email">
-                    {c.datos.email}
-                  </label>
-                  <input
-                    id="ll-email"
-                    type="email"
-                    autoComplete="email"
-                    value={datos.email}
-                    onChange={(e) => setDatos((d) => ({ ...d, email: e.target.value }))}
-                    placeholder={c.datos.emailPh}
-                    className={INPUT_CLASS}
-                  />
-                </div>
-                <div>
                   <label className={LABEL_CLASS} htmlFor="ll-whatsapp">
                     {c.datos.whatsapp}
                   </label>
@@ -263,6 +249,20 @@ export default function Cuestionario() {
                     value={datos.whatsapp}
                     onChange={(e) => setDatos((d) => ({ ...d, whatsapp: e.target.value }))}
                     placeholder={c.datos.whatsappPh}
+                    className={INPUT_CLASS}
+                  />
+                </div>
+                <div>
+                  <label className={LABEL_CLASS} htmlFor="ll-email">
+                    {c.datos.email}
+                  </label>
+                  <input
+                    id="ll-email"
+                    type="email"
+                    autoComplete="email"
+                    value={datos.email}
+                    onChange={(e) => setDatos((d) => ({ ...d, email: e.target.value }))}
+                    placeholder={c.datos.emailPh}
                     className={INPUT_CLASS}
                   />
                 </div>
