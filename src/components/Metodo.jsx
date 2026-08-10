@@ -17,17 +17,19 @@ export default function Metodo() {
 
   return (
     <section id="metodo" ref={scope} className="bg-espresso px-6 py-24 text-almond sm:px-10 sm:py-32">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark />
+      <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark />
 
-        <div data-reveal className="mt-10 text-center">
-          <p className="font-mono text-lg tracking-[0.3em] font-bold text-terracota sm:text-2xl">
-            {m.formula}
+          <div data-reveal className="mt-12">
+            <p className="font-mono text-xl tracking-[0.3em] font-bold text-terracota sm:text-2xl lg:text-3xl">
+              {m.formula}
+            </p>
+          </div>
+          <p data-reveal className="mt-10 text-sm leading-relaxed text-almond/70 sm:text-base">
+            {m.intro}
           </p>
         </div>
-        <p data-reveal className="mt-8 mx-auto max-w-2xl text-base leading-relaxed text-almond/70">
-          {m.intro}
-        </p>
 
         {/* Masonry editorial: 3 componentes + 2 imágenes intercaladas */}
         <div className="mt-16 grid gap-6 md:grid-cols-3 lg:gap-8">
