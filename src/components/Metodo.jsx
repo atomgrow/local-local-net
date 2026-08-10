@@ -20,10 +20,12 @@ export default function Metodo() {
       <div className="mx-auto max-w-6xl">
         <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark />
 
-        <p data-reveal className="mt-6 font-mono text-xs tracking-[0.2em] text-vanilla/80 sm:text-sm">
-          {m.formula}
-        </p>
-        <p data-reveal className="mt-5 max-w-2xl text-base leading-relaxed text-almond/70">
+        <div data-reveal className="mt-10 text-center">
+          <p className="font-mono text-lg tracking-[0.3em] font-bold text-terracota sm:text-2xl">
+            {m.formula}
+          </p>
+        </div>
+        <p data-reveal className="mt-8 mx-auto max-w-2xl text-base leading-relaxed text-almond/70">
           {m.intro}
         </p>
 
