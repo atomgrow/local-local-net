@@ -73,7 +73,7 @@ export default function Problema() {
                   {/* Sin */}
                   <div>
                     <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-terracota/80">
-                      {p.sinLabel}
+                      {esc.sinLabel}
                     </p>
                     <ul className="space-y-2">
                       {esc.sin.slice(0, 2).map((linea) => (
@@ -88,7 +88,7 @@ export default function Problema() {
                   {/* Con */}
                   <div className="border-t border-white/10 pt-4">
                     <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-matcha/80">
-                      {p.conLabel}
+                      {esc.conLabel}
                     </p>
                     <ul className="space-y-2">
                       {esc.con.slice(0, 2).map((linea) => (
