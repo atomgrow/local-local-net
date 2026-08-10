@@ -33,7 +33,7 @@ export const STRINGS = {
     },
 
     hero: {
-      kicker: 'Relocalización y soft landing en Tandil',
+      kicker: 'Relocalización en Tandil',
       titleSans: 'Tu llegada a Tandil,',
       titleSerif: 'organizada con método y respaldo local',
       sub: 'Evaluamos tu proyecto, ordenamos cada decisión y te acompañamos con información de primera mano, una estrategia a tu medida y una red local cuidadosamente seleccionada',
