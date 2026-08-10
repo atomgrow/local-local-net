@@ -6,7 +6,7 @@ import CtaButton from './CtaButton'
 
 export default function Servicios() {
   const scope = useReveal()
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const s = t.servicios
 
   const handleWhatsApp = () => {
@@ -36,12 +36,12 @@ export default function Servicios() {
                 <div className="mt-3 space-y-1">
                   {etapa.modalidad && (
                     <p className="text-sm text-espresso/70">
-                      <span className="font-bold">Modalidad:</span> {etapa.modalidad}
+                      <span className="font-bold">{lang === 'es' ? 'Modalidad:' : 'Format:'}</span> {etapa.modalidad}
                     </p>
                   )}
                   {etapa.estadiaEstimada && (
                     <p className="text-sm text-espresso/70">
-                      <span className="font-bold">Estadía estimada:</span> {etapa.estadiaEstimada}
+                      <span className="font-bold">{lang === 'es' ? 'Estadía estimada:' : 'Estimated stay:'}</span> {etapa.estadiaEstimada}
                     </p>
                   )}
                 </div>

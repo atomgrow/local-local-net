@@ -169,7 +169,7 @@ export const STRINGS = {
         {
           num: '01',
           titulo: 'Diagnóstico personalizado y hoja de ruta',
-          modalidad: 'Modalidad: 100 % remota',
+          modalidad: '100 % remota',
           parrafos: [
             'Comenzamos con una entrevista personalizada por videollamada para conocernos y comprender en detalle tu proyecto de mudanza a Tandil: tu situación actual, tus necesidades, deseos, prioridades y tiempos.',
             'Con esa información analizamos el proyecto de manera integral e identificamos qué está definido, qué falta resolver y qué alternativas pueden ajustarse a tu realidad.',
@@ -212,7 +212,7 @@ export const STRINGS = {
         {
           num: '03',
           titulo: 'Auditoría integral de la operación',
-          modalidad: 'Modalidad: híbrida. El análisis se realiza de manera remota, con instancias presenciales cuando la operación lo requiere',
+          modalidad: 'híbrida. El análisis se realiza de manera remota, con instancias presenciales cuando la operación lo requiere',
           parrafos: [
             'Cuando una alternativa se vuelve concreta, definimos el alcance de la auditoría según el tipo y la complejidad de la operación.',
             'Nuestro equipo jurídico y notarial revisa la documentación y los antecedentes disponibles, las condiciones acordadas, los contratos que vas a firmar y las obligaciones que vas a asumir. Identificamos los riesgos que pueden afectar tu decisión, tu dinero o los tiempos del proyecto, y te explicamos con claridad qué está en orden, qué merece atención y qué debería resolverse antes de avanzar.',
@@ -879,7 +879,7 @@ export const STRINGS = {
         {
           num: '01',
           titulo: 'Personalized diagnosis & roadmap',
-          modalidad: 'Format: 100% remote',
+          modalidad: '100% remote',
           parrafos: [
             'We start with a personalized video-call interview to get to know each other and understand your move to Tandil in detail: your current situation, needs, wishes, priorities and timing.',
             'With that information we analyze the project as a whole and identify what is defined, what remains to be solved and which alternatives may fit your reality.',
@@ -896,7 +896,8 @@ export const STRINGS = {
         {
           num: '02',
           titulo: 'Strategic visit to Tandil & local network activation',
-          modalidad: 'Format: in person · Estimated stay: one to three days, preferably Monday to Wednesday.',
+          modalidad: 'in person',
+          estadiaEstimada: 'one to three days, preferably Monday to Wednesday.',
           parrafos: [
             'With the roadmap as a base, we design a personalized agenda before your arrival, to see and evaluate in Tandil the alternatives identified during the diagnosis.',
             'We prioritize weekdays so you experience the city at its everyday rhythm and make the most of each day. Depending on your project, the agenda may include school and property visits, neighborhood tours and meetings with professionals and providers.',
@@ -921,7 +922,7 @@ export const STRINGS = {
         {
           num: '03',
           titulo: 'Comprehensive transaction audit',
-          modalidad: 'Format: hybrid. The analysis is done remotely, with in-person instances when the transaction requires it',
+          modalidad: 'hybrid. The analysis is done remotely, with in-person instances when the transaction requires it',
           parrafos: [
             'When an alternative becomes concrete, we define the scope of the audit according to the type and complexity of the transaction.',
             'Our legal and notarial team reviews the available documentation and records, the agreed conditions, the contracts you are about to sign and the obligations you are about to assume. We identify the risks that may affect your decision, your money or the the project timing, and we explain clearly what is in order, what deserves attention and what should be resolved before moving forward.',
