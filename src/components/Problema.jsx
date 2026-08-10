@@ -72,7 +72,7 @@ export default function Problema() {
                 <div className="space-y-4">
                   {/* Sin */}
                   <div>
-                    <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-terracota/80">
+                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-terracota font-semibold">
                       {esc.sinLabel}
                     </p>
                     <ul className="space-y-2">
@@ -87,7 +87,7 @@ export default function Problema() {
 
                   {/* Con */}
                   <div className="border-t border-white/10 pt-4">
-                    <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-matcha/80">
+                    <p className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-matcha font-semibold">
                       {esc.conLabel}
                     </p>
                     <ul className="space-y-2">

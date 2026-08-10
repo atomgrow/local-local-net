@@ -103,7 +103,7 @@ export const STRINGS = {
         },
         {
           titulo: 'Sorpresas legales y técnicas',
-          sinLabel: 'Sin método · Riesgo alto (acá si hay riesgo, que resalte)',
+          sinLabel: 'Sin método · Riesgo alto',
           conLabel: 'Con Local Local · Riesgo mitigado',
           riesgo: true,
           sin: [
