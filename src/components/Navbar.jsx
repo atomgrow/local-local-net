@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
-import { trackEvent } from '../lib/tracking'
+import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
 
 function LangToggle({ scrolled }) {
@@ -44,6 +45,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { t } = useLang()
+  const ctaNavigate = useCtaNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -54,8 +56,7 @@ export default function Navbar() {
 
   const goEvaluar = () => {
     setMenuOpen(false)
-    trackEvent('nav_cta_click')
-    document.getElementById('evaluar')?.scrollIntoView({ behavior: 'smooth' })
+    ctaNavigate('evaluar', 'nav')
   }
 
   const solid = scrolled || menuOpen
@@ -72,22 +73,22 @@ export default function Navbar() {
         ].join(' ')}
       >
         <div className="flex items-center justify-between gap-3">
-          <a href="#" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
+          <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
             <Logo className="h-20 w-20" />
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-5 lg:flex">
             {t.nav.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className={[
                   'text-[13px] font-medium tracking-tight transition-colors duration-500',
                   solid ? 'text-matcha hover:text-espresso' : 'text-white/85 hover:text-white',
                 ].join(' ')}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -120,14 +121,14 @@ export default function Navbar() {
           <div className="border-t border-espresso/10 px-1 pb-3 pt-3 lg:hidden">
             <div className="flex flex-col gap-1">
               {t.nav.links.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMenuOpen(false)}
                   className="rounded-xl px-3 py-2.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <button
                 type="button"

@@ -22,12 +22,12 @@ export const STRINGS = {
 
     nav: {
       links: [
-        { label: 'Método', href: '#metodo' },
-        { label: 'Servicios', href: '#servicios' },
-        { label: 'Red local', href: '#red' },
-        { label: 'Tandil', href: '#tandil' },
-        { label: 'Nosotros', href: '#nosotros' },
-        { label: 'Preguntas', href: '#preguntas' },
+        { label: 'Método', href: '/metodo' },
+        { label: 'Servicios', href: '/metodo#servicios' },
+        { label: 'Red local', href: '/metodo#red' },
+        { label: 'Tandil', href: '/nosotros#tandil' },
+        { label: 'Nosotros', href: '/nosotros' },
+        { label: 'Preguntas', href: '/nosotros#preguntas' },
       ],
       cta: 'Contanos tu proyecto',
     },
@@ -739,12 +739,12 @@ export const STRINGS = {
 
     nav: {
       links: [
-        { label: 'Method', href: '#metodo' },
-        { label: 'Services', href: '#servicios' },
-        { label: 'Local network', href: '#red' },
-        { label: 'Tandil', href: '#tandil' },
-        { label: 'About', href: '#nosotros' },
-        { label: 'FAQ', href: '#preguntas' },
+        { label: 'Method', href: '/metodo' },
+        { label: 'Services', href: '/metodo#servicios' },
+        { label: 'Local network', href: '/metodo#red' },
+        { label: 'Tandil', href: '/nosotros#tandil' },
+        { label: 'About', href: '/nosotros' },
+        { label: 'FAQ', href: '/nosotros#preguntas' },
       ],
       cta: 'Evaluate my project',
     },

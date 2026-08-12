@@ -1,7 +1,7 @@
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS, DIAGNOSTIC_PRICE } from '../config'
-import { trackEvent } from '../lib/tracking'
+import { useCtaNavigate } from '../lib/useCtaNavigate'
 import SectionHeader from './SectionHeader'
 import diagnosticoImg from '../assets/diagnostico-bg.jpg'
 
@@ -10,14 +10,14 @@ import diagnosticoImg from '../assets/diagnostico-bg.jpg'
 export default function Diagnostico() {
   const scope = useReveal()
   const { t } = useLang()
+  const ctaNavigate = useCtaNavigate()
   const d = t.diagnostico
 
   const onCta = () => {
-    trackEvent('diagnostic_cta_click')
     if (LINKS.booking) {
       window.open(LINKS.booking, '_blank', 'noopener')
     } else {
-      document.getElementById('evaluar')?.scrollIntoView({ behavior: 'smooth' })
+      ctaNavigate('evaluar', 'diagnostico')
     }
   }
 

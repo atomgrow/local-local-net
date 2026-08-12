@@ -1,6 +1,6 @@
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
-import { trackEvent } from '../lib/tracking'
+import { useCtaNavigate } from '../lib/useCtaNavigate'
 import ctaFinalImg from '../assets/cta-final-bg.jpg'
 
 // CTA Final: Fondo cinematográfico (atardecer Tandil) + tarjeta semi-transparente
@@ -8,11 +8,11 @@ import ctaFinalImg from '../assets/cta-final-bg.jpg'
 export default function CtaFinal() {
   const scope = useReveal()
   const { t } = useLang()
+  const ctaNavigate = useCtaNavigate()
   const cf = t.ctaFinal
 
   const go = (id, source) => {
-    trackEvent(`${source}_cta_click`)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    ctaNavigate(id, source)
   }
 
   return (

@@ -2,7 +2,7 @@ import { Compass, Route } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useJourney } from '../lib/journey'
 import { useReveal } from '../lib/useReveal'
-import { trackEvent } from '../lib/tracking'
+import { useCtaNavigate } from '../lib/useCtaNavigate'
 
 // [MEJORA #1] Micro-decisión temprana: el visitante se autosegmenta
 // sin fricción. No oculta contenido: solo revela un mensaje y un CTA
@@ -11,6 +11,7 @@ export default function MicroDecision() {
   const scope = useReveal()
   const { t } = useLang()
   const { journey, setJourney } = useJourney()
+  const ctaNavigate = useCtaNavigate()
   const md = t.microDecision
 
   const opciones = [
@@ -19,8 +20,7 @@ export default function MicroDecision() {
   ]
 
   const goTo = (id, source) => {
-    trackEvent(`${source}_cta_click`)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    ctaNavigate(id, source)
   }
 
   return (

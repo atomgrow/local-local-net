@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useLang } from '../lib/i18n'
-import { trackEvent } from '../lib/tracking'
+import { useCtaNavigate } from '../lib/useCtaNavigate'
 
 // Fotografías reales de Tandil (@santiarbeoph). Los originales disponibles
 // son de 1024px; en pantallas grandes el degradado disimula el reescalado.
@@ -13,6 +13,7 @@ import heroPortrait from '../assets/tandil-barrio-sierras.jpg'
 export default function Hero() {
   const scope = useRef(null)
   const { t } = useLang()
+  const ctaNavigate = useCtaNavigate()
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
@@ -31,8 +32,7 @@ export default function Hero() {
   }, [])
 
   const go = (id, source) => {
-    trackEvent(`${source}_cta_click`)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    ctaNavigate(id, source)
   }
 
   return (
