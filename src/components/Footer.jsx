@@ -109,7 +109,7 @@ export default function Footer() {
               href={LINKS.atomgrow}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-[11px] tracking-wider transition-colors hover:text-vanilla"
+              className="inline-block font-mono text-[11px] tracking-wider transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:text-vanilla"
             >
               <span className="text-almond/35">Powered by </span>
               <span className="text-terracota">Atomgrow</span>
