@@ -22,7 +22,7 @@ export default function Metodo() {
           <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark />
 
           <div data-reveal className="mt-12">
-            <p className="font-mono text-sm tracking-[0.3em] font-bold text-terracota whitespace-nowrap sm:text-base md:text-lg lg:text-xl">
+            <p className="font-mono text-sm tracking-[0.15em] font-bold text-terracota whitespace-nowrap sm:tracking-[0.2em] md:text-lg md:tracking-[0.3em] lg:text-xl">
               {m.formula}
             </p>
           </div>
