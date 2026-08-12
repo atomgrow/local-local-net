@@ -708,7 +708,9 @@ export const STRINGS = {
       blurb: 'Relocalización y soft landing en Tandil.',
       navLabel: 'Navegación',
       legalLabel: 'Legales',
-      legalLink: 'Legales',
+      legales: [
+        { label: 'Legales', href: '/legales.html' },
+      ],
       contactoLabel: 'Contacto',
       whatsapp: 'Escribinos por WhatsApp →',
       linkedin: 'LinkedIn de Bernardo',
@@ -1341,7 +1343,9 @@ export const STRINGS = {
       blurb: 'Relocation & soft landing in Tandil.',
       navLabel: 'Navigation',
       legalLabel: 'Legal',
-      legalLink: 'Legal',
+      legales: [
+        { label: 'Legal', href: '/legales.html' },
+      ],
       contactoLabel: 'Contact',
       whatsapp: 'Message us on WhatsApp →',
       linkedin: 'Bernardo on LinkedIn',
