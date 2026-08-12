@@ -78,20 +78,6 @@ export default function Navbar() {
             <Logo className="h-20 w-20" />
           </Link>
 
-          <div className="hidden items-center gap-5 lg:flex">
-            {t.nav.links.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={[
-                  'text-[13px] font-medium tracking-tight transition-colors duration-500',
-                  solid ? 'text-matcha hover:text-espresso' : 'text-white/85 hover:text-white',
-                ].join(' ')}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
 
           <div className="flex items-center gap-2">
             <LangToggle scrolled={solid} />
@@ -109,7 +95,7 @@ export default function Navbar() {
               aria-label="Menu"
               onClick={() => setMenuOpen((v) => !v)}
               className={[
-                'flex h-9 w-9 items-center justify-center rounded-full transition-colors lg:hidden',
+                'flex h-9 w-9 items-center justify-center rounded-full transition-colors',
                 solid ? 'text-espresso' : 'text-white',
               ].join(' ')}
             >
@@ -119,7 +105,7 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="border-t border-espresso/10 px-1 pb-3 pt-3 lg:hidden">
+          <div className="border-t border-espresso/10 px-1 pb-3 pt-3">
             <div className="flex flex-col gap-1">
               {t.nav.links.map((link) => (
                 <Link
@@ -134,7 +120,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={goEvaluar}
-                className="mt-2 rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white sm:hidden"
+                className="mt-2 rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white"
               >
                 {t.nav.cta}
               </button>
