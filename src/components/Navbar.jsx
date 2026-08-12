@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
+import HouseMenuIcon from './HouseMenuIcon'
 
 function LangToggle({ scrolled }) {
   const { lang, setLang } = useLang()
@@ -46,6 +47,15 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { t } = useLang()
   const ctaNavigate = useCtaNavigate()
+  const location = useLocation()
+
+  const getPageTitle = () => {
+    if (location.pathname === '/metodo') return 'Método'
+    if (location.pathname === '/nosotros') return 'Nosotros'
+    return ''
+  }
+
+  const pageTitle = getPageTitle()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -76,6 +86,15 @@ export default function Navbar() {
           <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
             <Logo className="h-20 w-20" />
           </Link>
+
+          {pageTitle && (
+            <div className={[
+              'hidden lg:flex text-[13px] font-medium tracking-tight transition-colors duration-500',
+              solid ? 'text-espresso' : 'text-white/85',
+            ].join(' ')}>
+              {pageTitle}
+            </div>
+          )}
 
           <div className="hidden items-center gap-5 lg:flex">
             {t.nav.links.map((link) => (
@@ -112,7 +131,7 @@ export default function Navbar() {
                 solid ? 'text-espresso' : 'text-white',
               ].join(' ')}
             >
-              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+              {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
             </button>
           </div>
         </div>
