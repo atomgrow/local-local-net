@@ -469,6 +469,10 @@ export const STRINGS = {
 
     comoComienza: {
       kicker: 'Cómo comienza',
+      intro: 'Empecemos',
+      introSub: 'Si Tandil está en tus planes:',
+      introHighlight: 'Tres preguntas. Dos minutos. Un primer paso concreto.',
+      introDesc: 'Contanos en qué momento está tu proyecto y te contacto dentro de las 24 horas para definir el próximo paso.',
       title: 'Tres pasos, sin vueltas',
       pasos: [
         { n: '1', t: 'Respondés tres preguntas', d: 'Dos minutos' },
@@ -1182,6 +1186,10 @@ export const STRINGS = {
 
     comoComienza: {
       kicker: 'How it starts',
+      intro: 'Let us begin',
+      introSub: 'If Tandil is in your plans:',
+      introHighlight: 'Three questions. Two minutes. A concrete first step.',
+      introDesc: 'Tell us where your project stands and I will contact you within 24 hours to define the next step.',
       title: 'Three steps, no runaround',
       pasos: [
         { n: '1', t: 'You answer three questions', d: 'Two minutes' },

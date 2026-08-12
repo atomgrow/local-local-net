@@ -13,7 +13,17 @@ export default function ComoComienza() {
         <p data-reveal className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracota">
           {cc.kicker}
         </p>
-        <h2 data-reveal className="mt-4 font-display text-2xl font-bold tracking-tight text-espresso sm:text-3xl">
+
+        {cc.intro && (
+          <div data-reveal className="mt-8 space-y-4">
+            <h3 className="font-display text-2xl font-bold text-espresso">{cc.intro}</h3>
+            <p className="text-base text-espresso/70">{cc.introSub}</p>
+            <p className="font-display text-lg font-bold text-espresso">{cc.introHighlight}</p>
+            <p className="text-sm leading-relaxed text-espresso/65">{cc.introDesc}</p>
+          </div>
+        )}
+
+        <h2 data-reveal className="mt-10 font-display text-2xl font-bold tracking-tight text-espresso sm:text-3xl">
           {cc.title}
         </h2>
 
