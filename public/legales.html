@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Legales, términos y condiciones, y política de privacidad de Local Local.">
+  <meta name="description" content="Términos y condiciones, política de privacidad, confidencialidad y alcance del servicio de Local Local.">
   <title>Legales | Local Local</title>
   <style>
     * {
@@ -14,7 +14,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #2d2d2d;
       background: #faf8f3;
     }
@@ -22,24 +22,24 @@
     header {
       background: #2d2d2d;
       color: #faf8f3;
-      padding: 2rem 1rem;
+      padding: 3rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid #d4a574;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
     }
 
     header p {
-      font-size: 0.9rem;
+      font-size: 1rem;
       opacity: 0.8;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
     }
@@ -48,89 +48,122 @@
       display: inline-block;
       margin-bottom: 2rem;
       font-size: 0.9rem;
-    }
-
-    .back-link a {
-      color: #d4a574;
+      color: #b4552d;
       text-decoration: none;
-      transition: color 0.2s;
+      border-bottom: 1px solid #b4552d;
     }
 
-    .back-link a:hover {
+    .back-link:hover {
       color: #2d2d2d;
+      border-bottom-color: #2d2d2d;
+    }
+
+    .toc {
+      background: #f5f3f0;
+      border-left: 4px solid #d4a574;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-radius: 8px;
+    }
+
+    .toc h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #2d2d2d;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: #b4552d;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #2d2d2d;
-      margin-bottom: 1rem;
+      margin: 3rem 0 1.5rem 0;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid #d4a574;
     }
 
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
     h3 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #2d2d2d;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
+      margin: 1.5rem 0 0.8rem 0;
       font-weight: 600;
     }
 
     p {
       margin-bottom: 1rem;
-      text-align: justify;
-      color: #4a4a4a;
+      color: #555;
     }
 
-    ul {
+    ul, ol {
       margin-left: 1.5rem;
       margin-bottom: 1rem;
     }
 
     li {
       margin-bottom: 0.5rem;
-      color: #4a4a4a;
+      color: #555;
     }
 
-    .info-box {
-      background: #fff5e6;
-      border-left: 4px solid #d4a574;
+    strong {
+      color: #2d2d2d;
+      font-weight: 600;
+    }
+
+    .metadata {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .highlight {
+      background: #fef3cd;
+      border-left: 4px solid #ffc107;
       padding: 1.5rem;
-      margin: 2rem 0;
-      font-size: 0.95rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
     }
 
-    .info-box strong {
-      display: block;
-      margin-bottom: 0.5rem;
+    .highlight strong {
       color: #2d2d2d;
     }
 
-    a {
-      color: #d4a574;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     footer {
+      border-top: 1px solid #d4a574;
+      padding: 2rem 0;
+      margin-top: 4rem;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #999;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 3rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       .container {
@@ -138,142 +171,360 @@
       }
 
       h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Legales</h1>
-    <p>Información legal, términos de servicio y privacidad</p>
+    <h1>Local Local</h1>
+    <p>Información Legal</p>
   </header>
 
   <div class="container">
-    <div class="back-link">
-      <a href="/">← Volver a Local Local</a>
+    <a href="/" class="back-link">← Volver al sitio</a>
+
+    <div class="toc">
+      <h2>Contenido</h2>
+      <ul>
+        <li><a href="#tyc">Términos y Condiciones</a></li>
+        <li><a href="#privacidad">Política de Privacidad</a></li>
+        <li><a href="#confidencialidad">Confidencialidad</a></li>
+        <li><a href="#alcance">Alcance del Servicio</a></li>
+      </ul>
     </div>
 
-    <!-- INFORMACIÓN LEGAL -->
-    <section>
-      <h2>Información Legal</h2>
-
-      <p><strong>Última actualización:</strong> 23 de julio de 2026</p>
-
-      <div class="info-box">
-        <strong>Local Local</strong>
-        <p>Nombre comercial bajo el cual Bernardo Gabriel Cisterna, CUIT N° 20-32643773-6, presta sus servicios.</p>
-        <p><strong>Domicilio legal:</strong> Mitre 767, piso 1, departamento "A", Tandil, Provincia de Buenos Aires</p>
-        <p><strong>Correo de contacto:</strong> <a href="mailto:bernardo@locallocal.net">bernardo@locallocal.net</a></p>
-      </div>
-
-      <h3>Matrículas Profesionales</h3>
-      <ul>
-        <li><strong>Colegio de Abogados del Departamento Judicial de Azul:</strong> T° XIII, F° 214</li>
-        <li><strong>Colegio Público de la Abogacía de la Capital Federal:</strong> T° 116, F° 620</li>
-        <li><strong>Matrícula Federal:</strong> T° 701, F° 856</li>
-      </ul>
-    </section>
-
     <!-- TÉRMINOS Y CONDICIONES -->
-    <section>
+    <section id="tyc">
       <h2>Términos y Condiciones</h2>
+      <p class="metadata">Última actualización: 3 de agosto de 2026.</p>
 
-      <h3>El servicio</h3>
-      <p>Local Local brinda servicios de análisis, planificación, orientación y acompañamiento para personas, familias y empresas que evalúan instalarse, invertir o desarrollar un proyecto en Tandil.</p>
-      <p>El servicio se organiza por etapas y puede incluir un diagnóstico inicial, la elaboración de una hoja de ruta, la organización de visitas y encuentros, la activación de una red local y la auditoría integral de una o varias operaciones, con intervención jurídica, notarial o técnica.</p>
-      <p>Cada etapa tiene un alcance propio y puede contratarse de manera independiente. Antes de comenzar se informan las tareas incluidas, la modalidad, los plazos, los honorarios y los costos adicionales que pudieran corresponder.</p>
-      <p>Cuando exista una propuesta particular, sus condiciones complementarán estos términos y prevalecerán respecto de los aspectos específicos del servicio contratado, sin afectar los derechos que resulten legalmente irrenunciables.</p>
+      <h3>Identificación</h3>
+      <p>Local Local es el nombre comercial bajo el cual Bernardo Gabriel Cisterna, CUIT 20-32643773-6, con domicilio en Mitre 767, piso 1, departamento A, Tandil, provincia de Buenos Aires, presta servicios de análisis, planificación, orientación, coordinación y acompañamiento vinculados con proyectos de mudanza, radicación, inversión o desarrollo en Tandil. El correo de contacto es bernardo@locallocal.net.</p>
 
-      <h3>Contratación y honorarios</h3>
-      <p>Cada etapa comienza una vez que el cliente acepta expresamente su alcance, sus honorarios y las condiciones de pago.</p>
-      <p>El precio aplicable será el informado al momento de la contratación. Se emitirá el comprobante fiscal correspondiente y ningún costo adicional será asumido sin conocimiento y aprobación previa del cliente.</p>
+      <h3>Aplicación y aceptación</h3>
+      <p>Estos Términos y Condiciones regulan el uso del sitio, el envío de consultas y la contratación de servicios de Local Local. Antes de contratar, la persona recibe información suficiente sobre la etapa elegida, su alcance, modalidad, entregables, plazos estimados, precio y forma de pago.</p>
+      <p>La contratación se perfecciona cuando la persona acepta la propuesta particular y realiza el pago o cumple la modalidad de confirmación allí prevista. Completar un formulario, enviar una consulta o mantener una conversación preliminar no obliga a contratar.</p>
+      <p>Si una propuesta particular establece condiciones específicas para un servicio, esas condiciones prevalecen respecto de ese trabajo.</p>
 
-      <h3>Decisiones y resultados</h3>
-      <p>Local Local analiza la información disponible y formula recomendaciones con criterio profesional y conocimiento local. Sin embargo, no garantiza un resultado determinado ni reemplaza la decisión final del cliente.</p>
-      <p>El cliente debe proporcionar información completa y verdadera, comunicar cualquier cambio relevante y revisar las condiciones antes de asumir compromisos con terceros.</p>
+      <h3>Naturaleza del servicio</h3>
+      <p>Local Local ayuda a evaluar, organizar y concretar proyectos en Tandil mediante información local, criterio profesional, planificación y una red de profesionales y proveedores seleccionados. Su función es ordenar variables, detectar riesgos, comparar alternativas y coordinar intervenciones para que cada persona pueda decidir con mayor claridad.</p>
+      <p>Local Local no elimina la responsabilidad de decidir ni sustituye la intervención de los profesionales que deban actuar según la naturaleza de cada asunto. Tampoco representa una propiedad determinada ni tiene como objetivo automático cerrar una operación.</p>
 
-      <h3>Profesionales y proveedores</h3>
-      <p>Cuando el proyecto lo requiere, Local Local puede presentar o coordinar la intervención de profesionales y proveedores externos.</p>
-      <p>Salvo que una propuesta indique expresamente otra modalidad, esos servicios se contratan y facturan directamente con cada tercero. Cada profesional o proveedor responde por su propia actuación, mientras que Local Local conserva la responsabilidad sobre las tareas de análisis, coordinación o asesoramiento que haya asumido expresamente.</p>
-      <p>El cliente mantiene plena libertad para contratar al tercero recomendado o elegir otra alternativa.</p>
+      <h3>Contratación por etapas</h3>
+      <p>El recorrido vigente puede comprender las siguientes etapas:</p>
+      <ul>
+        <li>Diagnóstico personalizado y hoja de ruta.</li>
+        <li>Visita estratégica a Tandil y activación de la red local.</li>
+        <li>Auditoría integral de una operación concreta.</li>
+        <li>Integración posterior a la llegada.</li>
+      </ul>
+      <p>Cada etapa tiene un objeto propio. El diagnóstico es independiente y no obliga a continuar. Cuando el proyecto ya se encuentra en marcha, Local Local puede incorporarse en una instancia posterior si cuenta con la información necesaria y el alcance queda expresamente acordado.</p>
 
-      <h3>Transparencia económica</h3>
-      <p>Los honorarios de Local Local y los gastos incluidos o excluidos se informan antes de comenzar cada etapa.</p>
-      <p>Si existiera un acuerdo económico vinculado con un profesional, proveedor o servicio recomendado, se informará al cliente por escrito antes de que tome una decisión, indicando quién realiza el pago, su concepto y su importe o forma de cálculo.</p>
+      <h3>Propuesta, precio y pagos</h3>
+      <p>Antes de comenzar una tarea paga, Local Local informa por escrito:</p>
+      <ul>
+        <li>el alcance concreto del trabajo y lo que no está incluido;</li>
+        <li>la modalidad, los entregables y los plazos estimados;</li>
+        <li>el precio final, la forma de pago y las condiciones de confirmación;</li>
+        <li>los honorarios y gastos de terceros que ya puedan identificarse; y</li>
+        <li>cualquier supuesto que requiera una ampliación de alcance o un nuevo presupuesto.</li>
+      </ul>
+      <p>Los precios publicados en el sitio corresponden al alcance allí indicado y pueden actualizarse para futuras contrataciones. La persona abona el valor que se le informa y acepta antes de confirmar. Los gastos, tasas, traslados, honorarios y servicios de terceros no están incluidos salvo que la propuesta lo indique expresamente.</p>
 
-      <h3>Confidencialidad</h3>
-      <p>Local Local aplica un criterio de mínima exposición. La información del proyecto sólo se comparte cuando resulta necesario, con conocimiento del cliente y en la medida indispensable para cada intervención.</p>
-      <p>Las actuaciones jurídicas se encuentran además alcanzadas por el secreto profesional. La confidencialidad puede ceder únicamente ante una autorización del cliente, una obligación legal o una orden de autoridad competente.</p>
+      <h3>Garantía comercial del diagnóstico</h3>
+      <p>Local Local ofrece una garantía comercial exclusiva para el diagnóstico inicial. Si dentro de las cuarenta y ocho (48) horas de recibir el documento la persona considera que no le aportó claridad, información relevante ni una hoja de ruta útil, puede solicitar la devolución total del importe abonado por esa etapa.</p>
+      <p>La solicitud debe enviarse a bernardo@locallocal.net dentro de ese plazo e indicar concretamente los motivos de la disconformidad. Esta garantía no se aplica a las demás etapas y se suma, sin reemplazarlos ni limitarlos, a los derechos que reconoce la legislación vigente.</p>
 
-      <h3>Garantía del diagnóstico</h3>
-      <p>El diagnóstico inicial debe aportar claridad, criterio y una hoja de ruta útil. Si dentro de las 48 horas de recibirla el cliente considera que no cumplió con esa finalidad, puede solicitar la devolución total del importe abonado por esa etapa.</p>
-      <p>Sólo le pediremos que nos indique brevemente los motivos de su disconformidad, con el único propósito de mejorar el servicio. La devolución no quedará condicionada a esa respuesta.</p>
-      <p>La garantía corresponde exclusivamente al diagnóstico inicial y no se extiende a servicios posteriores ya prestados ni a gastos o prestaciones de terceros.</p>
+      <h3>Información y colaboración del cliente</h3>
+      <p>Para prestar el servicio, la persona contratante se compromete a:</p>
+      <ul>
+        <li>brindar información cierta, suficiente y actualizada;</li>
+        <li>entregar a tiempo la documentación solicitada;</li>
+        <li>informar cambios que puedan modificar el análisis;</li>
+        <li>revisar los entregables y formular sus observaciones de manera oportuna; y</li>
+        <li>adoptar personalmente las decisiones finales y suscribir los instrumentos que correspondan.</li>
+      </ul>
+      <p>Los plazos pueden readecuarse cuando falte información, cambien las condiciones del proyecto o dependan de la disponibilidad de terceros. Las reglas de cancelación o reprogramación de reuniones, visitas o actividades presenciales se informan en la propuesta particular.</p>
 
-      <h3>Cancelaciones y reprogramaciones</h3>
-      <p>Las condiciones particulares para cancelar o reprogramar visitas, reservas o servicios personalizados se informarán antes de la contratación.</p>
-      <p>Las reservas y prestaciones de terceros estarán sujetas a sus propias condiciones de cancelación, que serán informadas antes de su confirmación.</p>
-      <p>Si Local Local no pudiera prestar un servicio ya contratado, el cliente podrá optar entre reprogramarlo o solicitar la devolución del importe correspondiente a la parte no prestada.</p>
+      <h3>Red de profesionales y proveedores</h3>
+      <p>Local Local selecciona profesionales y proveedores a partir de sus antecedentes, experiencia, referencias, estándares de trabajo, capacidad de respuesta y calidad humana. Cada presentación se realiza para una necesidad concreta; no consiste en entregar una lista general de contactos.</p>
+      <p>Salvo que se indique lo contrario, los profesionales y proveedores de la red actúan de manera independiente y son contratados directamente por el cliente. Cada uno responde por su presupuesto, documentación, trabajo, plazos y obligaciones. Local Local responde por su propio criterio de selección y coordinación dentro del alcance contratado, pero no garantiza el cumplimiento ni el resultado de prestaciones ejecutadas por terceros.</p>
+      <p>El cliente puede proponer profesionales ajenos a la red. La revisión de sus antecedentes, documentación o propuesta constituye una tarea adicional cuando no esté incluida en el alcance aceptado.</p>
 
-      <h3>Cambios y legislación aplicable</h3>
-      <p>Estos términos pueden actualizarse para reflejar cambios en los servicios o en la normativa. Las modificaciones no alterarán las condiciones de una propuesta ya aceptada.</p>
-      <p>Se aplica la legislación argentina y, en las relaciones de consumo, las normas de protección y competencia que resulten obligatorias.</p>
+      <h3>Auditoría y asesoramientos especializados</h3>
+      <p>La auditoría integral se realiza sobre la documentación, información y antecedentes disponibles dentro del alcance acordado. Su finalidad es identificar riesgos, inconsistencias, información faltante y resguardos recomendables antes de decidir. No constituye una certificación absoluta de la operación ni reemplaza estudios, informes, tasaciones, mensuras, verificaciones o certificaciones técnicas que deban emitir profesionales habilitados.</p>
+      <p>Toda intervención jurídica, notarial, técnica, contable, fiscal o de otra especialidad debe estar expresamente incluida en la propuesta o contratarse por separado con el profesional correspondiente.</p>
+
+      <h3>Resultados y decisiones</h3>
+      <p>Local Local no garantiza la obtención de una propiedad, una vacante escolar, un crédito, un permiso, una habilitación, una rentabilidad, la aceptación de una oferta ni ningún resultado que dependa del mercado, de autoridades, instituciones, propietarios, profesionales, proveedores u otras circunstancias externas.</p>
+      <p>Sí se compromete a prestar el servicio contratado de forma profesional, documentada y confidencial; a comunicar los riesgos que detecte; a explicar el fundamento de sus recomendaciones; y a acompañar hasta el cierre de la etapa contratada. La decisión de avanzar, renegociar, suspender o descartar una alternativa corresponde siempre al cliente.</p>
+
+      <h3>Confidencialidad y datos personales</h3>
+      <p>La información personal, familiar, profesional, patrimonial y estratégica se trata con criterio de mínima exposición. No se comparte con integrantes de la red sin conocimiento y autorización previa, salvo obligación legal. El tratamiento de datos personales se rige por la Política de Privacidad publicada en el sitio.</p>
+
+      <h3>Integración posterior</h3>
+      <p>Luego de la llegada a Tandil, el cliente mantiene acceso a Local Local para realizar consultas generales, pedir recomendaciones y solicitar conexiones con personas o servicios de confianza. Este acceso no tiene fecha de vencimiento y está incluido para quienes hayan completado el recorrido contratado.</p>
+      <p>La integración no equivale a disponibilidad permanente, gestión continua ni prestación ilimitada de servicios profesionales. Las auditorías, gestiones, coordinaciones, asesoramientos o trabajos nuevos que excedan una consulta o conexión general se presupuestan por separado.</p>
+
+      <h3>Uso de entregables y contenidos</h3>
+      <p>Los diagnósticos, hojas de ruta, informes y demás entregables están destinados al uso personal o interno del cliente para el proyecto analizado. No pueden publicarse, revenderse ni utilizarse comercialmente para terceros sin autorización. Los textos, identidad visual, metodología y contenidos generales del sitio pertenecen a Local Local o se utilizan con autorización.</p>
+
+      <h3>Funcionamiento del sitio y comunicaciones</h3>
+      <p>Local Local procura mantener la información del sitio actualizada, aunque precios, disponibilidad, normas, servicios y datos de terceros pueden cambiar. Las comunicaciones relativas a una contratación pueden enviarse al correo electrónico o número informado por el cliente. Es responsabilidad del cliente mantener esos datos actualizados.</p>
+
+      <h3>Modificaciones</h3>
+      <p>Local Local puede actualizar estos Términos y Condiciones para futuras contrataciones. La versión vigente indica su fecha de actualización. Las modificaciones no alteran las condiciones particulares ya aceptadas para una etapa en curso, salvo acuerdo de las partes o exigencia legal.</p>
+
+      <h3>Ley aplicable y resolución de controversias</h3>
+      <p>Se aplica la legislación de la República Argentina. Cualquier controversia será sometida a los mecanismos y autoridades competentes conforme a las normas aplicables, sin limitar los derechos del consumidor ni imponer una jurisdicción distinta de la que legalmente le corresponda.</p>
+
+      <h3>Contacto</h3>
+      <p>Consultas, reclamos, solicitudes de baja o ejercicio del derecho de arrepentimiento: <strong>bernardo@locallocal.net</strong>.</p>
     </section>
 
     <!-- POLÍTICA DE PRIVACIDAD -->
-    <section>
+    <section id="privacidad">
       <h2>Política de Privacidad</h2>
+      <p class="metadata">Última actualización: 3 de agosto de 2026.</p>
 
-      <h3>Responsable de los datos</h3>
-      <p>El responsable del tratamiento de los datos personales es Bernardo Gabriel Cisterna, CUIT 20-32643773-6, con domicilio en Mitre 767, piso 1, departamento "A", Tandil, Provincia de Buenos Aires.</p>
-      <p>Las consultas relacionadas con el tratamiento de datos personales pueden enviarse a <a href="mailto:bernardo@locallocal.net">bernardo@locallocal.net</a>.</p>
+      <p>En Local Local entendemos que una mudanza, una inversión o un proyecto empresarial pueden involucrar información personal, familiar, profesional, patrimonial y estratégica. Esta Política explica qué datos tratamos, para qué los usamos, con quiénes podemos compartirlos y cómo ejercer los derechos reconocidos por la Ley 25.326.</p>
+      <p>La Política se aplica al sitio web, formularios, correo electrónico, WhatsApp, entrevistas, propuestas, newsletter y demás canales utilizados para ofrecer o prestar los servicios.</p>
 
-      <h3>Qué información recopilamos y para qué</h3>
-      <p>Podemos recibir datos de identificación y contacto, respuestas enviadas mediante formularios, información suministrada durante entrevistas y comunicaciones, datos necesarios para la facturación, información relacionada con el proyecto del cliente y, cuando corresponda, datos técnicos de navegación.</p>
+      <h3>Responsable del tratamiento</h3>
+      <p>El responsable del tratamiento es Bernardo Gabriel Cisterna, CUIT 20-32643773-6, con domicilio en Mitre 767, piso 1, departamento A, Tandil, provincia de Buenos Aires, quien opera comercialmente bajo el nombre Local Local. Contacto para privacidad y ejercicio de derechos: <strong>bernardo@locallocal.net</strong>.</p>
 
-      <p>Los utilizamos para:</p>
+      <h3>Datos que podemos tratar</h3>
+      <p>Según la forma en que interactúes con Local Local, podemos tratar:</p>
       <ul>
-        <li>responder consultas y contactar a la persona interesada;</li>
-        <li>comprender, analizar y ejecutar el servicio solicitado;</li>
-        <li>elaborar diagnósticos, propuestas y hojas de ruta;</li>
-        <li>coordinar intervenciones previamente autorizadas;</li>
-        <li>cumplir obligaciones profesionales, contables y legales;</li>
-        <li>proteger la seguridad y el funcionamiento del sitio.</li>
+        <li><strong>Datos de identificación y contacto:</strong> nombre, apellido, teléfono, correo electrónico y localidad.</li>
+        <li><strong>Datos de facturación y contratación:</strong> identificación fiscal, domicilio, comprobantes, propuestas aceptadas y pagos.</li>
+        <li><strong>Información del proyecto:</strong> etapa de decisión, plazos, necesidades, prioridades, vivienda, educación, trabajo, inversión, presupuesto y demás datos que decidas compartir.</li>
+        <li><strong>Información general del grupo familiar:</strong> únicamente la necesaria para comprender rutinas, necesidades y restricciones del proyecto.</li>
+        <li><strong>Comunicaciones y relación:</strong> mensajes, entrevistas, reuniones, consultas, documentos y antecedentes vinculados con el servicio.</li>
+        <li><strong>Datos técnicos y de navegación:</strong> dirección IP, dispositivo, navegador, páginas visitadas, duración de la sesión y preferencias de cookies.</li>
+        <li><strong>Preferencias de comunicación:</strong> consentimiento para recibir novedades y canal elegido para el contacto.</li>
+      </ul>
+      <p>Los formularios generales no solicitan datos sensibles ni información detallada de niños, niñas o adolescentes. Si un dato de esa naturaleza resultara estrictamente necesario para una prestación concreta, se explicará previamente su finalidad y se aplicarán las medidas y autorizaciones correspondientes.</p>
+
+      <h3>Cómo obtenemos los datos</h3>
+      <p>Podemos obtener información:</p>
+      <ul>
+        <li>directamente de vos, mediante formularios, mensajes, entrevistas o documentación;</li>
+        <li>de otra persona que participe en el mismo proyecto y esté autorizada a compartirla;</li>
+        <li>de profesionales o proveedores que intervengan, cuando resulte necesario y esté autorizado;</li>
+        <li>de fuentes públicas legítimas; y</li>
+        <li>de cookies y tecnologías similares, de acuerdo con las preferencias que configures.</li>
+      </ul>
+      <p>Si compartís datos de otra persona, debés contar con autorización suficiente para hacerlo y comunicarle esta Política cuando corresponda.</p>
+
+      <h3>Finalidades</h3>
+      <p>Usamos los datos para:</p>
+      <ul>
+        <li>responder consultas y evaluar si podemos ayudarte;</li>
+        <li>comprender el proyecto y preparar un diagnóstico o una propuesta;</li>
+        <li>coordinar entrevistas, visitas, reuniones y conexiones con la red;</li>
+        <li>prestar, documentar y mejorar los servicios contratados;</li>
+        <li>emitir comprobantes y cumplir obligaciones legales, profesionales, fiscales y administrativas;</li>
+        <li>proteger la seguridad del sitio, prevenir usos indebidos y gestionar reclamos;</li>
+        <li>analizar el funcionamiento del sitio y mejorar la experiencia, cuando autorices cookies no necesarias; y</li>
+        <li>enviar contenidos o novedades únicamente cuando hayas dado un consentimiento separado, que podés retirar en cualquier momento.</li>
+      </ul>
+      <p>Local Local no adopta decisiones exclusivamente automatizadas que produzcan efectos jurídicos o significativos sobre vos.</p>
+
+      <h3>Consentimiento y datos necesarios</h3>
+      <p>El tratamiento se basa en tu consentimiento, en la relación contractual o profesional y en el cumplimiento de obligaciones legales, según corresponda. En cada formulario se identifica qué información es necesaria y cuál es optativa. Si no proporcionás los datos indispensables, es posible que no podamos responder adecuadamente o prestar el servicio solicitado.</p>
+      <p>Podés retirar tu consentimiento para tratamientos futuros cuando esa sea la base aplicable. El retiro no afecta la licitud del tratamiento realizado anteriormente ni la conservación que resulte necesaria para cumplir obligaciones legales o ejercer derechos.</p>
+
+      <h3>Confidencialidad y mínima exposición</h3>
+      <p>La información del proyecto no se distribuye automáticamente entre los integrantes de la red. Antes de activar un contacto acordamos qué información se compartirá, con quién y para qué. Cada tercero recibe únicamente lo necesario para su intervención.</p>
+      <p>Tu capacidad de pago y tu presupuesto máximo se mantienen reservados y no se comunican a propietarios, intermediarios, proveedores o profesionales, salvo que lo autorices de manera específica o que una comunicación determinada sea indispensable para una gestión previamente acordada.</p>
+
+      <h3>Destinatarios</h3>
+      <p>Los datos pueden ser comunicados, de forma limitada, a:</p>
+      <ul>
+        <li>proveedores tecnológicos que permiten operar el sitio, el correo, la agenda, la mensajería, el almacenamiento, la facturación o la analítica;</li>
+        <li>profesionales y proveedores seleccionados para tu proyecto, únicamente con autorización previa y en la medida necesaria;</li>
+        <li>asesores legales, contables o técnicos sujetos a deberes de confidencialidad; y</li>
+        <li>autoridades públicas o judiciales cuando exista una obligación legal o requerimiento válido.</li>
+      </ul>
+      <p><strong>Local Local no vende, alquila ni comercializa datos personales.</strong></p>
+
+      <h3>Cookies</h3>
+      <p>El sitio puede utilizar cookies necesarias para funcionar y, con tu consentimiento, cookies de medición o publicidad. Al ingresar, podés aceptar, rechazar o configurar las cookies no necesarias. También podés modificar la configuración desde tu navegador o desde el panel disponible en el sitio. Rechazar cookies no necesarias no impide el acceso a los contenidos principales.</p>
+
+      <h3>Conservación</h3>
+      <p>Conservamos la información durante el tiempo necesario para cada finalidad:</p>
+      <ul>
+        <li><strong>Consultas sin contratación:</strong> hasta veinticuatro (24) meses desde el último contacto, salvo pedido de supresión o necesidad justificada de conservación.</li>
+        <li><strong>Clientes:</strong> durante la relación y luego por los plazos exigidos para cumplir obligaciones legales, fiscales, profesionales o defender derechos.</li>
+        <li><strong>Newsletter y comunicaciones comerciales:</strong> hasta que retires el consentimiento o solicites la baja.</li>
+        <li><strong>Datos técnicos y cookies:</strong> durante los plazos configurados para cada herramienta o hasta que retires el consentimiento, según corresponda.</li>
+      </ul>
+      <p>Vencidos esos plazos, los datos se eliminan, anonimizan o bloquean según corresponda.</p>
+
+      <h3>Seguridad</h3>
+      <p>Aplicamos medidas técnicas y organizativas razonables para proteger la confidencialidad, integridad y disponibilidad de los datos y limitar el acceso a quienes lo necesitan. Ningún sistema es completamente infalible; si se detecta un incidente relevante, se adoptarán las medidas de contención y comunicación exigibles.</p>
+
+      <h3>Derechos de los titulares</h3>
+      <p>Podés solicitar:</p>
+      <ul>
+        <li>información sobre la existencia y finalidad de las bases de datos;</li>
+        <li>acceso a tus datos;</li>
+        <li>rectificación o actualización de datos inexactos o desactualizados;</li>
+        <li>supresión cuando corresponda;</li>
+        <li>retiro del consentimiento y baja de comunicaciones comerciales; y</li>
+        <li>confidencialidad o bloqueo mientras se verifica una impugnación.</li>
+      </ul>
+      <p>El derecho de acceso puede ejercerse gratuitamente con una periodicidad no inferior a seis (6) meses, salvo que exista un interés legítimo. Local Local responderá las solicitudes de acceso dentro de los diez (10) días corridos y las de rectificación, actualización o supresión dentro de los cinco (5) días hábiles, conforme a la normativa vigente.</p>
+      <p>Para ejercer estos derechos, escribí a <strong>bernardo@locallocal.net</strong> e indicá tu nombre, la solicitud concreta y un medio para verificar razonablemente tu identidad. La Agencia de Acceso a la Información Pública, órgano de control de la Ley 25.326, recibe denuncias y reclamos por incumplimientos en materia de protección de datos personales.</p>
+
+      <h3>Niños, niñas y adolescentes</h3>
+      <p>Los servicios se contratan por personas adultas. Podés brindar información general sobre el grupo familiar cuando resulte relevante para vivienda, educación, salud, accesibilidad o logística, pero te pedimos que evites compartir datos identificatorios o sensibles de menores que no sean estrictamente necesarios.</p>
+
+      <h3>Enlaces externos</h3>
+      <p>El sitio puede contener enlaces a páginas de terceros. Local Local no controla sus contenidos, medidas de seguridad ni políticas de privacidad.</p>
+
+      <h3>Cambios y contacto</h3>
+      <p>Esta Política puede actualizarse para reflejar cambios legales, técnicos o del servicio. La versión vigente estará publicada con su fecha. Para consultas o ejercicio de derechos: Local Local, Bernardo Gabriel Cisterna, Mitre 767, piso 1, departamento A, Tandil, provincia de Buenos Aires; <strong>bernardo@locallocal.net</strong>.</p>
+    </section>
+
+    <!-- CONFIDENCIALIDAD -->
+    <section id="confidencialidad">
+      <h2>Confidencialidad</h2>
+
+      <div class="highlight">
+        <p><strong>Tu proyecto no tiene por qué circular por toda la ciudad</strong></p>
+      </div>
+
+      <p>Una mudanza, una búsqueda inmobiliaria, una inversión o un proyecto empresarial involucran información familiar, profesional, patrimonial y estratégica. Su circulación innecesaria puede exponer decisiones, condicionar negociaciones y sumar intereses ajenos al proyecto.</p>
+      <p>Por eso, en Local Local trabajamos con un criterio de <strong>mínima exposición</strong>: la información se abre de manera gradual, únicamente cuando hace falta y siempre con un propósito concreto.</p>
+
+      <h3>Cómo cuidamos tu información</h3>
+      <ul>
+        <li>Antes de activar cada contacto, acordamos con vos qué información se comparte, con quién y para qué.</li>
+        <li>Cada profesional o proveedor recibe solamente el contexto indispensable para cumplir su función.</li>
+        <li>Tu capacidad de pago y tu presupuesto máximo se mantienen en reserva para proteger tu posición negociadora.</li>
+        <li>No incorporamos a personas de la red a conversaciones, documentos o decisiones que no requieran su intervención.</li>
+        <li>Quienes acceden a información del proyecto deben respetar las mismas pautas de reserva y utilizarla únicamente para el trabajo autorizado.</li>
       </ul>
 
-      <p>Los datos necesarios para responder o prestar el servicio se identifican en cada instancia. Si no son proporcionados, es posible que no podamos atender la consulta o ejecutar la tarea solicitada.</p>
-      <p>Las comunicaciones comerciales o newsletters sólo se enviarán cuando exista consentimiento y siempre permitirán solicitar la baja.</p>
+      <h3>La autorización es específica</h3>
+      <p>Autorizar una presentación no significa habilitar la circulación general del proyecto. La autorización se limita al contacto, la información y la finalidad acordados. Si una nueva etapa exige abrir otros datos o sumar a otra persona, lo conversamos antes.</p>
 
-      <h3>Datos sensibles y de menores de edad</h3>
-      <p>El formulario inicial no solicita datos sensibles. Si el desarrollo del proyecto hiciera necesario conocer información de esa naturaleza, se solicitará únicamente la indispensable, con una finalidad específica y bajo especiales condiciones de reserva.</p>
-      <p>El sitio está dirigido a personas mayores de edad. Los datos relacionados con niños, niñas o adolescentes sólo podrán ser proporcionados por sus padres, representantes o responsables y cuando resulten necesarios para el proyecto.</p>
-
-      <h3>Con quién se comparten</h3>
-      <p>La información no se vende ni se entrega a terceros para fines ajenos al servicio.</p>
-      <p>Puede compartirse, en la medida necesaria, con profesionales o proveedores cuya intervención haya sido informada y autorizada; con prestadores tecnológicos de alojamiento, formularios, correo, mensajería o analítica; y con autoridades públicas cuando exista una obligación legal o una orden válida.</p>
-
-      <h3>Conservación y seguridad</h3>
-      <p>Los datos se conservan durante el tiempo necesario para atender la consulta, prestar el servicio y cumplir las obligaciones profesionales, contables o legales aplicables.</p>
-      <p>Local Local adopta medidas razonables para evitar su acceso, modificación, pérdida o divulgación no autorizada.</p>
-
-      <h3>Derechos sobre los datos</h3>
-      <p>Cada persona puede solicitar el acceso, actualización o rectificación de sus datos y, cuando corresponda, su supresión. También puede retirar su consentimiento para tratamientos futuros o dejar de recibir comunicaciones comerciales.</p>
-      <p>Determinada información podrá conservarse cuando resulte necesaria para cumplir obligaciones profesionales, contables o legales.</p>
-      <p>Las solicitudes pueden enviarse a <a href="mailto:bernardo@locallocal.net">bernardo@locallocal.net</a>.</p>
-
-      <h3>Cookies y herramientas de medición</h3>
-      <p>El sitio puede utilizar cookies técnicas necesarias para funcionar y, con el consentimiento correspondiente, herramientas de medición o publicidad como Google Analytics y Meta Pixel.</p>
-      <p>El usuario podrá aceptar, rechazar o modificar esas preferencias desde el panel de cookies, excepto respecto de aquellas estrictamente necesarias para el funcionamiento del sitio.</p>
+      <h3>La reserva continúa después</h3>
+      <p>La confidencialidad se mantiene durante todo el proceso y continúa una vez finalizada la etapa contratada. Sólo puede ceder ante tu autorización, una obligación legal, un requerimiento válido de autoridad competente o la necesidad de ejercer o defender derechos.</p>
+      <p>La discreción no es una formalidad: <strong>es una herramienta para cuidar tus decisiones, tus tiempos y tu poder de negociación.</strong></p>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 Local Local. Todos los derechos reservados.</p>
-  </footer>
+    <!-- ALCANCE DEL SERVICIO -->
+    <section id="alcance">
+      <h2>Alcance del Servicio</h2>
+
+      <p>Local Local acompaña a personas, familias, profesionales, inversores y empresas que están evaluando, organizando o concretando un proyecto en Tandil. El servicio integra información local, planificación, criterio profesional y coordinación de una red seleccionada. Se presta por etapas para que cada decisión prepare la siguiente y el cliente conserve el control del proceso.</p>
+
+      <h3>01. Diagnóstico personalizado y hoja de ruta</h3>
+      <p><strong>Modalidad:</strong> 100 % remota.</p>
+      <p>Comenzamos con una entrevista personalizada por videollamada, de aproximadamente cuarenta y cinco (45) minutos, para comprender la situación actual, las necesidades, prioridades, tiempos y decisiones ya tomadas. Luego analizamos el proyecto de manera integral e identificamos qué está definido, qué falta resolver, qué riesgos conviene atender y qué alternativas pueden ajustarse a la realidad del cliente.</p>
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>entrevista personalizada por videollamada;</li>
+        <li>análisis integral del proyecto;</li>
+        <li>identificación de prioridades, riesgos y decisiones críticas;</li>
+        <li>diagnóstico escrito; y</li>
+        <li>hoja de ruta con escenarios, criterios, próximos pasos y orden recomendado de avance.</li>
+      </ul>
+      <p><strong>Entrega:</strong> dentro de los tres (3) días hábiles posteriores a la entrevista, siempre que se haya recibido la información necesaria. <strong>Valor final vigente: $300.000</strong>. El diagnóstico es una etapa independiente: después de recibirlo, el cliente puede avanzar por su cuenta o contratar una etapa posterior.</p>
+      <p><strong>Garantía:</strong> si dentro de las cuarenta y ocho (48) horas de recibir el documento el cliente considera que no aportó claridad, información relevante ni una hoja de ruta útil, puede solicitar la devolución total del importe abonado por el diagnóstico, indicando concretamente los motivos de su disconformidad.</p>
+
+      <h3>02. Visita estratégica a Tandil y activación de la red local</h3>
+      <p><strong>Modalidad:</strong> presencial. <strong>Duración estimada:</strong> de uno (1) a tres (3) días, preferentemente entre lunes y miércoles.</p>
+      <p>Con la hoja de ruta como base, diseñamos antes de la llegada una agenda personalizada para conocer, comparar y evaluar en Tandil las alternativas identificadas durante el diagnóstico. Según el proyecto, puede incluir recorridos por barrios, visitas a colegios o inmuebles y reuniones con profesionales, proveedores o instituciones.</p>
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>diseño y coordinación previa de la agenda;</li>
+        <li>organización de visitas, encuentros y recorridos;</li>
+        <li>presentación personal con integrantes de la red seleccionados para el proyecto;</li>
+        <li>devolución final y actualización de la hoja de ruta; y</li>
+        <li>hasta dos (2) noches de alojamiento, sujetas a disponibilidad y capacidad.</li>
+      </ul>
+      <p><strong>Valor:</strong> desde $500.000 finales para dos personas. La propuesta definitiva se prepara después del diagnóstico y depende de la cantidad de personas, las actividades, la complejidad de la agenda y el alojamiento disponible. Para grupos de más de dos personas o cuando se requiera otra alternativa de alojamiento, la diferencia se informa previamente.</p>
+      <p>No incluye los traslados hasta Tandil ni los desplazamientos dentro de la ciudad, salvo que la propuesta particular indique lo contrario.</p>
+
+      <h3>03. Auditoría integral de la operación</h3>
+      <p><strong>Modalidad:</strong> híbrida. El análisis se realiza de manera remota, con instancias presenciales cuando la operación lo requiere.</p>
+      <p>Cuando una alternativa se vuelve concreta, definimos el alcance de la revisión según el tipo y complejidad de la operación. El equipo jurídico y notarial analiza la documentación y antecedentes disponibles, las condiciones negociadas, los contratos que se prevé firmar y las obligaciones que se asumirán. Cuando se necesita una evaluación técnica, coordinamos la intervención del profesional especializado.</p>
+      <p><strong>Antes de comenzar, el cliente recibe una propuesta que detalla:</strong></p>
+      <ul>
+        <li>qué se revisará y qué queda fuera del análisis;</li>
+        <li>qué profesionales intervendrán;</li>
+        <li>qué documentación se necesita;</li>
+        <li>los plazos estimados;</li>
+        <li>los honorarios propios y de terceros; y</li>
+        <li>los gastos adicionales que razonablemente puedan preverse.</li>
+      </ul>
+      <p><strong>Entregable:</strong> informe de revisión integral y mapa de riesgos, con:</p>
+      <ul>
+        <li>documentación y antecedentes revisados;</li>
+        <li>riesgos, inconsistencias u observaciones detectados;</li>
+        <li>impacto posible de cada punto;</li>
+        <li>información o documentación faltante; y</li>
+        <li>ajustes, resguardos o condiciones recomendados antes de avanzar.</li>
+      </ul>
+      <p>El servicio incluye una reunión de explicación y consultas. Con esa información, el cliente decide si avanza, solicita ajustes, renegocia condiciones o descarta la alternativa. La auditoría no garantiza el resultado de la operación ni sustituye certificaciones, informes o controles técnicos que deban emitir profesionales habilitados.</p>
+      <p><strong>Valor:</strong> presupuesto personalizado según el tipo, alcance y complejidad de la operación. Se informa y acuerda antes de comenzar.</p>
+
+      <h3>04. Llegaste. Sos parte — Integración</h3>
+      <p>Conocemos la complejidad de construir una vida cotidiana en una ciudad nueva. Por eso, una vez en Tandil, el cliente sigue contando con Local Local para realizar consultas generales, pedir recomendaciones y conectarse con personas, instituciones y servicios de confianza.</p>
+      <p>El recorrido inicial termina, pero el acceso a la red continúa. Esta instancia de integración está incluida y no tiene fecha de vencimiento para quienes hayan completado el proceso contratado.</p>
+      <p><strong>La integración comprende:</strong></p>
+      <ul>
+        <li>consultas generales vinculadas con la vida práctica en Tandil;</li>
+        <li>recomendaciones puntuales dentro de la red disponible; y</li>
+        <li>conexiones iniciales con personas o servicios relevantes.</li>
+      </ul>
+      <p><strong>No comprende</strong> disponibilidad permanente, gestión continua, seguimiento ilimitado, representación, auditorías ni nuevos trabajos profesionales. Si una consulta requiere análisis, coordinación o intervención específica, se define un nuevo alcance y presupuesto antes de avanzar.</p>
+
+      <h3>Un recorrido flexible</h3>
+      <p>El servicio está diseñado para avanzar por etapas: cada una ordena y prepara la siguiente. Ese es el recorrido recomendado para evitar decisiones aisladas. Sin embargo, si el proyecto ya está en marcha y necesita una intervención puntual, Local Local puede incorporarse en la instancia adecuada, siempre que el alcance y la información disponible permitan trabajar con responsabilidad.</p>
+
+      <h3>Qué atraviesa todas las etapas</h3>
+      <ul>
+        <li>Un interlocutor principal que ordena prioridades y coordina las intervenciones.</li>
+        <li>Criterio independiente enfocado en la conveniencia del cliente, incluso cuando la recomendación sea no avanzar.</li>
+        <li>Confidencialidad y mínima exposición de información personal, familiar, patrimonial y estratégica.</li>
+        <li>Información clara y trazable, con explicación del fundamento de cada recomendación.</li>
+        <li>Selección de profesionales y proveedores según la necesidad concreta del proyecto.</li>
+        <li>Acompañamiento hasta el cierre de la etapa contratada.</li>
+      </ul>
+
+      <h3>Qué no está incluido, salvo acuerdo expreso</h3>
+      <ul>
+        <li>Intermediación inmobiliaria o representación de una propiedad determinada.</li>
+        <li>Garantía de vacantes escolares, disponibilidad de inmuebles, créditos, habilitaciones, permisos, rentabilidad o decisiones de terceros.</li>
+        <li>Mudanza, transporte, fletes o logística material.</li>
+        <li>Traslados, tasas, sellados, tributos, gastos notariales, informes, certificados u honorarios de terceros.</li>
+        <li>Trámites administrativos o presentaciones ante organismos públicos.</li>
+        <li>Tasaciones, mensuras, estudios de suelo, inspecciones, proyectos, dirección de obra u otras prestaciones técnicas.</li>
+        <li>Asesoramiento contable, fiscal, notarial, jurídico o técnico distinto del expresamente incluido en la propuesta.</li>
+        <li>Representación judicial o administrativa.</li>
+        <li>Gestión permanente o ejecución integral e indefinida del proyecto.</li>
+      </ul>
+
+      <h3>Responsabilidad del cliente y de los terceros</h3>
+      <p>El cliente aporta información completa y actualizada, revisa los entregables y adopta las decisiones finales. Los profesionales y proveedores independientes son contratados directamente y responden por sus propias prestaciones. Local Local responde por el trabajo y la coordinación que asume expresamente, no por resultados que dependan del mercado, autoridades, instituciones o terceros.</p>
+    </section>
+
+    <footer>
+      <p><strong>Local Local</strong> | Bernardo Gabriel Cisterna | CUIT 20-32643773-6</p>
+      <p>Mitre 767, piso 1, departamento A, Tandil, provincia de Buenos Aires</p>
+      <p>bernardo@locallocal.net | Versión: 3 de agosto de 2026</p>
+    </footer>
+  </div>
 </body>
 </html>
