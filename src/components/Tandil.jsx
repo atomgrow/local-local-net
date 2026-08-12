@@ -57,17 +57,6 @@ export default function Tandil() {
               {td.cierre2}
             </p>
           </div>
-
-          <ul data-reveal className="mt-10 flex flex-wrap gap-2.5">
-            {td.atributos.map((attr) => (
-              <li
-                key={attr}
-                className="rounded-full border border-espresso/15 bg-white/50 px-4 py-1.5 text-xs font-medium text-espresso/70"
-              >
-                {attr}
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* Carrusel full-width: fotos en aspecto natural, sin crop */}
