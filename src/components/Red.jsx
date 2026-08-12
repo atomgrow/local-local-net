@@ -40,10 +40,10 @@ export default function Red() {
             </div>
             <dl className="mt-8 space-y-5 sm:space-y-6">
               {r.stats.map((s) => (
-                <div key={s.d} className="flex items-baseline gap-3 sm:gap-4">
+                <div key={s.d} className="flex items-start gap-3 sm:gap-4">
                   <dt className="sr-only">{s.d}</dt>
                   <dd className="font-display text-2xl sm:text-4xl font-bold tracking-tight shrink-0">{s.n}</dd>
-                  <dd className="text-xs sm:text-sm text-white/80 whitespace-nowrap">{s.d}</dd>
+                  <dd className="text-xs sm:text-sm text-white/80 leading-snug">{s.d}</dd>
                 </div>
               ))}
             </dl>
