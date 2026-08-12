@@ -105,14 +105,14 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="border-t border-espresso/10 px-1 pb-3 pt-3">
-            <div className="flex flex-col gap-1">
+          <div className="border-t border-espresso/10 px-1 pb-2 pt-2">
+            <div className="flex flex-col gap-0.5">
               {t.nav.links.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
                 >
                   {link.label}
                 </Link>
@@ -120,7 +120,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={goEvaluar}
-                className="mt-2 rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white"
+                className="mt-1 rounded-full bg-terracota px-4 py-2 text-sm font-semibold text-white sm:hidden"
               >
                 {t.nav.cta}
               </button>
