@@ -8,6 +8,7 @@ import ParaQuien from '../components/ParaQuien'
 import ComoComienza from '../components/ComoComienza'
 import Cuestionario from '../components/Cuestionario'
 import Newsletter from '../components/Newsletter'
+import TestimoniosPreview from '../components/TestimoniosPreview'
 import CtaFinal from '../components/CtaFinal'
 import { initAnalytics } from '../lib/tracking'
 
@@ -28,6 +29,7 @@ export default function Home() {
       <ComoComienza />
       <Cuestionario />
       <Newsletter />
+      <TestimoniosPreview />
       <CtaFinal />
     </main>
   )
