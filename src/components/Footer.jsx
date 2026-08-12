@@ -9,14 +9,7 @@ export default function Footer() {
   const ft = t.footer
 
   return (
-    <footer
-      className="bg-espresso px-6 pb-10 pt-20 text-almond sm:px-10"
-      style={{
-        borderTopLeftRadius: '48px',
-        borderTopRightRadius: '48px',
-        clipPath: 'inset(0 0 -10px -10px round 48px 48px 0 0)'
-      }}
-    >
+    <footer className="bg-espresso px-6 pb-10 pt-20 text-almond sm:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
