@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
@@ -10,100 +10,106 @@ import fotoCieloAtardecer from '../assets/tandil-cielo-atardecer.jpg'
 import fotoTorre from '../assets/tandil-torre.jpg'
 import fotoBarrio from '../assets/tandil-barrio-sierras.jpg'
 
-const IMAGES = [
-  { src: fotoPanorama, alt: 0 },
-  { src: fotoBarrio, alt: 1 },
-  { src: fotoAtardecerCiudad, alt: 3 },
-  { src: fotoCieloAtardecer, alt: 4 },
-  { src: fotoTorre, alt: 5 },
+const SECTIONS = [
+  { img: fotoPanorama, alt: 0 },
+  { img: fotoBarrio, alt: 1 },
+  { img: fotoAtardecerCiudad, alt: 3 },
+  { img: fotoCieloAtardecer, alt: 4 },
+  { img: fotoTorre, alt: 5 },
 ]
-
-const IMAGE_POSITIONS = [0, 2, 4, 5, 7]
 
 export default function Tandil() {
   const scope = useReveal()
   const { t } = useLang()
   const td = t.tandil
-  const [scrollY, setScrollY] = useState(0)
+  const [parallaxOffsets, setParallaxOffsets] = useState(Array(5).fill(0))
+  const containerRef = useRef(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
+    const handleScroll = () => {
+      if (!containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+      const offsets = SECTIONS.map((_, i) => {
+        const elementOffset = (i * 200) - window.scrollY
+        return elementOffset * 0.15
+      })
+      setParallaxOffsets(offsets)
+    }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const getImageOpacity = (index) => {
-    const offsetTop = IMAGE_POSITIONS[index] * 150
-    const distance = Math.abs(scrollY - offsetTop)
-    return Math.max(0, 1 - distance / 400)
-  }
-
-  const getImageTransform = (index) => {
-    const offsetTop = IMAGE_POSITIONS[index] * 150
-    const parallax = (scrollY - offsetTop) * 0.3
-    return `translateY(${parallax}px)`
-  }
-
   return (
-    <section id="tandil" ref={scope} className="relative bg-almond px-6 py-24 sm:px-10 sm:py-32 overflow-hidden">
+    <section id="tandil" ref={scope} className="bg-almond px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mx-auto max-w-5xl mb-20">
+        <div className="mx-auto max-w-5xl mb-16">
           <SectionHeader kicker={td.kicker} titleSans={td.titleSans} titleSerif={td.titleSerif} />
         </div>
 
-        {/* Editorial Layout: Texto + Imágenes en Scroll Inmersivo */}
-        <div className="relative mx-auto max-w-2xl">
-          {/* Imágenes flotantes detrás del texto */}
-          <div className="absolute inset-0 pointer-events-none">
-            {IMAGES.map((img, i) => (
-              <div
-                key={i}
-                className="absolute w-96 h-64 rounded-2xl overflow-hidden"
-                style={{
-                  opacity: getImageOpacity(i),
-                  transform: getImageTransform(i),
-                  transition: 'opacity 0.3s ease-out',
-                  right: i % 2 === 0 ? '-180px' : 'auto',
-                  left: i % 2 === 1 ? '-180px' : 'auto',
-                  top: `${IMAGE_POSITIONS[i] * 150}px`,
-                }}
-              >
-                <img
-                  src={img.src}
-                  alt={td.galleryAlts[img.alt]}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/20 via-transparent to-transparent" />
+        {/* Editorial Immersive Layout */}
+        <div ref={containerRef} className="relative mx-auto max-w-4xl space-y-16 sm:space-y-24">
+          {/* Sección 1: Intro */}
+          <div className="relative h-96 sm:h-[500px] rounded-3xl overflow-hidden group">
+            <img
+              src={SECTIONS[0].img}
+              alt={td.galleryAlts[SECTIONS[0].alt]}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ transform: `translateY(${parallaxOffsets[0]}px)` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-espresso/70 via-espresso/30 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white px-6 sm:px-10 max-w-2xl">
+                <p className="text-lg sm:text-xl leading-relaxed">
+                  {td.parrafos[0]}
+                </p>
               </div>
-            ))}
+            </div>
           </div>
 
-          {/* Contenido de texto */}
-          <div data-reveal className="relative z-10 space-y-6 sm:space-y-8">
-            {td.parrafos.map((parrafo, i) => (
-              <p
-                key={i}
-                className="text-base sm:text-lg leading-relaxed text-espresso/75 font-light"
-              >
-                {parrafo}
-              </p>
-            ))}
+          {/* Sección 2-5: Texto + Imagen Parallax */}
+          {td.parrafos.slice(1).map((parrafo, idx) => {
+            const imgIdx = (idx + 1) % SECTIONS.length
+            const isLeft = idx % 2 === 0
+            return (
+              <div key={idx} className="relative grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 items-center">
+                {/* Imagen */}
+                <div className={`relative h-64 sm:h-80 rounded-2xl overflow-hidden ${!isLeft && 'sm:order-2'}`}>
+                  <img
+                    src={SECTIONS[imgIdx].img}
+                    alt={td.galleryAlts[SECTIONS[imgIdx].alt]}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                    style={{ transform: `translateY(${parallaxOffsets[imgIdx]}px)` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/20 via-transparent to-transparent" />
+                </div>
 
-            <div className="pt-6 space-y-3">
-              <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
-                {td.cierre1}
-              </p>
-              <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
-                {td.cierre2}
-              </p>
-            </div>
+                {/* Texto */}
+                <div className={isLeft ? 'sm:order-1' : ''}>
+                  <p className="text-base sm:text-lg leading-relaxed text-espresso/75 font-light">
+                    {parrafo}
+                  </p>
+                </div>
+              </div>
+            )
+          })}
+
+          {/* Cierre */}
+          <div data-reveal className="pt-8 sm:pt-12 border-t border-espresso/15">
+            <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic mb-3">
+              {td.cierre1}
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
+              {td.cierre2}
+            </p>
           </div>
         </div>
 
         {/* Photo Credit */}
-        <div className="mx-auto max-w-2xl mt-20 pt-12 border-t border-espresso/10">
+        <div className="mx-auto max-w-4xl mt-16 pt-12 border-t border-espresso/10">
           <p className="text-right font-mono text-[10px] tracking-widest text-espresso/40">
             <a
               href={LINKS.photographer}
