@@ -96,7 +96,7 @@ export function detectLang() {
 const LangContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(detectLang)
+  const [lang, setLangState] = useState(detectLang())
 
   const setLang = (next) => {
     setLangState(next)
