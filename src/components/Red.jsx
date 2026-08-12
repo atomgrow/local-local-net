@@ -33,17 +33,17 @@ export default function Red() {
             </div>
           </div>
 
-          <div data-reveal className="rounded-[2rem] bg-matcha p-8 text-white shadow-xl shadow-matcha/25 sm:p-10">
+          <div data-reveal className="rounded-[2rem] bg-matcha p-6 text-white shadow-xl shadow-matcha/25 sm:p-8 lg:p-10 overflow-x-hidden">
             <div className="flex items-center gap-3">
               <KeyRound size={18} strokeWidth={1.75} aria-hidden="true" className="text-vanilla" />
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-white/70">{r.statsTitle}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70 sm:text-[11px] sm:tracking-[0.3em]">{r.statsTitle}</p>
             </div>
-            <dl className="mt-8 space-y-6">
+            <dl className="mt-8 space-y-5 sm:space-y-6">
               {r.stats.map((s) => (
-                <div key={s.d} className="flex items-baseline gap-4">
+                <div key={s.d} className="flex items-baseline gap-3 sm:gap-4">
                   <dt className="sr-only">{s.d}</dt>
-                  <dd className="font-display text-4xl font-bold tracking-tight shrink-0">{s.n}</dd>
-                  <dd className="text-sm text-white/80 whitespace-nowrap">{s.d}</dd>
+                  <dd className="font-display text-2xl sm:text-4xl font-bold tracking-tight shrink-0">{s.n}</dd>
+                  <dd className="text-xs sm:text-sm text-white/80 whitespace-nowrap">{s.d}</dd>
                 </div>
               ))}
             </dl>
