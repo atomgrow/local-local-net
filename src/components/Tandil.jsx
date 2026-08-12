@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
@@ -10,107 +10,127 @@ import fotoCieloAtardecer from '../assets/tandil-cielo-atardecer.jpg'
 import fotoTorre from '../assets/tandil-torre.jpg'
 import fotoBarrio from '../assets/tandil-barrio-sierras.jpg'
 
-const SECTIONS = [
-  { img: fotoPanorama, alt: 0 },
-  { img: fotoBarrio, alt: 1 },
-  { img: fotoAtardecerCiudad, alt: 3 },
-  { img: fotoCieloAtardecer, alt: 4 },
-  { img: fotoTorre, alt: 5 },
+const IMAGEN_SECUENCIA = [
+  { src: fotoPanorama, alt: 0, textos: [0] },
+  { src: fotoBarrio, alt: 1, textos: [1, 2] },
+  { src: fotoAtardecerCiudad, alt: 3, textos: [3, 4] },
+  { src: fotoCieloAtardecer, alt: 4, textos: [5, 6] },
+  { src: fotoTorre, alt: 5, textos: [7, 8, 9] },
 ]
 
 export default function Tandil() {
   const scope = useReveal()
   const { t } = useLang()
   const td = t.tandil
-  const [parallaxOffsets, setParallaxOffsets] = useState(Array(5).fill(0))
-  const containerRef = useRef(null)
+  const [currentImg, setCurrentImg] = useState(0)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const offsets = SECTIONS.map((_, i) => {
-        const elementOffset = (i * 200) - window.scrollY
-        return elementOffset * 0.15
-      })
-      setParallaxOffsets(offsets)
-    }
+  const handleNextImg = () => {
+    setCurrentImg((prev) => (prev + 1) % IMAGEN_SECUENCIA.length)
+  }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const handlePrevImg = () => {
+    setCurrentImg((prev) => (prev - 1 + IMAGEN_SECUENCIA.length) % IMAGEN_SECUENCIA.length)
+  }
+
+  const goToImage = (index) => {
+    setCurrentImg(index)
+  }
+
+  const currentSequence = IMAGEN_SECUENCIA[currentImg]
 
   return (
-    <section id="tandil" ref={scope} className="bg-almond px-6 py-24 sm:px-10 sm:py-32">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mx-auto max-w-5xl mb-16">
+    <section id="tandil" ref={scope} className="relative bg-almond">
+      {/* Header */}
+      <div className="relative z-20 px-6 py-24 sm:px-10 sm:py-32">
+        <div className="mx-auto max-w-5xl">
           <SectionHeader kicker={td.kicker} titleSans={td.titleSans} titleSerif={td.titleSerif} />
         </div>
+      </div>
 
-        {/* Editorial Immersive Layout */}
-        <div ref={containerRef} className="relative mx-auto max-w-4xl space-y-16 sm:space-y-24">
-          {/* Sección 1: Intro */}
-          <div className="relative h-96 sm:h-[500px] rounded-3xl overflow-hidden group">
-            <img
-              src={SECTIONS[0].img}
-              alt={td.galleryAlts[SECTIONS[0].alt]}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ transform: `translateY(${parallaxOffsets[0]}px)` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-espresso/70 via-espresso/30 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white px-6 sm:px-10 max-w-2xl">
-                <p className="text-lg sm:text-xl leading-relaxed">
-                  {td.parrafos[0]}
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* Fullscreen Image Sequence */}
+      <div className="relative h-screen bg-espresso overflow-hidden">
+        {/* Imagen actual */}
+        <img
+          src={currentSequence.src}
+          alt={td.galleryAlts[currentSequence.alt]}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+        />
 
-          {/* Sección 2-5: Texto + Imagen Parallax */}
-          {td.parrafos.slice(1).map((parrafo, idx) => {
-            const imgIdx = (idx + 1) % SECTIONS.length
-            const isLeft = idx % 2 === 0
-            return (
-              <div key={idx} className="relative grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 items-center">
-                {/* Imagen */}
-                <div className={`relative h-64 sm:h-80 rounded-2xl overflow-hidden ${!isLeft && 'sm:order-2'}`}>
-                  <img
-                    src={SECTIONS[imgIdx].img}
-                    alt={td.galleryAlts[SECTIONS[imgIdx].alt]}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    style={{ transform: `translateY(${parallaxOffsets[imgIdx]}px)` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/20 via-transparent to-transparent" />
-                </div>
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/40 to-espresso/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/30 via-transparent to-espresso/30" />
 
-                {/* Texto */}
-                <div className={isLeft ? 'sm:order-1' : ''}>
-                  <p className="text-base sm:text-lg leading-relaxed text-espresso/75 font-light">
-                    {parrafo}
-                  </p>
-                </div>
-              </div>
-            )
-          })}
-
-          {/* Cierre */}
-          <div data-reveal className="pt-8 sm:pt-12 border-t border-espresso/15">
-            <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic mb-3">
-              {td.cierre1}
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
-              {td.cierre2}
-            </p>
+        {/* Contenido centrado */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 sm:px-10">
+          <div className="max-w-3xl text-center space-y-6 sm:space-y-8">
+            {/* Renderizar párrafos asociados a esta imagen */}
+            {currentSequence.textos.map((parrafoIdx) => (
+              <p
+                key={parrafoIdx}
+                className="text-lg sm:text-xl leading-relaxed text-white font-light animate-fade-in"
+              >
+                {td.parrafos[parrafoIdx]}
+              </p>
+            ))}
           </div>
         </div>
 
-        {/* Photo Credit */}
-        <div className="mx-auto max-w-4xl mt-16 pt-12 border-t border-espresso/10">
-          <p className="text-right font-mono text-[10px] tracking-widest text-espresso/40">
+        {/* Botones Navegación */}
+        <button
+          type="button"
+          onClick={handlePrevImg}
+          aria-label="Imagen anterior"
+          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          onClick={handleNextImg}
+          aria-label="Imagen siguiente"
+          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Indicador (X de Y) */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+          {IMAGEN_SECUENCIA.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => goToImage(idx)}
+              aria-label={`Ir a imagen ${idx + 1}`}
+              aria-current={currentImg === idx}
+              className={`h-2 rounded-full transition-all ${
+                currentImg === idx
+                  ? 'w-8 bg-white'
+                  : 'w-2 bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Closing + Photo Credit */}
+      <div className="relative z-10 px-6 py-16 sm:px-10 sm:py-20 bg-almond">
+        <div className="mx-auto max-w-3xl text-center space-y-4">
+          <p className="text-lg leading-relaxed text-espresso/70 font-medium italic">
+            {td.cierre1}
+          </p>
+          <p className="text-lg leading-relaxed text-espresso/70 font-medium italic">
+            {td.cierre2}
+          </p>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-espresso/10 text-center">
+          <p className="font-mono text-[10px] tracking-widest text-espresso/40">
             <a
               href={LINKS.photographer}
               target="_blank"
@@ -122,6 +142,23 @@ export default function Tandil() {
           </p>
         </div>
       </div>
+
+      {/* Estilos de animación */}
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease-out;
+        }
+      `}</style>
     </section>
   )
 }
