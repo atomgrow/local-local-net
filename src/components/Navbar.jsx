@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
+import HouseMenuIcon from './HouseMenuIcon'
 
 function LangToggle({ scrolled }) {
   const { lang, setLang } = useLang()
@@ -112,7 +113,7 @@ export default function Navbar() {
                 solid ? 'text-espresso' : 'text-white',
               ].join(' ')}
             >
-              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+              {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
             </button>
           </div>
         </div>
