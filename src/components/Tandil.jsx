@@ -1,132 +1,110 @@
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
 import SectionHeader from './SectionHeader'
 
-// ------------------------------------------------------------
-// GALERÍA — Fotografías reales de Tandil (@santiarbeoph).
-// Originales disponibles: 1024px. [PENDIENTE] Si llegan exports en
-// alta resolución, reemplazar los archivos en src/assets con el
-// mismo nombre. Los alt vienen de strings.js (tandil.galleryAlts).
-// INTERACCIÓN: Fullscreen slider (imagen grande + thumbnails navegables).
-// ------------------------------------------------------------
 import fotoPanorama from '../assets/tandil-panorama.jpg'
 import fotoAtardecerCiudad from '../assets/tandil-atardecer-ciudad.jpg'
-import fotoCaballo from '../assets/tandil-caballo.jpg'
 import fotoCieloAtardecer from '../assets/tandil-cielo-atardecer.jpg'
 import fotoTorre from '../assets/tandil-torre.jpg'
+import fotoBarrio from '../assets/tandil-barrio-sierras.jpg'
 
-const GALLERY = [
+const IMAGES = [
   { src: fotoPanorama, alt: 0 },
-  { src: fotoAtardecerCiudad, alt: 1 },
-  { src: fotoCaballo, alt: 2 },
-  { src: fotoCieloAtardecer, alt: 3 },
-  { src: fotoTorre, alt: 4 },
+  { src: fotoBarrio, alt: 1 },
+  { src: fotoAtardecerCiudad, alt: 3 },
+  { src: fotoCieloAtardecer, alt: 4 },
+  { src: fotoTorre, alt: 5 },
 ]
+
+const IMAGE_POSITIONS = [0, 2, 4, 5, 7]
 
 export default function Tandil() {
   const scope = useReveal()
   const { t } = useLang()
   const td = t.tandil
-  const [current, setCurrent] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
-  const next = () => setCurrent((current + 1) % GALLERY.length)
-  const prev = () => setCurrent((current - 1 + GALLERY.length) % GALLERY.length)
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const getImageOpacity = (index) => {
+    const offsetTop = IMAGE_POSITIONS[index] * 150
+    const distance = Math.abs(scrollY - offsetTop)
+    return Math.max(0, 1 - distance / 400)
+  }
+
+  const getImageTransform = (index) => {
+    const offsetTop = IMAGE_POSITIONS[index] * 150
+    const parallax = (scrollY - offsetTop) * 0.3
+    return `translateY(${parallax}px)`
+  }
 
   return (
-    <section id="tandil" ref={scope} className="bg-almond px-6 py-24 sm:px-10 sm:py-32">
+    <section id="tandil" ref={scope} className="relative bg-almond px-6 py-24 sm:px-10 sm:py-32 overflow-hidden">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-5xl">
+        {/* Header */}
+        <div className="mx-auto max-w-5xl mb-20">
           <SectionHeader kicker={td.kicker} titleSans={td.titleSans} titleSerif={td.titleSerif} />
+        </div>
 
-          <div data-reveal className="mt-7 max-w-3xl space-y-4">
+        {/* Editorial Layout: Texto + Imágenes en Scroll Inmersivo */}
+        <div className="relative mx-auto max-w-2xl">
+          {/* Imágenes flotantes detrás del texto */}
+          <div className="absolute inset-0 pointer-events-none">
+            {IMAGES.map((img, i) => (
+              <div
+                key={i}
+                className="absolute w-96 h-64 rounded-2xl overflow-hidden"
+                style={{
+                  opacity: getImageOpacity(i),
+                  transform: getImageTransform(i),
+                  transition: 'opacity 0.3s ease-out',
+                  right: i % 2 === 0 ? '-180px' : 'auto',
+                  left: i % 2 === 1 ? '-180px' : 'auto',
+                  top: `${IMAGE_POSITIONS[i] * 150}px`,
+                }}
+              >
+                <img
+                  src={img.src}
+                  alt={td.galleryAlts[img.alt]}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/20 via-transparent to-transparent" />
+              </div>
+            ))}
+          </div>
+
+          {/* Contenido de texto */}
+          <div data-reveal className="relative z-10 space-y-6 sm:space-y-8">
             {td.parrafos.map((parrafo, i) => (
-              <p key={i} className="text-base leading-relaxed text-espresso/70">
+              <p
+                key={i}
+                className="text-base sm:text-lg leading-relaxed text-espresso/75 font-light"
+              >
                 {parrafo}
               </p>
             ))}
-          </div>
 
-          <div data-reveal className="mt-10 max-w-2xl">
-            <p className="text-base leading-relaxed text-espresso/70 font-medium">
-              {td.cierre1}
-            </p>
-            <p className="mt-2 text-base leading-relaxed text-espresso/70 font-medium">
-              {td.cierre2}
-            </p>
-          </div>
-        </div>
-
-        {/* Carrusel full-width: fotos en aspecto natural, sin crop */}
-        <div data-reveal className="mt-14 space-y-6">
-          {/* Imagen principal — contaimer que respeta aspecto natural */}
-          <div className="relative overflow-hidden rounded-[2rem] bg-espresso/5">
-            <div className="relative flex items-center justify-center min-h-[400px] sm:min-h-[550px]">
-              <img
-                src={GALLERY[current].src}
-                alt={td.galleryAlts[GALLERY[current].alt]}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain transition-opacity duration-500"
-              />
-              {/* Gradient overlay sutil (solo en foto) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso/5 via-transparent to-transparent pointer-events-none" />
+            <div className="pt-6 space-y-3">
+              <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
+                {td.cierre1}
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-espresso/70 font-medium italic">
+                {td.cierre2}
+              </p>
             </div>
-
-            {/* Botones navegación */}
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Foto anterior"
-              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-espresso/30 p-3 text-white backdrop-blur transition-colors hover:bg-espresso/50"
-            >
-              <ChevronLeft size={24} strokeWidth={2} />
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Foto siguiente"
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-espresso/30 p-3 text-white backdrop-blur transition-colors hover:bg-espresso/50"
-            >
-              <ChevronRight size={24} strokeWidth={2} />
-            </button>
-
-            {/* Indicador (X de Y) */}
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-xs text-espresso/50 bg-white/30 px-3 py-1.5 rounded-full backdrop-blur">
-              {current + 1} / {GALLERY.length}
-            </p>
-          </div>
-
-          {/* Thumbnails navegables */}
-          <div className="flex justify-center gap-2.5 overflow-x-auto pb-2">
-            {GALLERY.map((photo, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setCurrent(i)}
-                aria-label={`Ver foto ${i + 1}`}
-                aria-current={current === i}
-                className={[
-                  'shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-300 hover:scale-105',
-                  current === i
-                    ? 'border-matcha ring-2 ring-matcha/40'
-                    : 'border-espresso/20 opacity-50 hover:opacity-75',
-                ].join(' ')}
-              >
-                <img
-                  src={photo.src}
-                  alt={td.galleryAlts[photo.alt]}
-                  loading="lazy"
-                  className="h-20 w-20 object-cover"
-                />
-              </button>
-            ))}
           </div>
         </div>
 
-        <div className="mx-auto max-w-5xl">
-          <p data-reveal className="mt-8 text-right font-mono text-[10px] tracking-widest text-espresso/40">
+        {/* Photo Credit */}
+        <div className="mx-auto max-w-2xl mt-20 pt-12 border-t border-espresso/10">
+          <p className="text-right font-mono text-[10px] tracking-widest text-espresso/40">
             <a
               href={LINKS.photographer}
               target="_blank"
