@@ -104,19 +104,17 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 mx-auto max-w-4xl rounded-lg bg-white/95 border border-espresso/10 shadow-lg backdrop-blur-sm px-3 py-2 z-40">
-            <div className="flex flex-col gap-1">
-              {t.nav.links.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="rounded-md px-3 py-1.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+          <div className="absolute top-full left-5 mt-2 z-40 flex flex-col gap-2">
+            {t.nav.links.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-sm font-medium text-espresso/70 transition-colors hover:text-espresso"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         )}
       </nav>
