@@ -73,8 +73,8 @@ export default function Navbar() {
         ].join(' ')}
       >
           <div className="flex items-center justify-between w-full gap-3">
-            <Link to="/" aria-label="Local Local" className="-m-2 flex h-20 w-20 flex-shrink-0 items-center justify-center overflow-visible">
-              <Logo className="h-24 w-24" />
+            <Link to="/" aria-label="Local Local" className="-m-2 flex h-28 w-28 flex-shrink-0 items-center justify-center overflow-visible">
+              <Logo className="h-28 w-28" />
             </Link>
 
             {/* Links appear on mobile (between logo and menu) */}
