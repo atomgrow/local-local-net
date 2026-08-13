@@ -65,15 +65,15 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
       <nav
         className={[
-          'w-full max-w-2xl rounded-[1.75rem] py-0.5 pl-5 pr-2.5 sm:rounded-full',
-          'transition-all duration-500 ease-out',
+          'w-full max-w-6xl rounded-[1.75rem] py-0 pl-5 pr-2.5 sm:rounded-full',
+          'transition-all duration-500 ease-out flex items-center',
           solid
             ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
             : 'border border-transparent bg-transparent',
         ].join(' ')}
       >
-          <div className="flex items-center justify-between w-full gap-0.5">
-            <Link to="/" aria-label="Local Local" className="-m-2 flex h-28 w-28 flex-shrink-0 items-center justify-center overflow-visible">
+          <div className="flex items-center justify-between w-full gap-0 h-fit">
+            <Link to="/" aria-label="Local Local" className="flex h-28 w-28 flex-shrink-0 items-center justify-center overflow-visible">
               <Logo className="h-28 w-28" />
             </Link>
 
