@@ -66,7 +66,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
       <nav
         className={[
-          'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full',
+          'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full relative',
           'transition-all duration-500 ease-out',
           solid
             ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
@@ -78,17 +78,7 @@ export default function Navbar() {
             <Logo className="h-20 w-20" />
           </Link>
 
-
           <div className="flex items-center gap-2">
-            <LangToggle scrolled={solid} />
-            <button
-              type="button"
-              onClick={goEvaluar}
-              className="btn-magnetic hidden rounded-full bg-terracota px-5 py-2.5 text-[13px] font-semibold text-white sm:block"
-            >
-              <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
-              {t.nav.cta}
-            </button>
             <button
               type="button"
               aria-expanded={menuOpen}
@@ -101,29 +91,31 @@ export default function Navbar() {
             >
               {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
             </button>
+            <LangToggle scrolled={solid} />
+            <button
+              type="button"
+              onClick={goEvaluar}
+              className="btn-magnetic hidden rounded-full bg-terracota px-5 py-2.5 text-[13px] font-semibold text-white sm:block"
+            >
+              <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
+              {t.nav.cta}
+            </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className="border-t border-espresso/10 px-1 pb-2 pt-2">
-            <div className="flex flex-col gap-0.5">
+          <div className="absolute top-full left-0 right-0 mt-2 mx-auto max-w-4xl rounded-lg bg-white/95 border border-espresso/10 shadow-lg backdrop-blur-sm px-3 py-2 z-40">
+            <div className="flex flex-col gap-1">
               {t.nav.links.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
+                  className="rounded-md px-3 py-1.5 text-sm font-medium text-espresso/80 transition-colors hover:bg-espresso/5"
                 >
                   {link.label}
                 </Link>
               ))}
-              <button
-                type="button"
-                onClick={goEvaluar}
-                className="mt-1 rounded-full bg-terracota px-4 py-2 text-sm font-semibold text-white sm:hidden"
-              >
-                {t.nav.cta}
-              </button>
             </div>
           </div>
         )}
