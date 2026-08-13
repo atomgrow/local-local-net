@@ -7,7 +7,7 @@ import HouseMenuIcon from './HouseMenuIcon'
 
 function LangToggle({ scrolled }) {
   const { lang, setLang } = useLang()
-  const base = 'rounded-full px-2.5 py-1 font-mono text-[11px] tracking-wider transition-all duration-300'
+  const base = 'rounded-full px-2.5 py-0 font-mono text-[11px] tracking-wider transition-all duration-300'
 
   return (
     <div
@@ -133,7 +133,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={goEvaluar}
-                className="btn-magnetic hidden rounded-full bg-terracota px-5 py-2.5 text-[13px] font-semibold text-white sm:block"
+                className="btn-magnetic hidden rounded-full bg-terracota px-5 py-1 text-[13px] font-semibold text-white sm:block"
               >
                 <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
                 {t.nav.cta}
