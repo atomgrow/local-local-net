@@ -65,7 +65,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
       <nav
         className={[
-          'w-full max-w-4xl rounded-[1.75rem] py-0 pl-5 pr-2.5 sm:rounded-full',
+          'w-full rounded-[1.75rem] py-1 pl-5 pr-2.5 sm:rounded-full h-fit',
           'transition-all duration-500 ease-out flex items-center',
           solid
             ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
@@ -77,16 +77,16 @@ export default function Navbar() {
               <Logo className="h-28 w-28" />
             </Link>
 
-            {/* Links appear on mobile (between logo and menu) */}
+            {/* Links appear when menu opens */}
             {menuOpen && (
-              <div className="flex items-center gap-4 md:hidden">
+              <div className="flex items-center gap-3">
                 {t.nav.links.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
                     onClick={() => setMenuOpen(false)}
                     className={[
-                      'text-sm font-medium transition-colors',
+                      'text-xs font-medium transition-colors',
                       solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
                     ].join(' ')}
                   >
@@ -97,32 +97,13 @@ export default function Navbar() {
             )}
 
             <div className="flex items-center gap-0.5 ml-auto">
-              {/* Links appear on desktop (BEFORE menu button, but visually after due to order) */}
-              {menuOpen && (
-                <div className="hidden md:flex items-center gap-4 order-first">
-                  {t.nav.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      onClick={() => setMenuOpen(false)}
-                      className={[
-                        'text-sm font-medium transition-colors',
-                        solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
-                      ].join(' ')}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-
               <button
                 type="button"
                 aria-expanded={menuOpen}
                 aria-label="Menu"
                 onClick={() => setMenuOpen((v) => !v)}
                 className={[
-                  'flex h-9 w-9 items-center justify-center rounded-full transition-colors order-last',
+                  'flex h-8 w-8 items-center justify-center rounded-full transition-colors',
                   solid ? 'text-espresso' : 'text-white',
                 ].join(' ')}
               >
