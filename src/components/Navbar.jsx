@@ -77,26 +77,25 @@ export default function Navbar() {
               <Logo className="h-28 w-28" />
             </Link>
 
-            {/* Links appear when menu opens */}
-            {menuOpen && (
-              <div className="flex items-center gap-3">
-                {t.nav.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={[
-                      'text-xs font-medium transition-colors',
-                      solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
-                    ].join(' ')}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-
             <div className="flex items-center gap-0.5 ml-auto">
+              {/* Links appear when menu opens - right before menu button */}
+              {menuOpen && (
+                <div className="flex items-center gap-3 mr-1">
+                  {t.nav.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={[
+                        'text-xs font-medium transition-colors',
+                        solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
+                      ].join(' ')}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
               <button
                 type="button"
                 aria-expanded={menuOpen}

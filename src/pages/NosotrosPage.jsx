@@ -10,7 +10,7 @@ export default function NosotrosPage() {
   const { lang } = useLang()
 
   return (
-    <main key={lang}>
+    <main key={lang} className="mt-32 sm:mt-40">
       <Nosotros />
       <Tandil />
       <Testimonios />
