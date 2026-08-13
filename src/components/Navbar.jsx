@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
 import HouseMenuIcon from './HouseMenuIcon'
-import HouseMenu from './HouseMenu'
 
 function LangToggle({ scrolled }) {
   const { lang, setLang } = useLang()
@@ -64,23 +62,41 @@ export default function Navbar() {
   const solid = scrolled || menuOpen
 
   return (
-    <>
-      <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
-        <nav
-          className={[
-            'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full',
-            'transition-all duration-500 ease-out',
-            solid
-              ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
-              : 'border border-transparent bg-transparent',
-          ].join(' ')}
-        >
-          <div className="flex items-center justify-between gap-3">
+    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
+      <nav
+        className={[
+          'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full',
+          'transition-all duration-500 ease-out',
+          solid
+            ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
+            : 'border border-transparent bg-transparent',
+        ].join(' ')}
+      >
+          <div className="flex items-center justify-between w-full gap-3">
             <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
               <Logo className="h-20 w-20" />
             </Link>
 
-            <div className="flex items-center gap-2">
+            {/* Links appear here when menu opens */}
+            {menuOpen && (
+              <div className="flex items-center gap-4">
+                {t.nav.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={[
+                      'text-sm font-medium transition-colors',
+                      solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
+                    ].join(' ')}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <div className="flex items-center gap-2 ml-auto">
               <button
                 type="button"
                 aria-expanded={menuOpen}
@@ -91,7 +107,7 @@ export default function Navbar() {
                   solid ? 'text-espresso' : 'text-white',
                 ].join(' ')}
               >
-                {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
+                <HouseMenuIcon isOpen={menuOpen} />
               </button>
               <LangToggle scrolled={solid} />
               <button
@@ -104,10 +120,7 @@ export default function Navbar() {
               </button>
             </div>
           </div>
-        </nav>
-      </header>
-
-      <HouseMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-    </>
+      </nav>
+    </header>
   )
 }
