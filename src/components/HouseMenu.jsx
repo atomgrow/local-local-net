@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import heroImg from '../assets/hero-bg.jpg'
+import tandilImg from '../assets/tandil-atardecer-ciudad.jpg'
 
 export default function HouseMenu({ isOpen, onClose }) {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export default function HouseMenu({ isOpen, onClose }) {
         className="relative w-24 h-28"
         onClick={(e) => e.stopPropagation()}
         style={{
-          backgroundImage: `url(${heroImg})`,
+          backgroundImage: `url(${tandilImg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
