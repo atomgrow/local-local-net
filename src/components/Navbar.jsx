@@ -5,6 +5,7 @@ import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
 import HouseMenuIcon from './HouseMenuIcon'
+import HouseMenu from './HouseMenu'
 
 function LangToggle({ scrolled }) {
   const { lang, setLang } = useLang()
@@ -63,61 +64,50 @@ export default function Navbar() {
   const solid = scrolled || menuOpen
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
-      <nav
-        className={[
-          'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full relative',
-          'transition-all duration-500 ease-out',
-          solid
-            ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
-            : 'border border-transparent bg-transparent',
-        ].join(' ')}
-      >
-        <div className="flex items-center justify-between gap-3">
-          <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
-            <Logo className="h-20 w-20" />
-          </Link>
+    <>
+      <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
+        <nav
+          className={[
+            'w-full max-w-4xl rounded-[1.75rem] py-2.5 pl-5 pr-2.5 sm:rounded-full',
+            'transition-all duration-500 ease-out',
+            solid
+              ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
+              : 'border border-transparent bg-transparent',
+          ].join(' ')}
+        >
+          <div className="flex items-center justify-between gap-3">
+            <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
+              <Logo className="h-20 w-20" />
+            </Link>
 
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              aria-expanded={menuOpen}
-              aria-label="Menu"
-              onClick={() => setMenuOpen((v) => !v)}
-              className={[
-                'flex h-9 w-9 items-center justify-center rounded-full transition-colors',
-                solid ? 'text-espresso' : 'text-white',
-              ].join(' ')}
-            >
-              {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
-            </button>
-            <LangToggle scrolled={solid} />
-            <button
-              type="button"
-              onClick={goEvaluar}
-              className="btn-magnetic hidden rounded-full bg-terracota px-5 py-2.5 text-[13px] font-semibold text-white sm:block"
-            >
-              <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
-              {t.nav.cta}
-            </button>
-          </div>
-        </div>
-
-        {menuOpen && (
-          <div className="absolute top-full left-5 mt-2 z-40 flex flex-col gap-2">
-            {t.nav.links.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm font-medium text-espresso/70 transition-colors hover:text-espresso"
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-expanded={menuOpen}
+                aria-label="Menu"
+                onClick={() => setMenuOpen((v) => !v)}
+                className={[
+                  'flex h-9 w-9 items-center justify-center rounded-full transition-colors',
+                  solid ? 'text-espresso' : 'text-white',
+                ].join(' ')}
               >
-                {link.label}
-              </Link>
-            ))}
+                {menuOpen ? <X size={18} /> : <HouseMenuIcon isOpen={menuOpen} />}
+              </button>
+              <LangToggle scrolled={solid} />
+              <button
+                type="button"
+                onClick={goEvaluar}
+                className="btn-magnetic hidden rounded-full bg-terracota px-5 py-2.5 text-[13px] font-semibold text-white sm:block"
+              >
+                <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
+                {t.nav.cta}
+              </button>
+            </div>
           </div>
-        )}
-      </nav>
-    </header>
+        </nav>
+      </header>
+
+      <HouseMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+    </>
   )
 }
