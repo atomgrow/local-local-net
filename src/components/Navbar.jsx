@@ -65,7 +65,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
       <nav
         className={[
-          'w-full max-w-6xl rounded-[1.75rem] py-0 pl-5 pr-2.5 sm:rounded-full',
+          'w-full max-w-4xl rounded-[1.75rem] py-0 pl-5 pr-2.5 sm:rounded-full',
           'transition-all duration-500 ease-out flex items-center',
           solid
             ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
@@ -97,22 +97,9 @@ export default function Navbar() {
             )}
 
             <div className="flex items-center gap-0.5 ml-auto">
-              <button
-                type="button"
-                aria-expanded={menuOpen}
-                aria-label="Menu"
-                onClick={() => setMenuOpen((v) => !v)}
-                className={[
-                  'flex h-9 w-9 items-center justify-center rounded-full transition-colors',
-                  solid ? 'text-espresso' : 'text-white',
-                ].join(' ')}
-              >
-                <HouseMenuIcon isOpen={menuOpen} />
-              </button>
-
-              {/* Links appear on desktop (after menu button) */}
+              {/* Links appear on desktop (BEFORE menu button, but visually after due to order) */}
               {menuOpen && (
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden md:flex items-center gap-4 order-first">
                   {t.nav.links.map((link) => (
                     <Link
                       key={link.href}
@@ -128,6 +115,19 @@ export default function Navbar() {
                   ))}
                 </div>
               )}
+
+              <button
+                type="button"
+                aria-expanded={menuOpen}
+                aria-label="Menu"
+                onClick={() => setMenuOpen((v) => !v)}
+                className={[
+                  'flex h-9 w-9 items-center justify-center rounded-full transition-colors order-last',
+                  solid ? 'text-espresso' : 'text-white',
+                ].join(' ')}
+              >
+                <HouseMenuIcon isOpen={menuOpen} />
+              </button>
 
               <LangToggle scrolled={solid} />
               <button
