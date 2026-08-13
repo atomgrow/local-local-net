@@ -68,7 +68,7 @@ export default function Navbar() {
           'w-full rounded-[1.75rem] py-1 pl-5 pr-2.5 sm:rounded-full h-fit',
           'transition-all duration-500 ease-out flex items-center',
           solid
-            ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
+            ? 'border border-espresso/5 bg-white/10 shadow-sm shadow-espresso/10 backdrop-blur-sm'
             : 'border border-transparent bg-transparent',
         ].join(' ')}
       >
