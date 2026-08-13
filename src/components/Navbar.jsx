@@ -73,13 +73,13 @@ export default function Navbar() {
         ].join(' ')}
       >
           <div className="flex items-center justify-between w-full gap-3">
-            <Link to="/" aria-label="Local Local" className="-m-2 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-visible">
-              <Logo className="h-20 w-20" />
+            <Link to="/" aria-label="Local Local" className="-m-2 flex h-20 w-20 flex-shrink-0 items-center justify-center overflow-visible">
+              <Logo className="h-24 w-24" />
             </Link>
 
-            {/* Links appear here when menu opens */}
+            {/* Links appear on mobile (between logo and menu) */}
             {menuOpen && (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 md:hidden">
                 {t.nav.links.map((link) => (
                   <Link
                     key={link.href}
@@ -109,6 +109,26 @@ export default function Navbar() {
               >
                 <HouseMenuIcon isOpen={menuOpen} />
               </button>
+
+              {/* Links appear on desktop (after menu button) */}
+              {menuOpen && (
+                <div className="hidden md:flex items-center gap-4">
+                  {t.nav.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={[
+                        'text-sm font-medium transition-colors',
+                        solid ? 'text-espresso hover:text-terracota' : 'text-white hover:text-white/70',
+                      ].join(' ')}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
               <LangToggle scrolled={solid} />
               <button
                 type="button"
