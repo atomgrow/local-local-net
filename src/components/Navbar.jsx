@@ -65,7 +65,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6">
       <nav
         className={[
-          'w-full max-w-4xl rounded-[1.75rem] py-1 pl-5 pr-2.5 sm:rounded-full',
+          'w-full max-w-2xl rounded-[1.75rem] py-1 pl-4 pr-2 sm:rounded-full',
           'transition-all duration-500 ease-out',
           solid
             ? 'border border-espresso/10 bg-white/80 shadow-lg shadow-espresso/5 backdrop-blur-xl'
