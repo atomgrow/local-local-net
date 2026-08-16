@@ -11,7 +11,7 @@ export const STRINGS = {
   ========================================================== */
   es: {
     meta: {
-      title: 'Local Local | Relocalización y soft landing en Tandil',
+      title: 'Local Local | Relocalización en Tandil',
       description:
         'Evaluamos tu proyecto, ordenamos cada decisión y te acompañamos con información de primera mano, una estrategia a tu medida y una red local cuidadosamente seleccionada.',
     },
@@ -701,7 +701,7 @@ export const STRINGS = {
     },
 
     footer: {
-      blurb: 'Relocalización y soft landing en Tandil.',
+      blurb: 'Relocalización en Tandil.',
       navLabel: 'Navegación',
       legalLabel: 'Legales',
       legales: [
@@ -724,7 +724,7 @@ export const STRINGS = {
   ========================================================== */
   en: {
     meta: {
-      title: 'Local Local | Relocation & soft landing in Tandil',
+      title: 'Local Local | Relocation in Tandil',
       description:
         'We evaluate your project, bring order to every decision and support you with first-hand information, a tailored strategy and a carefully curated local network.',
     },
@@ -742,7 +742,7 @@ export const STRINGS = {
     },
 
     hero: {
-      kicker: 'Relocation & soft landing in Tandil',
+      kicker: 'Relocation in Tandil',
       titleSans: 'Your arrival in Tandil,',
       titleSerif: 'organized with method and local backing',
       sub: 'We evaluate your project, bring order to every decision and support you with first-hand information, a tailored strategy and a carefully curated local network',
@@ -1332,7 +1332,7 @@ export const STRINGS = {
     },
 
     footer: {
-      blurb: 'Relocation & soft landing in Tandil.',
+      blurb: 'Relocation in Tandil.',
       navLabel: 'Navigation',
       legalLabel: 'Legal',
       legales: [
