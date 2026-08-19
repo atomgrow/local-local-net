@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-4 sm:top-4">
       <nav
-        className="w-full max-w-6xl flex items-center gap-6 rounded-full py-0.5 px-5 transition-all duration-500 border"
+        className="w-full max-w-6xl flex items-center gap-3 sm:gap-6 rounded-full py-0.5 px-4 sm:px-5 transition-all duration-500 border"
         style={{
           backgroundColor: `rgba(255, 255, 255, ${0.08 * scrollOpacity})`,
           borderColor: scrollOpacity > 0.2 ? 'rgba(93, 64, 55, 0.05)' : 'rgba(255, 255, 255, 0.1)',
@@ -77,8 +77,8 @@ export default function Navbar() {
         {/* Spacer left */}
         <div className="flex-1" />
 
-        {/* Links - Método, Nosotros */}
-        <div className="flex items-center gap-5">
+        {/* Links - Método, Nosotros (desktop only) */}
+        <div className="hidden md:flex items-center gap-5">
           {t.nav.links.map((link) => (
             <Link
               key={link.href}
