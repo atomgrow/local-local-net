@@ -22,6 +22,7 @@ export const STRINGS = {
 
     nav: {
       links: [
+        { label: 'Servicios', href: '/metodo#servicios' },
         { label: 'Método', href: '/metodo' },
         { label: 'Nosotros', href: '/nosotros' },
       ],

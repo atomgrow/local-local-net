@@ -61,7 +61,7 @@ export default function Navbar() {
       <nav
         className="w-full max-w-6xl flex items-center gap-3 sm:gap-6 rounded-full py-0.5 px-4 sm:px-5 transition-all duration-500 border"
         style={{
-          backgroundColor: `rgba(255, 255, 255, ${0.08 * scrollOpacity})`,
+          backgroundColor: `rgba(255, 255, 255, ${Math.max(0.12, 0.12 * scrollOpacity + 0.08)})`,
           borderColor: scrollOpacity > 0.2 ? 'rgba(93, 64, 55, 0.05)' : 'rgba(255, 255, 255, 0.1)',
           backdropFilter: scrollOpacity > 0.1 ? 'blur(4px)' : 'blur(0px)',
           boxShadow: scrollOpacity > 0.1 ? 'rgba(93, 64, 55, 0.05) 0 2px 8px' : 'none',
