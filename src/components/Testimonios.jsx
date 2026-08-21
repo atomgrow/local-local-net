@@ -10,7 +10,7 @@ export default function Testimonios() {
   const items = TESTIMONIALS[lang] || TESTIMONIALS.es
 
   return (
-    <section ref={scope} className="bg-almond px-6 py-16 sm:px-10 sm:py-20">
+    <section id="testimonios" ref={scope} className="bg-almond px-6 py-16 sm:px-10 sm:py-20">
       <div className="mx-auto max-w-5xl">
         <SectionHeader kicker={ts.kicker} titleSans={ts.titleSans} titleSerif={ts.titleSerif} />
 
