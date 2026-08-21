@@ -5,7 +5,7 @@ export default function ScrollToHash() {
   const location = useLocation()
 
   useEffect(() => {
-    if (location.hash && location.pathname === '/') {
+    if (location.hash) {
       const id = location.hash.slice(1)
       const element = document.getElementById(id)
       if (element) {
@@ -13,7 +13,7 @@ export default function ScrollToHash() {
           element.scrollIntoView({ behavior: 'smooth' })
         })
       }
-    } else {
+    } else if (location.pathname !== '/') {
       window.scrollTo(0, 0)
     }
   }, [location])
