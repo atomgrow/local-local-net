@@ -13,7 +13,7 @@ export default function ScrollToHash() {
           element.scrollIntoView({ behavior: 'smooth' })
         })
       }
-    } else if (location.pathname !== '/') {
+    } else {
       window.scrollTo(0, 0)
     }
   }, [location])
