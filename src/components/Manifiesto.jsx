@@ -42,6 +42,7 @@ export default function Manifiesto() {
   return (
     <section ref={scope} className="relative overflow-hidden bg-espresso px-6 py-32 sm:px-10 sm:py-44">
       <img
+        loading="lazy"
         data-parallax
         src={texturaTandil}
         alt=""

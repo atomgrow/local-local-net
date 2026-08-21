@@ -17,6 +17,7 @@ export default function Problema() {
     >
       {/* Fondo parallax */}
       <img
+        loading="lazy"
         src={problemaImg}
         alt="Tandil landscape"
         className="absolute inset-0 h-full w-full object-cover"

@@ -29,6 +29,7 @@ export default function Diagnostico() {
     >
       {/* Fondo parallax (imagen estática en mobile, parallax en desktop) */}
       <img
+        loading="lazy"
         src={diagnosticoImg}
         alt="Tandil premium landscape"
         className="absolute inset-0 h-full w-full object-cover"

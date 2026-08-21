@@ -24,6 +24,7 @@ export default function CtaFinal() {
       <img
         src={ctaFinalImg}
         alt="Sunset over Tandil"
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
         style={{
           backgroundAttachment: 'fixed',
