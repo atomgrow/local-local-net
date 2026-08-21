@@ -24,9 +24,7 @@ function LangToggle({ opacity }) {
               'rounded-full px-2 py-0 font-mono text-[11px] tracking-wider transition-all',
               active
                 ? 'bg-terracota text-white'
-                : isDark
-                  ? 'text-white/75 hover:text-white'
-                  : 'text-espresso/75 hover:text-espresso',
+                : 'text-white/85 hover:text-white',
             ].join(' ')}
           >
             {code.toUpperCase()}
@@ -85,7 +83,7 @@ export default function Navbar() {
               to={link.href}
               className="text-[12px] font-semibold transition-colors"
               style={{
-                color: isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.8)',
+                color: 'rgba(255, 255, 255, 0.95)',
               }}
             >
               {link.label}
