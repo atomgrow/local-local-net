@@ -51,7 +51,7 @@ export default function TestimoniosPreview() {
               onClick={handleSeeMore}
               className="text-sm font-semibold text-terracota transition-colors hover:text-espresso"
             >
-              Ver todas las experiencias →
+              Ver más experiencias →
             </button>
             <span className="hidden sm:inline text-espresso/30">·</span>
             <a
