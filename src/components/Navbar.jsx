@@ -45,28 +45,30 @@ export default function Navbar() {
     const onScroll = () => {
       const opacity = Math.min(window.scrollY / 120, 1)
       setScrollOpacity(opacity)
+
+      // Detect light background by checking element at navbar position
+      const navbarRect = document.querySelector('nav')?.getBoundingClientRect()
+      if (navbarRect) {
+        const elementsAtNavbar = document.elementsFromPoint(
+          window.innerWidth / 2,
+          navbarRect.bottom + 10
+        )
+
+        const hasLightBg = elementsAtNavbar.some((el) => {
+          const bgClass = el.className
+          return bgClass && (
+            bgClass.includes('bg-vanilla') ||
+            bgClass.includes('bg-almond') ||
+            bgClass.includes('bg-white')
+          )
+        })
+
+        setIsOverLightBg(hasLightBg)
+      }
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target.classList.contains('bg-vanilla') ||
-              entry.target.classList.contains('bg-almond') ||
-              entry.target.classList.contains('bg-vanilla/50')) {
-            setIsOverLightBg(entry.isIntersecting)
-          }
-        })
-      },
-      { threshold: 0.5 }
-    )
-
-    document.querySelectorAll('[data-light-bg]').forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
   }, [])
 
   const goEvaluar = () => {
