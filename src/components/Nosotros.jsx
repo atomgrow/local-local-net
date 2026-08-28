@@ -4,10 +4,10 @@ import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
 import { trackEvent } from '../lib/tracking'
 import SectionHeader from './SectionHeader'
+import bernardoRetrato from '../assets/bernardo-retrato.jpg'
 
 // [MEJORA #4] Bernardo: humanización + autoridad + compromiso personal.
-// FOTO: placeholder hasta contar con la sesión definitiva. [PENDIENTE]
-const BERNARDO_PHOTO = null // ej.: import foto from '../assets/bernardo.webp'
+const BERNARDO_PHOTO = bernardoRetrato
 
 export default function Nosotros() {
   const scope = useReveal()
