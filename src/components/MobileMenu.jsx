@@ -1,38 +1,40 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../lib/i18n'
 
 export default function MobileMenu({ isOpen, onClose }) {
   const { t } = useLang()
+  const menuRef = useRef(null)
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+    if (!isOpen) return
+
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        onClose()
+      }
     }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
   return (
     <div
-      className="fixed inset-0 z-40 bg-espresso/90 flex items-center justify-center backdrop-blur-sm"
-      onClick={onClose}
+      ref={menuRef}
+      className="fixed top-20 left-4 right-4 z-40 rounded-2xl bg-white/95 backdrop-blur-md border border-espresso/10 shadow-lg overflow-hidden"
     >
-      <div
-        className="flex flex-col items-center gap-8"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {t.nav.links.map((link) => (
+      <div className="flex flex-col py-4">
+        {t.nav.links.map((link, idx) => (
           <Link
             key={link.href}
             to={link.href}
             onClick={onClose}
-            className="font-display text-4xl font-bold text-vanilla transition-colors hover:text-terracota"
+            className={`px-6 py-4 font-semibold text-espresso transition-colors hover:bg-terracota/10 hover:text-terracota ${
+              idx !== t.nav.links.length - 1 ? 'border-b border-espresso/10' : ''
+            }`}
           >
             {link.label}
           </Link>
