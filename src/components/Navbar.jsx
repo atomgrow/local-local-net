@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
-import HouseMenu from './HouseMenu'
 
 function LangToggle({ opacity, isLight }) {
   const { lang, setLang } = useLang()
@@ -40,7 +38,6 @@ function LangToggle({ opacity, isLight }) {
 export default function Navbar() {
   const [scrollOpacity, setScrollOpacity] = useState(0)
   const [isOverLightBg, setIsOverLightBg] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLang()
   const ctaNavigate = useCtaNavigate()
 
@@ -68,9 +65,6 @@ export default function Navbar() {
 
         setIsOverLightBg(hasLightBg)
       }
-
-      // Close menu on scroll
-      setIsMenuOpen(false)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -121,21 +115,8 @@ export default function Navbar() {
         {/* Spacer right */}
         <div className="flex-1" />
 
-        {/* Right side: Lang, CTA, Menu */}
+        {/* Right side: Lang, CTA */}
         <div className="flex items-center gap-3">
-          {/* Menu Hamburger - mobile only */}
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden flex items-center justify-center p-1.5 transition-colors"
-            aria-label="Menu"
-            style={{
-              color: isOverLightBg ? 'rgba(93, 64, 55, 0.8)' : 'rgba(255, 255, 255, 0.95)',
-            }}
-          >
-            <Menu size={20} strokeWidth={2} />
-          </button>
-
           {/* Lang Toggle */}
           <LangToggle opacity={scrollOpacity} isLight={isOverLightBg} />
 
@@ -149,9 +130,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* House Menu - mobile only */}
-      <HouseMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </header>
   )
 }
