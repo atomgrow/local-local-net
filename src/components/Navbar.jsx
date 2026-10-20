@@ -41,7 +41,7 @@ export default function Navbar() {
   const [scrollOpacity, setScrollOpacity] = useState(0)
   const [isOverLightBg, setIsOverLightBg] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const ctaNavigate = useCtaNavigate()
 
   useEffect(() => {
@@ -125,7 +125,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden flex items-center justify-center p-1.5 transition-colors"
-            aria-label="Menu"
+            aria-label={lang === 'es' ? 'Menú' : 'Menu'}
             style={{
               color: isOverLightBg ? 'rgba(93, 64, 55, 0.8)' : 'rgba(255, 255, 255, 0.95)',
             }}

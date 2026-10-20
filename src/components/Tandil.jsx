@@ -20,7 +20,7 @@ const IMAGEN_SECUENCIA = [
 
 export default function Tandil() {
   const scope = useReveal()
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const td = t.tandil
   const [currentImg, setCurrentImg] = useState(0)
 
@@ -80,7 +80,7 @@ export default function Tandil() {
         <button
           type="button"
           onClick={handlePrevImg}
-          aria-label="Imagen anterior"
+          aria-label={lang === 'es' ? 'Imagen anterior' : 'Previous image'}
           className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export default function Tandil() {
         <button
           type="button"
           onClick={handleNextImg}
-          aria-label="Imagen siguiente"
+          aria-label={lang === 'es' ? 'Imagen siguiente' : 'Next image'}
           className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export default function Tandil() {
               key={idx}
               type="button"
               onClick={() => goToImage(idx)}
-              aria-label={`Ir a imagen ${idx + 1}`}
+              aria-label={`${lang === 'es' ? 'Ir a imagen' : 'Go to image'} ${idx + 1}`}
               aria-current={currentImg === idx}
               className={`h-2 rounded-full transition-all ${
                 currentImg === idx

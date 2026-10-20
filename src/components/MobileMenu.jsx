@@ -4,7 +4,7 @@ import { X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 
 export default function MobileMenu({ isOpen, onClose }) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const menuRef = useRef(null)
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         <button
           onClick={onClose}
           className="p-1.5 text-espresso/70 hover:text-espresso hover:bg-espresso/5 rounded-lg transition-colors"
-          aria-label="Cerrar menú"
+          aria-label={lang === 'es' ? 'Cerrar menú' : 'Close menu'}
         >
           <X size={20} strokeWidth={2} />
         </button>

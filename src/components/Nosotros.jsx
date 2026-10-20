@@ -23,22 +23,14 @@ export default function Nosotros() {
           {/* Foto + tarjeta de identidad */}
           <div data-reveal>
             <figure className="overflow-hidden rounded-[2rem] shadow-xl shadow-espresso/10">
-              {BERNARDO_PHOTO ? (
-                <img src={BERNARDO_PHOTO} alt={n.fotoAlt} loading="lazy" className="aspect-[4/5] w-full object-cover" />
-              ) : (
-                <div
-                  role="img"
-                  aria-label={n.fotoAlt}
-                  className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-matcha/35 via-vanilla to-terracota/15"
-                >
-                  <span className="flex h-20 w-20 items-center justify-center rounded-full bg-espresso/85 font-display text-2xl font-bold text-vanilla">
-                    BC
-                  </span>
-                  <span className="rounded-md border border-espresso/20 bg-white/70 px-3 py-1 font-mono text-[10px] tracking-widest text-espresso/50">
-                    RETRATO · PLACEHOLDER
-                  </span>
-                </div>
-              )}
+              <img
+                src={BERNARDO_PHOTO}
+                alt={n.fotoAlt}
+                width="1254"
+                height="1254"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
             </figure>
             <p className="mt-5 font-display text-lg font-bold text-espresso">{n.nombre}</p>
             <p className="text-sm text-espresso/55">{n.rol}</p>
@@ -74,7 +66,11 @@ export default function Nosotros() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-sm italic leading-relaxed text-espresso/60">{n.expertiseCierre}</p>
+              {n.expertiseCierre.map((p) => (
+                <p key={p.slice(0, 24)} className="mt-4 text-sm leading-relaxed text-espresso/70">
+                  {p}
+                </p>
+              ))}
             </div>
 
             <div data-reveal>

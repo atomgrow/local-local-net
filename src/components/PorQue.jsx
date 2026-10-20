@@ -38,7 +38,6 @@ export default function PorQue() {
             <span className="font-display font-bold text-espresso">
               {pq.cierre2Destacado}
             </span>
-            .
           </p>
         </div>
 

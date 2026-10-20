@@ -7,7 +7,7 @@ import ctaFinalImg from '../assets/cta-final-bg.jpg'
 
 export default function CtaFinal() {
   const scope = useReveal()
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const ctaNavigate = useCtaNavigate()
   const cf = t.ctaFinal
 
@@ -23,7 +23,7 @@ export default function CtaFinal() {
       {/* Fondo cinematográfico */}
       <img
         src={ctaFinalImg}
-        alt="Sunset over Tandil"
+        alt={lang === 'es' ? 'Atardecer sobre Tandil' : 'Sunset over Tandil'}
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
         style={{

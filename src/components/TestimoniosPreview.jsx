@@ -43,7 +43,9 @@ export default function TestimoniosPreview() {
 
         <div data-reveal className="mt-12 rounded-xl bg-white/40 border border-espresso/10 p-6 sm:p-8 text-center">
           <p className="text-sm text-espresso/70 leading-relaxed mb-4">
-            Mostramos algunas experiencias. Cuidamos la confidencialidad de nuestros clientes.
+            {lang === 'es'
+              ? 'Mostramos algunas experiencias. Cuidamos la confidencialidad de nuestros clientes.'
+              : 'We share a selection of experiences while protecting our clients’ confidentiality.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 justify-center items-center">
             <button
@@ -51,14 +53,14 @@ export default function TestimoniosPreview() {
               onClick={handleSeeMore}
               className="text-sm font-semibold text-terracota transition-colors hover:text-espresso"
             >
-              Ver más experiencias →
+              {lang === 'es' ? 'Ver más experiencias →' : 'View more experiences →'}
             </button>
             <span className="hidden sm:inline text-espresso/30">·</span>
             <a
               href="/legales#confidencialidad"
               className="text-sm text-espresso/60 transition-colors hover:text-terracota underline"
             >
-              Leer sobre confidencialidad
+              {lang === 'es' ? 'Leer sobre confidencialidad' : 'Read about confidentiality'}
             </a>
           </div>
         </div>

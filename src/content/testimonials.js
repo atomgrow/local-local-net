@@ -16,8 +16,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'Estabamos bastante decididos, pero teniamos muchas dudas sueltas. Bernardo nos ayudo a ponerlas sobre la mesa y nos conecto con gente que nos dio mucha confianza.',
-      nombre: 'Rodrigo Zubillaga y flia.',
+        'Estábamos bastante decididos, pero teníamos muchas dudas sueltas. Bernardo nos ayudó a ponerlas sobre la mesa y nos conectó con gente que nos dio mucha confianza.',
+      nombre: 'Rodrigo Z.',
       relacion: '',
       ubicacion: '',
       foto: null,
@@ -25,8 +25,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'Llegue a Bernardo con una consulta bastante puntual y, hablando, aparecieron varias cosas que no habia tenido en cuenta. Me ayudo a ordenar todo y a decidir con mas tranquilidad.',
-      nombre: 'Monica Guastella',
+        'Llegué a Bernardo con una consulta bastante puntual y, hablando, aparecieron varias cosas que no había tenido en cuenta. Me ayudó a ordenar todo y a decidir con más tranquilidad.',
+      nombre: 'Mónica G.',
       relacion: 'inversora',
       ubicacion: '',
       foto: null,
@@ -34,8 +34,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'Bernardo y equipo conocen muy bien Tandil, pero, sobre todo, saben quien es quien y como trabaja cada uno. Eso fue lo que mas confianza nos dio.',
-      nombre: 'Andrea Arevalo y flia.',
+        'Bernardo y equipo conocen muy bien Tandil, pero, sobre todo, saben quién es quién y cómo trabaja cada uno. Eso fue lo que más confianza nos dio.',
+      nombre: 'Andrea A.',
       relacion: '',
       ubicacion: '',
       foto: null,
@@ -43,8 +43,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'Estabamos por poner plata en un proyecto que parecia una buena oportunidad. Bernardo empezo a hacer preguntas que nadie habia hecho y aparecieron varias cosas que no cerraban. Frenamos a tiempo. Viendolo ahora, nos evito un problema enorme.',
-      nombre: 'Francisco Bravo',
+        'Estábamos por poner plata en un proyecto que parecía una buena oportunidad. Bernardo empezó a hacer preguntas que nadie había hecho y aparecieron varias cosas que no cerraban. Frenamos a tiempo. Viéndolo ahora, nos evitó un problema enorme.',
+      nombre: 'Francisco B.',
       relacion: 'inversor CABA',
       ubicacion: '',
       foto: null,
@@ -54,8 +54,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'We were pretty decided, but we had many loose threads. Bernardo helped us put them on the table and connected us with people who gave us a lot of confidence.',
-      nombre: 'Rodrigo Zubillaga and family',
+        'We had almost made up our minds, but we still had several unanswered questions. Bernardo helped us work through them and connected us with people we felt we could trust.',
+      nombre: 'Rodrigo Z.',
       relacion: '',
       ubicacion: '',
       foto: null,
@@ -64,7 +64,7 @@ export const TESTIMONIALS = {
       isDemo: false,
       texto:
         'I came to Bernardo with a fairly specific question, and as we talked, several things came up that I had not considered. He helped me organize everything and make the decision with more peace of mind.',
-      nombre: 'Monica Guastella',
+      nombre: 'Mónica G.',
       relacion: 'investor',
       ubicacion: '',
       foto: null,
@@ -72,8 +72,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'Bernardo and his team know Tandil very well, but above all, they know who is who and how each person works. That is what gave us the most confidence.',
-      nombre: 'Andrea Arevalo and family',
+        'Bernardo and his team know Tandil very well, but above all, they know whom to trust and how each person works. That is what gave us the most confidence.',
+      nombre: 'Andrea A.',
       relacion: '',
       ubicacion: '',
       foto: null,
@@ -81,8 +81,8 @@ export const TESTIMONIALS = {
     {
       isDemo: false,
       texto:
-        'We were about to put money into a project that looked like a good opportunity. Bernardo began to ask questions that no one else had asked, and several things that did not add up appeared. We stopped in time. Looking back, he saved us from a huge problem.',
-      nombre: 'Francisco Bravo',
+        'We were about to put money into a project that looked like a good opportunity. Bernardo began to ask questions that no one else had asked, and several red flags emerged. We pulled out in time. Looking back, he saved us from a huge problem.',
+      nombre: 'Francisco B.',
       relacion: 'investor Buenos Aires',
       ubicacion: '',
       foto: null,
