@@ -8,7 +8,7 @@ export default function MetodoPage() {
   const { lang } = useLang()
 
   return (
-    <main key={lang} className="bg-espresso">
+    <main id="contenido" key={lang} className="bg-espresso">
       <Metodo />
       <Servicios />
       <Red />

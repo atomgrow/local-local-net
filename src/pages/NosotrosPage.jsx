@@ -10,7 +10,7 @@ export default function NosotrosPage() {
   const { lang } = useLang()
 
   return (
-    <main key={lang} className="bg-vanilla/50">
+    <main id="contenido" key={lang} className="bg-vanilla/50">
       <Nosotros />
       <Tandil />
       <Testimonios />

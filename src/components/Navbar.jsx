@@ -22,6 +22,7 @@ function LangToggle({ opacity, isLight }) {
             key={code}
             type="button"
             onClick={() => setLang(code)}
+            aria-pressed={active}
             className={[
               'rounded-full px-2 py-0 font-mono text-[11px] tracking-wider transition-all duration-300',
               active
@@ -92,7 +93,11 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link to="/" className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
+        <Link
+          to="/"
+          aria-label={lang === 'es' ? 'Local Local, ir al inicio' : 'Local Local, go to home'}
+          className="flex h-16 w-16 flex-shrink-0 items-center justify-center"
+        >
           <Logo className="h-16 w-16" />
         </Link>
 
@@ -126,6 +131,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden flex items-center justify-center p-1.5 transition-colors"
             aria-label={lang === 'es' ? 'Menú' : 'Menu'}
+            aria-expanded={isMenuOpen}
             style={{
               color: isOverLightBg ? 'rgba(93, 64, 55, 0.8)' : 'rgba(255, 255, 255, 0.95)',
             }}

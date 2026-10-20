@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main key={lang}>
+    <main id="contenido" key={lang}>
       <Hero />
       <TrustBar />
       <MicroDecision />
