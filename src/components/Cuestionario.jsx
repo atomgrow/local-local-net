@@ -89,7 +89,7 @@ export default function Cuestionario() {
     if (LINKS.booking) {
       window.open(LINKS.booking, '_blank', 'noopener')
     } else {
-      document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })
+      window.open(buildWhatsAppUrl(t.whatsappMessage), '_blank', 'noopener')
     }
   }
 

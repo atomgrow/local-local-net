@@ -10,6 +10,37 @@ export const STRINGS = {
      ESPAÑOL
   ========================================================== */
   es: {
+  oferta: {
+    kicker: 'Primer paso',
+    titleSans: 'Diagnóstico personalizado',
+    titleSerif: 'y hoja de ruta',
+    intro1: 'Una entrevista remota de aproximadamente 45 minutos para comprender el proyecto, ordenar prioridades e identificar las decisiones y los riesgos que conviene atender.',
+    intro2: 'Después de la entrevista entregamos un documento personalizado con el diagnóstico, los escenarios posibles y una hoja de ruta concreta para avanzar.',
+    incluyeLabel: 'Incluye:',
+    incluye: [
+      'entrevista personalizada por videollamada',
+      'análisis integral del proyecto',
+      'identificación de prioridades, riesgos y decisiones críticas',
+      'diagnóstico y hoja de ruta por escrito',
+      'entrega dentro de los tres días hábiles posteriores a la entrevista',
+    ],
+    valorLabel: 'Valor final:',
+    valor: '$300.000 finales',
+    garantia: 'Si dentro de las 48 horas de recibir el documento considerás que no te aportó claridad, información relevante ni una hoja de ruta útil, podés solicitar la devolución del importe abonado.',
+    cta: 'QUIERO MI DIAGNÓSTICO',
+    visita: 'Visita estratégica a Tandil y activación de la red local, desde $500.000 finales para dos personas.',
+    visitaDetalle: 'Incluye una agenda personalizada de entre uno y tres días y hasta dos noches de alojamiento. No incluye traslados. La propuesta definitiva se prepara después del diagnóstico.',
+  },
+
+  bernardoHome: {
+    kicker: 'Quién te acompaña',
+    parrafos: [
+      'Criado en Tandil, me mudé a Buenos Aires para estudiar Derecho. Hoy vuelvo a elegir Tandil para desarrollarme y criar a mis hijos.',
+      'Con cada mudanza aprendí que la información que parece definitiva muchas veces es incompleta, y que las decisiones apresuradas son costosas de corregir.',
+      'Por eso, cada proyecto lo acompaño con mi criterio, mi experiencia y la red personal y profesional que pongo a disposición.',
+    ],
+    cta: 'Conocer mi historia →',
+  },
     meta: {
       title: 'Local Local | Relocalización en Tandil',
       description:
@@ -723,6 +754,37 @@ export const STRINGS = {
      Final translation reviewed and aligned with Spanish copy.
   ========================================================== */
   en: {
+  oferta: {
+    kicker: 'First step',
+    titleSans: 'Personalized assessment',
+    titleSerif: 'and roadmap',
+    intro1: 'A remote interview of approximately 45 minutes to understand your project, set priorities, and identify the decisions and risks that need attention.',
+    intro2: 'After the interview, we deliver a personalized document with the initial assessment, the possible scenarios, and a concrete roadmap to move forward.',
+    incluyeLabel: 'Includes:',
+    incluye: [
+      'personalized video interview',
+      'comprehensive review of your project',
+      'identification of priorities, risks, and critical decisions',
+      'written assessment and roadmap',
+      'delivery within three business days of the interview',
+    ],
+    valorLabel: 'Final price:',
+    valor: 'ARS 300,000',
+    garantia: 'If within 48 hours of receiving the document you feel it did not bring you clarity, relevant information, or a useful roadmap, you can request a refund of the amount paid.',
+    cta: 'Book my assessment',
+    visita: 'Strategic visit to Tandil & introductions to our local network, starting at ARS 500,000 for two people.',
+    visitaDetalle: 'Includes a personalized itinerary of one to three days and up to two nights of accommodation. Transfers are not included. The final proposal is prepared after the assessment.',
+  },
+
+  bernardoHome: {
+    kicker: 'Who guides you',
+    parrafos: [
+      'I grew up in Tandil and moved to Buenos Aires to study law. Today I choose Tandil again, to grow and raise my children.',
+      'Each move taught me that information that seems definitive is often incomplete, and that hasty decisions are costly to fix.',
+      'So every project gets my judgment, my experience, and the personal and professional network I put at its disposal.',
+    ],
+    cta: 'Read my story →',
+  },
     meta: {
       title: 'Local Local | Relocating to Tandil',
       description:

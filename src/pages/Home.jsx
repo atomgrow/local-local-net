@@ -3,6 +3,8 @@ import { useLang } from '../lib/i18n'
 import Hero from '../components/Hero'
 import TrustBar from '../components/TrustBar'
 import MicroDecision from '../components/MicroDecision'
+import OfertaDiagnostico from '../components/OfertaDiagnostico'
+import BernardoHome from '../components/BernardoHome'
 import Problema from '../components/Problema'
 import ParaQuien from '../components/ParaQuien'
 import ComoComienza from '../components/ComoComienza'
@@ -24,6 +26,8 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <MicroDecision />
+      <OfertaDiagnostico />
+      <BernardoHome />
       <Problema />
       <ParaQuien />
       <ComoComienza />
