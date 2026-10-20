@@ -4,9 +4,9 @@ import { trackFormStart, trackFormSubmit, getUtmParams, buildWhatsAppUrl } from 
 import { useLang } from '../lib/i18n'
 
 const INPUT_CLASS =
-  'w-full rounded-2xl border border-espresso/15 bg-white/70 px-5 py-3.5 text-sm text-espresso outline-none transition-all duration-300 placeholder:text-espresso/35 focus:border-matcha focus:bg-white focus:ring-2 focus:ring-matcha/25'
+  'w-full rounded-2xl border border-espresso/15 bg-white/70 px-5 py-3.5 text-sm text-espresso outline-none transition-all duration-300 placeholder:text-espresso/75 focus:border-matcha focus:bg-white focus:ring-2 focus:ring-matcha/25'
 
-const LABEL_CLASS = 'mb-2 block font-mono text-[11px] uppercase tracking-[0.18em] text-espresso/55'
+const LABEL_CLASS = 'mb-2 block font-mono text-[11px] uppercase tracking-[0.18em] text-espresso/75'
 
 export default function Formulario() {
   const { t } = useLang()
@@ -76,7 +76,7 @@ export default function Formulario() {
           {f.titleSans}{' '}
           <span className="font-serif font-medium italic text-matcha">{f.titleSerif}</span>
         </h2>
-        <p className="mt-4 text-base leading-relaxed text-espresso/70">{f.intro}</p>
+        <p className="mt-4 text-base leading-relaxed text-espresso/75">{f.intro}</p>
 
         {enviado ? (
           <div className="mt-12 rounded-[2rem] border border-matcha/30 bg-white/80 p-10 text-center">
@@ -86,7 +86,7 @@ export default function Formulario() {
             <p className="mt-6 font-display text-xl font-semibold text-espresso">
               {f.gracias.titulo} {datos.nombre.split(' ')[0]}.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-espresso/65">{f.gracias.copy}</p>
+            <p className="mt-3 text-sm leading-relaxed text-espresso/75">{f.gracias.copy}</p>
           </div>
         ) : (
           <div className="mt-12 space-y-7">
@@ -115,7 +115,7 @@ export default function Formulario() {
                   value={datos[campo]}
                   onFocus={marcarInicio}
                   onChange={setCampo(campo)}
-                  className={`${INPUT_CLASS} appearance-none ${datos[campo] ? '' : 'text-espresso/35'}`}
+                  className={`${INPUT_CLASS} appearance-none ${datos[campo] ? '' : 'text-espresso/75'}`}
                 >
                   <option value="">{f.elegi}</option>
                   {def.opciones.map((op) => (

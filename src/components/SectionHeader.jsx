@@ -6,7 +6,7 @@ export default function SectionHeader({ kicker, titleSans, titleSerif, center = 
         <p
           className={[
             'mb-5 font-mono text-[11px] uppercase tracking-[0.3em]',
-            dark ? 'text-almond/60' : 'text-terracota',
+            dark ? 'text-almond/75' : 'text-terracota',
           ].join(' ')}
         >
           {kicker}

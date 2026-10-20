@@ -27,7 +27,7 @@ export default function Testimonios() {
               </blockquote>
               <figcaption className="mt-4 border-t border-espresso/10 pt-3">
                 <p className="font-display text-sm font-bold text-espresso">{item.nombre}</p>
-                <p className="text-xs text-espresso/55">
+                <p className="text-xs text-espresso/75">
                   {item.relacion}
                   {item.ubicacion ? ` · ${item.ubicacion}` : ''}
                 </p>

@@ -29,7 +29,7 @@ export default function Entregables() {
           ))}
         </ul>
 
-        <p data-reveal className="mt-10 max-w-2xl border-l-2 border-terracota/50 pl-5 text-sm italic leading-relaxed text-espresso/60">
+        <p data-reveal className="mt-10 max-w-2xl border-l-2 border-terracota/50 pl-5 text-sm italic leading-relaxed text-espresso/75">
           {e.nota}
         </p>
       </div>

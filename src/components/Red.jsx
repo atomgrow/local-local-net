@@ -17,8 +17,8 @@ export default function Red() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="space-y-5" data-reveal>
-            <p className="text-base leading-relaxed text-espresso/70">{r.copy}</p>
-            <p className="text-base leading-relaxed text-espresso/70">{r.copy2}</p>
+            <p className="text-base leading-relaxed text-espresso/75">{r.copy}</p>
+            <p className="text-base leading-relaxed text-espresso/75">{r.copy2}</p>
 
             <div className="mt-8 space-y-5">
               {r.principios.map((p) => (
@@ -26,7 +26,7 @@ export default function Red() {
                   <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-terracota" />
                   <div>
                     <p className="font-display text-sm font-bold text-espresso">{p.t}</p>
-                    <p className="mt-0.5 text-sm leading-relaxed text-espresso/60">{p.d}</p>
+                    <p className="mt-0.5 text-sm leading-relaxed text-espresso/75">{p.d}</p>
                   </div>
                 </div>
               ))}
@@ -54,8 +54,8 @@ export default function Red() {
         </div>
 
         <div data-reveal className="mt-12 max-w-3xl space-y-4">
-          <p className="text-sm leading-relaxed text-espresso/60">{r.statsNote}</p>
-          <p className="text-sm leading-relaxed text-espresso/60">{r.bilateral}</p>
+          <p className="text-sm leading-relaxed text-espresso/75">{r.statsNote}</p>
+          <p className="text-sm leading-relaxed text-espresso/75">{r.bilateral}</p>
         </div>
       </div>
     </section>

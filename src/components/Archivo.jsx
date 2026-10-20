@@ -176,7 +176,7 @@ export default function Archivo() {
 
         {/* Para quién es — listado estilo sistema */}
         <div className="relative z-10 mt-20 rounded-[2rem] border border-espresso/10 bg-almond/80 p-8 backdrop-blur sm:p-10">
-          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/50">
+          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/75">
             {a.paraQuien.label}
           </p>
           <p className="mt-5 font-mono text-sm leading-loose tracking-wide text-espresso sm:text-base">
@@ -187,7 +187,7 @@ export default function Archivo() {
               </span>
             ))}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-espresso/60">{a.paraQuien.sub}</p>
+          <p className="mt-3 text-sm leading-relaxed text-espresso/75">{a.paraQuien.sub}</p>
         </div>
       </div>
     </section>

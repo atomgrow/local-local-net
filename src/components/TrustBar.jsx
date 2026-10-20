@@ -18,7 +18,7 @@ export default function TrustBar() {
               <Icon size={20} strokeWidth={1.75} className="mt-0.5 shrink-0 text-matcha" aria-hidden="true" />
               <div>
                 <p className="font-display text-sm font-semibold text-espresso">{item.t}</p>
-                <p className="mt-1 text-xs leading-relaxed text-espresso/60">{item.d}</p>
+                <p className="mt-1 text-xs leading-relaxed text-espresso/75">{item.d}</p>
               </div>
             </div>
           )

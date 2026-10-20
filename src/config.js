@@ -29,7 +29,7 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/bernardo-g-cisterna/?skipRedirect=true',
 
   // Instagram de Local Local. [PENDIENTE — vacío = no se muestra]
-  instagram: '',
+  instagram: 'https://www.instagram.com/locallocal.tandil',
 
   // Instagram del fotógrafo (crédito de galería).
   photographer: 'https://www.instagram.com/santiarbeoph',

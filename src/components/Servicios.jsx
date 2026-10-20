@@ -36,12 +36,12 @@ export default function Servicios() {
                 </h3>
                 <div className="mt-3 space-y-1">
                   {etapa.modalidad && (
-                    <p className="text-sm text-espresso/70">
+                    <p className="text-sm text-espresso/75">
                       <span className="font-bold">{lang === 'es' ? 'Modalidad:' : 'Format:'}</span> {etapa.modalidad}
                     </p>
                   )}
                   {etapa.estadiaEstimada && (
-                    <p className="text-sm text-espresso/70">
+                    <p className="text-sm text-espresso/75">
                       <span className="font-bold">{lang === 'es' ? 'Estadía estimada:' : 'Estimated stay:'}</span> {etapa.estadiaEstimada}
                     </p>
                   )}
@@ -52,7 +52,7 @@ export default function Servicios() {
               {etapa.parrafos.length > 0 && (
                 <div className="space-y-4 mb-6">
                   {etapa.parrafos.map((parrafo, j) => (
-                    <p key={j} className="text-sm leading-relaxed text-espresso/65">
+                    <p key={j} className="text-sm leading-relaxed text-espresso/75">
                       {parrafo}
                     </p>
                   ))}
@@ -69,7 +69,7 @@ export default function Servicios() {
                     {etapa.incluye.map((item, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-sm leading-relaxed text-espresso/70"
+                        className="flex items-start gap-3 text-sm leading-relaxed text-espresso/75"
                       >
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-matcha" />
                         {item}
@@ -90,7 +90,7 @@ export default function Servicios() {
               {etapa.notas.length > 0 && (
                 <div className="pt-6 border-t border-espresso/10 space-y-3">
                   {etapa.notas.map((nota, j) => (
-                    <p key={j} className="text-xs leading-relaxed text-espresso/55">
+                    <p key={j} className="text-xs leading-relaxed text-espresso/75">
                       {nota}
                     </p>
                   ))}
@@ -107,7 +107,7 @@ export default function Servicios() {
           </h3>
           <div className="space-y-4">
             {s.flexible.map((parrafo, i) => (
-              <p key={i} className="text-sm leading-relaxed text-espresso/70">
+              <p key={i} className="text-sm leading-relaxed text-espresso/75">
                 {parrafo}
               </p>
             ))}
@@ -129,7 +129,7 @@ export default function Servicios() {
         {c && (
           <div data-reveal className="mt-20">
             <div className="mx-auto max-w-3xl text-center mb-12">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/50 mb-4">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/75 mb-4">
                 {c.kicker}
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight text-espresso">
@@ -139,15 +139,15 @@ export default function Servicios() {
             </div>
 
             <div className="mx-auto max-w-2xl space-y-6">
-              <p className="text-sm leading-relaxed text-espresso/70">{c.copy}</p>
-              <p className="text-sm leading-relaxed text-espresso/70">{c.copy2}</p>
+              <p className="text-sm leading-relaxed text-espresso/75">{c.copy}</p>
+              <p className="text-sm leading-relaxed text-espresso/75">{c.copy2}</p>
 
               {c.puntos.length > 0 && (
                 <ul className="space-y-3">
                   {c.puntos.map((punto, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-espresso/70"
+                      className="flex items-start gap-3 text-sm leading-relaxed text-espresso/75"
                     >
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-terracota" />
                       {punto}
@@ -156,7 +156,7 @@ export default function Servicios() {
                 </ul>
               )}
 
-              <p className="text-sm italic leading-relaxed text-espresso/60 pt-4 border-t border-espresso/10">
+              <p className="text-sm italic leading-relaxed text-espresso/75 pt-4 border-t border-espresso/10">
                 {c.cierre}
               </p>
 

@@ -26,7 +26,7 @@ export default function Metodo() {
               {m.formula}
             </p>
           </div>
-          <p data-reveal className="mt-10 text-sm leading-relaxed text-almond/70 sm:text-base">
+          <p data-reveal className="mt-10 text-sm leading-relaxed text-almond/75 sm:text-base">
             {m.intro}
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Metodo() {
               <span className="font-mono text-xs text-terracota">{m.componentes[0].num}</span>
               <h3 className="font-display text-xl font-bold text-white">{m.componentes[0].titulo}</h3>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-almond/65">{m.componentes[0].copy}</p>
+            <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[0].copy}</p>
           </div>
 
           {/* Imagen 1: Vida local (caballo, personas) */}
@@ -62,7 +62,7 @@ export default function Metodo() {
               <span className="font-mono text-xs text-terracota">{m.componentes[1].num}</span>
               <h3 className="font-display text-xl font-bold text-white">{m.componentes[1].titulo}</h3>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-almond/65">{m.componentes[1].copy}</p>
+            <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[1].copy}</p>
           </div>
 
           {/* Componente 3 (span 2 cols en desktop) */}
@@ -71,7 +71,7 @@ export default function Metodo() {
               <span className="font-mono text-xs text-terracota">{m.componentes[2].num}</span>
               <h3 className="font-display text-xl font-bold text-white">{m.componentes[2].titulo}</h3>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-almond/65">{m.componentes[2].copy}</p>
+            <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[2].copy}</p>
           </div>
 
           {/* Imagen 2: Detalles de Tandil (rocas, flora) */}
@@ -92,7 +92,7 @@ export default function Metodo() {
         {m?.etapas && (
           <div data-reveal className="mt-16">
             {m.etapasLabel && (
-              <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/50">
+              <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/75">
                 {m.etapasLabel}
               </p>
             )}
@@ -114,11 +114,11 @@ export default function Metodo() {
                       <ChevronDown
                         size={16}
                         aria-hidden="true"
-                        className={`shrink-0 text-almond/50 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+                        className={`shrink-0 text-almond/75 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
                       />
                     </button>
                     {open && (
-                      <p className="px-6 pb-5 pl-[4.25rem] text-sm leading-relaxed text-almond/60">{etapa.d}</p>
+                      <p className="px-6 pb-5 pl-[4.25rem] text-sm leading-relaxed text-almond/75">{etapa.d}</p>
                     )}
                   </li>
                 )

@@ -14,9 +14,9 @@ import {
 import SectionHeader from './SectionHeader'
 
 const INPUT_CLASS =
-  'w-full rounded-2xl border border-espresso/15 bg-white/70 px-5 py-3.5 text-sm text-espresso outline-none transition-all duration-300 placeholder:text-espresso/35 focus:border-matcha focus:bg-white focus:ring-2 focus:ring-matcha/25'
+  'w-full rounded-2xl border border-espresso/15 bg-white/70 px-5 py-3.5 text-sm text-espresso outline-none transition-all duration-300 placeholder:text-espresso/75 focus:border-matcha focus:bg-white focus:ring-2 focus:ring-matcha/25'
 
-const LABEL_CLASS = 'mb-2 block font-mono text-[11px] uppercase tracking-[0.18em] text-espresso/55'
+const LABEL_CLASS = 'mb-2 block font-mono text-[11px] uppercase tracking-[0.18em] text-espresso/75'
 
 // Cuestionario inicial: tres preguntas + datos de contacto, un bloque
 // por pantalla con indicador de progreso. El lead se envía por WhatsApp
@@ -31,7 +31,7 @@ export default function Cuestionario() {
   const [momento, setMomento] = useState('')
   const [evaluando, setEvaluando] = useState('')
   const [plazo, setPlazo] = useState('')
-  const [datos, setDatos] = useState({ nombre: '', email: '', whatsapp: '', preferencia: '' })
+  const [datos, setDatos] = useState({ nombre: '', email: '', whatsapp: '', preferencia: '', origen: '' })
   const [error, setError] = useState('')
   const started = useRef(false)
 
@@ -72,6 +72,7 @@ export default function Cuestionario() {
       datos.email && `${L.email}: ${datos.email}`,
       datos.whatsapp && `${L.whatsapp}: ${datos.whatsapp}`,
       datos.preferencia && `${L.preferencia}: ${datos.preferencia}`,
+      datos.origen && `${L.origen}: ${datos.origen}`,
       momento && `${L.momento}: ${momento}`,
       evaluando && `${L.evaluando}: ${evaluando}`,
       plazo && `${L.plazo}: ${plazo}`,
@@ -98,7 +99,7 @@ export default function Cuestionario() {
   }
 
   const Progreso = ({ actual }) => (
-    <p className="font-mono text-[11px] tracking-[0.25em] text-espresso/45" aria-live="polite">
+    <p className="font-mono text-[11px] tracking-[0.25em] text-espresso/75" aria-live="polite">
       {actual} {c.progreso} 3
     </p>
   )
@@ -107,7 +108,7 @@ export default function Cuestionario() {
     <button
       type="button"
       onClick={() => setPaso(a)}
-      className="rounded-full border border-espresso/20 px-6 py-3 text-sm font-medium text-espresso/70 transition-colors hover:border-espresso/40"
+      className="rounded-full border border-espresso/20 px-6 py-3 text-sm font-medium text-espresso/75 transition-colors hover:border-espresso/40"
     >
       {c.atras}
     </button>
@@ -149,7 +150,7 @@ export default function Cuestionario() {
                       'w-full rounded-2xl border px-5 py-4 text-left text-sm font-medium transition-colors duration-300',
                       momento === op
                         ? 'border-matcha bg-matcha/10 text-espresso'
-                        : 'border-espresso/15 bg-white/50 text-espresso/70 hover:border-matcha/50',
+                        : 'border-espresso/15 bg-white/50 text-espresso/75 hover:border-matcha/50',
                     ].join(' ')}
                   >
                     {op}
@@ -177,7 +178,7 @@ export default function Cuestionario() {
                       'w-full rounded-2xl border px-5 py-4 text-left text-sm font-medium transition-colors duration-300',
                       evaluando === op
                         ? 'border-matcha bg-matcha/10 text-espresso'
-                        : 'border-espresso/15 bg-white/50 text-espresso/70 hover:border-matcha/50',
+                        : 'border-espresso/15 bg-white/50 text-espresso/75 hover:border-matcha/50',
                     ].join(' ')}
                   >
                     {op}
@@ -206,7 +207,7 @@ export default function Cuestionario() {
                       'w-full rounded-2xl border px-5 py-4 text-left text-sm font-medium transition-colors duration-300',
                       plazo === op
                         ? 'border-matcha bg-matcha/10 text-espresso'
-                        : 'border-espresso/15 bg-white/50 text-espresso/70 hover:border-matcha/50',
+                        : 'border-espresso/15 bg-white/50 text-espresso/75 hover:border-matcha/50',
                     ].join(' ')}
                   >
                     {op}
@@ -230,7 +231,9 @@ export default function Cuestionario() {
                   </label>
                   <input
                     id="ll-nombre"
+                    name="nombre"
                     type="text"
+                    required
                     autoComplete="name"
                     value={datos.nombre}
                     onChange={(e) => setDatos((d) => ({ ...d, nombre: e.target.value }))}
@@ -244,6 +247,7 @@ export default function Cuestionario() {
                   </label>
                   <input
                     id="ll-whatsapp"
+                    name="whatsapp"
                     type="tel"
                     autoComplete="tel"
                     value={datos.whatsapp}
@@ -258,6 +262,7 @@ export default function Cuestionario() {
                   </label>
                   <input
                     id="ll-email"
+                    name="email"
                     type="email"
                     autoComplete="email"
                     value={datos.email}
@@ -274,10 +279,29 @@ export default function Cuestionario() {
                     id="ll-preferencia"
                     value={datos.preferencia}
                     onChange={(e) => setDatos((d) => ({ ...d, preferencia: e.target.value }))}
-                    className={`${INPUT_CLASS} appearance-none ${datos.preferencia ? '' : 'text-espresso/35'}`}
+                    className={`${INPUT_CLASS} appearance-none ${datos.preferencia ? '' : 'text-espresso/75'}`}
                   >
                     <option value="">—</option>
                     {c.datos.preferencias.map((op) => (
+                      <option key={op} value={op}>
+                        {op}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="sm:col-span-2">
+                  <label className={LABEL_CLASS} htmlFor="ll-origen">
+                    {c.datos.origen}
+                  </label>
+                  <select
+                    id="ll-origen"
+                    name="origen"
+                    value={datos.origen}
+                    onChange={(e) => setDatos((d) => ({ ...d, origen: e.target.value }))}
+                    className={`${INPUT_CLASS} appearance-none ${datos.origen ? '' : 'text-espresso/75'}`}
+                  >
+                    <option value="">—</option>
+                    {c.datos.origenes.map((op) => (
                       <option key={op} value={op}>
                         {op}
                       </option>
@@ -292,12 +316,25 @@ export default function Cuestionario() {
                 </p>
               )}
 
+              <p className="mt-6 text-xs leading-relaxed text-espresso/80">
+                {c.confid}{' '}
+                <a
+                  href="/legales.html#privacidad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-espresso underline underline-offset-2 hover:text-terracota"
+                >
+                  {c.privacidadLink}
+                </a>
+              </p>
+
               <div className="mt-8 flex justify-between">
                 <BotonAtras a={2} />
                 <button
                   type="button"
                   onClick={enviar}
-                  className="btn-magnetic rounded-full bg-terracota px-9 py-3.5 text-sm font-semibold text-white"
+                  disabled={!datos.nombre.trim() || (!datos.email.trim() && !datos.whatsapp.trim())}
+                  className="btn-magnetic rounded-full bg-terracota px-9 py-3.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
                   {c.enviar}
@@ -314,7 +351,7 @@ export default function Cuestionario() {
               <p className="mt-6 font-display text-xl font-semibold text-espresso">
                 {c.graciasTitulo} {datos.nombre.split(' ')[0]}.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-espresso/65">{c.graciasCopy}</p>
+              <p className="mt-3 text-sm leading-relaxed text-espresso/75">{c.graciasCopy}</p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <button
                   type="button"
@@ -327,7 +364,7 @@ export default function Cuestionario() {
                 <button
                   type="button"
                   onClick={postExplorando}
-                  className="rounded-full border border-espresso/20 px-7 py-3.5 text-sm font-medium text-espresso/70 transition-colors hover:border-espresso/40"
+                  className="rounded-full border border-espresso/20 px-7 py-3.5 text-sm font-medium text-espresso/75 transition-colors hover:border-espresso/40"
                 >
                   {c.postCtaSecundario}
                 </button>

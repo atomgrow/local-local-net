@@ -44,7 +44,7 @@ export default function Dolores() {
   return (
     <section ref={scope} className="bg-almond px-6 py-28 sm:px-10 sm:py-36">
       <div className="mx-auto max-w-4xl">
-        <p className="mb-14 font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/50">
+        <p className="mb-14 font-mono text-[11px] uppercase tracking-[0.3em] text-espresso/75">
           {t.dolores.kicker}
         </p>
 

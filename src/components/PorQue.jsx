@@ -13,7 +13,7 @@ export default function PorQue() {
       <div className="mx-auto max-w-4xl">
         <SectionHeader kicker={pq.kicker} titleSans={pq.titleSans} titleSerif={pq.titleSerif} />
 
-        <p data-reveal className="mt-7 max-w-3xl text-base leading-relaxed text-espresso/70">
+        <p data-reveal className="mt-7 max-w-3xl text-base leading-relaxed text-espresso/75">
           {pq.intro}
         </p>
 
@@ -22,7 +22,7 @@ export default function PorQue() {
           {pq.items.map((item, i) => (
             <li
               key={i}
-              className="flex items-start gap-4 rounded-2xl border border-espresso/10 bg-white/60 px-6 py-4 text-sm leading-relaxed text-espresso/70"
+              className="flex items-start gap-4 rounded-2xl border border-espresso/10 bg-white/60 px-6 py-4 text-sm leading-relaxed text-espresso/75"
             >
               <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-terracota" />
               {item}
@@ -32,8 +32,8 @@ export default function PorQue() {
 
         {/* Cierre */}
         <div data-reveal className="mt-12 space-y-4 max-w-2xl">
-          <p className="text-base leading-relaxed text-espresso/70">{pq.cierre1}</p>
-          <p className="text-base leading-relaxed text-espresso/70">
+          <p className="text-base leading-relaxed text-espresso/75">{pq.cierre1}</p>
+          <p className="text-base leading-relaxed text-espresso/75">
             {pq.cierre2Intro}{' '}
             <span className="font-display font-bold text-espresso">
               {pq.cierre2Destacado}

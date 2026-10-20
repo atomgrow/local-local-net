@@ -1,3 +1,4 @@
+import { Instagram, Mail, MessageCircle } from 'lucide-react'
 import { openWhatsApp, trackEvent } from '../lib/tracking'
 import { useLang } from '../lib/i18n'
 import { LINKS } from '../config'
@@ -16,11 +17,11 @@ export default function Footer() {
             <div className="mb-5 h-28 w-28 flex-shrink-0">
               <Logo className="h-full w-full" />
             </div>
-            <p className="max-w-xs text-sm leading-relaxed text-almond/55">{ft.blurb}</p>
+            <p className="max-w-xs text-sm leading-relaxed text-almond/75">{ft.blurb}</p>
           </div>
 
           <nav className="flex flex-col gap-3" aria-label={ft.navLabel}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/40">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/75">
               {ft.navLabel}
             </p>
             {t.nav.links.map((link) => (
@@ -35,7 +36,7 @@ export default function Footer() {
           </nav>
 
           <nav className="flex flex-col gap-3" aria-label={ft.legalLabel}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/40">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/75">
               {ft.legalLabel}
             </p>
             {Array.isArray(ft.legales) ? (
@@ -59,16 +60,24 @@ export default function Footer() {
           </nav>
 
           <div className="flex flex-col gap-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/40">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-almond/75">
               {ft.contactoLabel}
             </p>
             <button
               type="button"
               onClick={() => openWhatsApp('footer', t.whatsappMessage)}
-              className="text-left text-sm text-terracota transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-left text-sm text-terracota transition-colors hover:text-white"
             >
+              <MessageCircle size={15} strokeWidth={2} aria-hidden="true" />
               {ft.whatsapp}
             </button>
+            <a
+              href="mailto:bernardo@locallocal.net"
+              className="inline-flex items-center gap-2 text-sm text-almond/75 transition-colors hover:text-white"
+            >
+              <Mail size={15} strokeWidth={2} aria-hidden="true" />
+              bernardo@locallocal.net
+            </a>
             <a
               href={LINKS.linkedin}
               target="_blank"
@@ -83,8 +92,9 @@ export default function Footer() {
                 href={LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-almond/75 transition-colors hover:text-white"
+                className="inline-flex items-center gap-2 text-sm text-almond/75 transition-colors hover:text-white"
               >
+                <Instagram size={15} strokeWidth={2} aria-hidden="true" />
                 Instagram
               </a>
             )}
@@ -92,7 +102,7 @@ export default function Footer() {
               href={LINKS.photographer}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-almond/45 transition-colors hover:text-almond/70"
+              className="text-xs text-almond/75 transition-colors hover:text-almond/75"
             >
               {ft.credito}
             </a>
@@ -100,9 +110,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-almond/10 pt-8">
-          <p className="max-w-3xl text-xs leading-relaxed text-almond/40">{ft.disclaimer}</p>
+          <p className="max-w-3xl text-xs leading-relaxed text-almond/75">{ft.disclaimer}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-mono text-[11px] tracking-wider text-almond/35">
+            <p className="font-mono text-[11px] tracking-wider text-almond/75">
               © {year} Local Local — Tandil · {ft.derechos}
             </p>
             <a
@@ -111,7 +121,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-block font-mono text-[11px] tracking-wider transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:text-vanilla"
             >
-              <span className="text-almond/35">Powered by </span>
+              <span className="text-almond/75">Powered by </span>
               <span className="text-terracota">Atomgrow</span>
             </a>
           </div>

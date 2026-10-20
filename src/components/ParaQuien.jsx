@@ -15,7 +15,7 @@ export default function ParaQuien() {
       <div className="mx-auto max-w-5xl">
         <SectionHeader kicker={pq.kicker} titleSans={pq.titleSans} titleSerif={pq.titleSerif} />
 
-        <p data-reveal className="mt-7 max-w-3xl text-base leading-relaxed text-espresso/70">
+        <p data-reveal className="mt-7 max-w-3xl text-base leading-relaxed text-espresso/75">
           {pq.intro}
         </p>
 
@@ -43,7 +43,7 @@ export default function ParaQuien() {
                 <h3 className={`mt-5 font-display text-lg font-bold ${principal ? 'text-white' : 'text-espresso'}`}>
                   {perfil.t}
                 </h3>
-                <p className={`mt-3 text-sm leading-relaxed ${principal ? 'text-white/80' : 'text-espresso/60'}`}>
+                <p className={`mt-3 text-sm leading-relaxed ${principal ? 'text-white/80' : 'text-espresso/75'}`}>
                   {perfil.d}
                 </p>
               </div>
@@ -51,7 +51,7 @@ export default function ParaQuien() {
           })}
         </div>
 
-        <p data-reveal className="mt-10 max-w-2xl text-sm italic leading-relaxed text-espresso/55">
+        <p data-reveal className="mt-10 max-w-2xl text-sm italic leading-relaxed text-espresso/75">
           {pq.filtro}
         </p>
       </div>

@@ -31,7 +31,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       <div className="flex justify-end p-4 border-b border-espresso/10">
         <button
           onClick={onClose}
-          className="p-1.5 text-espresso/70 hover:text-espresso hover:bg-espresso/5 rounded-lg transition-colors"
+          className="p-1.5 text-espresso/75 hover:text-espresso hover:bg-espresso/5 rounded-lg transition-colors"
           aria-label={lang === 'es' ? 'Cerrar menú' : 'Close menu'}
         >
           <X size={20} strokeWidth={2} />

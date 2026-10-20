@@ -26,7 +26,7 @@ function LangToggle({ opacity, isLight }) {
               'rounded-full px-2 py-0 font-mono text-[11px] tracking-wider transition-all duration-300',
               active
                 ? 'bg-terracota text-white'
-                : isLight ? 'text-espresso/70 hover:text-espresso' : 'text-white/85 hover:text-white',
+                : isLight ? 'text-espresso/75 hover:text-espresso' : 'text-white/85 hover:text-white',
             ].join(' ')}
           >
             {code.toUpperCase()}

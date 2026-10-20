@@ -62,7 +62,7 @@ export default function Diagnostico() {
             <p data-reveal className="mt-6 font-display text-3xl font-bold text-white">
               {DIAGNOSTIC_PRICE.amount} {DIAGNOSTIC_PRICE.currency}
               {DIAGNOSTIC_PRICE.paymentNote && (
-                <span className="ml-3 text-sm font-normal text-almond/60">
+                <span className="ml-3 text-sm font-normal text-almond/75">
                   {DIAGNOSTIC_PRICE.paymentNote}
                 </span>
               )}
@@ -77,7 +77,7 @@ export default function Diagnostico() {
             <p className="mt-4 text-sm leading-relaxed text-almond/85">{d.garantia}</p>
             <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
               {d.garantiaNotas.map((nota) => (
-                <li key={nota} className="text-xs text-almond/60">
+                <li key={nota} className="text-xs text-almond/75">
                   · {nota}
                 </li>
               ))}
@@ -94,7 +94,7 @@ export default function Diagnostico() {
               <span className="btn-sheen bg-espresso/40" aria-hidden="true" />
               {d.cta}
             </button>
-            <p className="mt-4 font-mono text-[10px] tracking-wider text-almond/50">
+            <p className="mt-4 font-mono text-[10px] tracking-wider text-almond/75">
               {d.micro}
             </p>
           </div>

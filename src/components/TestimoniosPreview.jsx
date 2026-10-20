@@ -32,7 +32,7 @@ export default function TestimoniosPreview() {
               </blockquote>
               <figcaption className="mt-6 border-t border-espresso/10 pt-4">
                 <p className="font-display text-sm font-bold text-espresso">{item.nombre}</p>
-                <p className="text-xs text-espresso/55">
+                <p className="text-xs text-espresso/75">
                   {item.relacion}
                   {item.ubicacion ? ` · ${item.ubicacion}` : ''}
                 </p>
@@ -42,7 +42,7 @@ export default function TestimoniosPreview() {
         </div>
 
         <div data-reveal className="mt-12 rounded-xl bg-white/40 border border-espresso/10 p-6 sm:p-8 text-center">
-          <p className="text-sm text-espresso/70 leading-relaxed mb-4">
+          <p className="text-sm text-espresso/75 leading-relaxed mb-4">
             {lang === 'es'
               ? 'Mostramos algunas experiencias. Cuidamos la confidencialidad de nuestros clientes.'
               : 'We share a selection of experiences while protecting our clients’ confidentiality.'}
@@ -55,10 +55,10 @@ export default function TestimoniosPreview() {
             >
               {lang === 'es' ? 'Ver más experiencias →' : 'View more experiences →'}
             </button>
-            <span className="hidden sm:inline text-espresso/30">·</span>
+            <span className="hidden sm:inline text-espresso/75">·</span>
             <a
               href="/legales#confidencialidad"
-              className="text-sm text-espresso/60 transition-colors hover:text-terracota underline"
+              className="text-sm text-espresso/75 transition-colors hover:text-terracota underline"
             >
               {lang === 'es' ? 'Leer sobre confidencialidad' : 'Read about confidentiality'}
             </a>

@@ -46,12 +46,12 @@ export default function Faq() {
                     <ChevronDown
                       size={16}
                       aria-hidden="true"
-                      className={`shrink-0 text-espresso/40 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+                      className={`shrink-0 text-espresso/75 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
                     />
                   </button>
                 </h3>
                 <div id={panelId} hidden={!open} className="px-6 pb-6">
-                  <p className="text-sm leading-relaxed text-espresso/65">{item.a}</p>
+                  <p className="text-sm leading-relaxed text-espresso/75">{item.a}</p>
                 </div>
               </div>
             )

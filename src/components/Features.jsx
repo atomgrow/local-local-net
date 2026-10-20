@@ -46,7 +46,7 @@ function BarajaDiagnostica({ labels, modulo }) {
             }}
           >
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] tracking-[0.25em] text-espresso/40">
+              <span className="font-mono text-[10px] tracking-[0.25em] text-espresso/75">
                 {modulo} 0{i + 1} / 03
               </span>
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-matcha/15 text-matcha">
@@ -99,8 +99,8 @@ function TelemetriaEnVivo({ label, live, mensajes }) {
   return (
     <div className="mt-14 rounded-[2rem] border border-espresso/8 bg-espresso p-7 shadow-xl shadow-espresso/15">
       <div className="flex items-center justify-between">
-        <span className="font-mono text-[10px] tracking-[0.25em] text-almond/40">{label}</span>
-        <span className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-almond/70">
+        <span className="font-mono text-[10px] tracking-[0.25em] text-almond/75">{label}</span>
+        <span className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-almond/75">
           <span className="live-dot h-2 w-2 rounded-full bg-terracota" />
           {live}
         </span>
@@ -196,13 +196,13 @@ function AgendaProtocolo({ agenda }) {
       className="relative mt-14 overflow-hidden rounded-[2rem] border border-espresso/8 bg-white p-7 shadow-xl shadow-espresso/10"
     >
       <div className="flex items-center justify-between">
-        <span className="font-mono text-[10px] tracking-[0.25em] text-espresso/40">
+        <span className="font-mono text-[10px] tracking-[0.25em] text-espresso/75">
           {agenda.label}
         </span>
         <span
           className={[
             'font-mono text-[10px] tracking-widest transition-colors duration-300',
-            guardado ? 'text-matcha' : 'text-espresso/30',
+            guardado ? 'text-matcha' : 'text-espresso/75',
           ].join(' ')}
         >
           {guardado ? agenda.agendado : agenda.sinAgendar}
@@ -218,7 +218,7 @@ function AgendaProtocolo({ agenda }) {
               'flex aspect-square items-center justify-center rounded-xl font-mono text-xs transition-all duration-300',
               activo === i
                 ? 'scale-105 bg-terracota text-white shadow-lg shadow-terracota/30'
-                : 'bg-almond text-espresso/60',
+                : 'bg-almond text-espresso/75',
             ].join(' ')}
           >
             {dia}
@@ -231,7 +231,7 @@ function AgendaProtocolo({ agenda }) {
           data-guardar
           className={[
             'rounded-full px-5 py-2 font-mono text-[11px] tracking-wider transition-all duration-300',
-            guardado ? 'bg-matcha text-white' : 'bg-espresso/8 text-espresso/50',
+            guardado ? 'bg-matcha text-white' : 'bg-espresso/8 text-espresso/75',
           ].join(' ')}
         >
           {agenda.guardar}
@@ -284,7 +284,7 @@ export default function Features() {
             {f.titleSans}{' '}
             <span className="font-serif font-medium italic text-matcha">{f.titleSerif}</span>
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-espresso/70">{f.intro}</p>
+          <p className="mt-5 text-base leading-relaxed text-espresso/75">{f.intro}</p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
@@ -292,7 +292,7 @@ export default function Features() {
             <h3 className="font-display text-lg font-semibold tracking-tight text-espresso">
               {f.col1.h}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-espresso/60">{f.col1.p}</p>
+            <p className="mt-2 text-sm leading-relaxed text-espresso/75">{f.col1.p}</p>
             <BarajaDiagnostica labels={f.cartas} modulo={f.modulo} />
           </div>
 
@@ -300,7 +300,7 @@ export default function Features() {
             <h3 className="font-display text-lg font-semibold tracking-tight text-espresso">
               {f.col2.h}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-espresso/60">{f.col2.p}</p>
+            <p className="mt-2 text-sm leading-relaxed text-espresso/75">{f.col2.p}</p>
             <TelemetriaEnVivo
               label={f.telemetria.label}
               live={f.telemetria.live}
@@ -312,7 +312,7 @@ export default function Features() {
             <h3 className="font-display text-lg font-semibold tracking-tight text-espresso">
               {f.col3.h}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-espresso/60">{f.col3.p}</p>
+            <p className="mt-2 text-sm leading-relaxed text-espresso/75">{f.col3.p}</p>
             <AgendaProtocolo agenda={f.agenda} />
           </div>
         </div>

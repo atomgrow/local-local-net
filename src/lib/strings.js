@@ -89,7 +89,7 @@ export const STRINGS = {
         'Perfecto. Te acompañamos a explorar Tandil con información real, a tu ritmo y con libertad para decidir.',
       msgAvanzando:
         'Perfecto. Ordenamos tu proceso: diagnóstico personalizado, estrategia a medida y red local para activar el plan.',
-      ctaExplorando: 'Quiero recibir la guía sobre Tandil',
+      ctaExplorando: 'Quiero recibir novedades',
       ctaAvanzando: 'Quiero evaluar mi proyecto',
     },
 
@@ -546,11 +546,14 @@ export const STRINGS = {
         whatsappPh: '+54 9 …',
         preferencia: 'Preferencia de contacto',
         preferencias: ['WhatsApp.', 'Email.', 'Cualquiera de los dos.'],
+        origen: '¿Cómo conociste Local Local?',
+        origenes: ['Instagram', 'Google', 'Me lo recomendó alguien', 'Tarjeta postal o código QR', 'LinkedIn', 'Otro'],
       },
       error: 'Contanos al menos tu nombre y un contacto para poder responderte.',
       enviar: 'Enviar mi proyecto',
       confid:
         'Confidencialidad desde el primer contacto. Tus respuestas se utilizan exclusivamente para comprender tu proyecto y contactarte.',
+      privacidadLink: 'Política de privacidad',
       directo: '¿Preferís conversar directamente?',
       directoCta: 'Escribime por WhatsApp',
       graciasTitulo: 'Recibido,',
@@ -566,6 +569,7 @@ export const STRINGS = {
         email: 'Email',
         whatsapp: 'WhatsApp',
         preferencia: 'Preferencia de contacto',
+        origen: 'Cómo conoció Local Local',
         campania: 'campaña',
       },
     },
@@ -601,6 +605,8 @@ export const STRINGS = {
       title: 'Sigamos pensando juntos',
       copy: 'Compartimos ideas, experiencias y herramientas para quienes están atravesando una mudanza, evaluando un cambio de ciudad o imaginando una nueva etapa para su familia o su proyecto.',
       cta: 'Suscribite para recibir nuestras próximas historias y novedades',
+      privacidad: 'Al suscribirte aceptás recibir novedades por email. Podés darte de baja en cualquier momento desde el enlace incluido en cada envío.',
+      privacidadLink: 'Política de privacidad',
     },
 
     faq: {
@@ -833,7 +839,7 @@ export const STRINGS = {
         'Great. We will help you explore Tandil with real information, at your own pace and with full freedom to decide.',
       msgAvanzando:
         'Great. We bring order to your process: personalized assessment, tailored strategy and a local network to activate the plan.',
-      ctaExplorando: 'Send me the Tandil guide',
+      ctaExplorando: 'Get updates',
       ctaAvanzando: 'Book my assessment',
     },
 
@@ -1293,11 +1299,14 @@ export const STRINGS = {
         whatsappPh: '+... your number',
         preferencia: 'Contact preference',
         preferencias: ['WhatsApp.', 'Email.', 'Either is fine.'],
+        origen: 'How did you find out about Local Local?',
+        origenes: ['Instagram', 'Google', 'A recommendation', 'Postcard or QR code', 'LinkedIn', 'Other'],
       },
       error: 'Tell us at least your name and one contact so we can get back to you.',
       enviar: 'Send my project',
       confid:
         'Confidentiality from the very first contact. Your answers are used exclusively to understand your project and contact you.',
+      privacidadLink: 'Privacy policy',
       directo: 'Prefer to talk directly?',
       directoCta: 'Message me on WhatsApp',
       graciasTitulo: 'Got it,',
@@ -1313,6 +1322,7 @@ export const STRINGS = {
         email: 'Email',
         whatsapp: 'WhatsApp',
         preferencia: 'Contact preference',
+        origen: 'How they found us',
         campania: 'campaign',
       },
     },
@@ -1348,6 +1358,8 @@ export const STRINGS = {
       title: 'Let’s keep exploring together',
       copy: 'We share ideas, experiences, and practical tools for people going through a move, considering a new city, or imagining a new chapter for their family or project.',
       cta: 'Subscribe for stories, insights, and updates',
+      privacidad: 'By subscribing you agree to receive updates by email. You can unsubscribe at any time using the link included in each message.',
+      privacidadLink: 'Privacy policy',
     },
 
     faq: {

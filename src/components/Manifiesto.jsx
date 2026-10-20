@@ -52,14 +52,14 @@ export default function Manifiesto() {
       <div className="absolute inset-0 bg-gradient-to-b from-espresso via-espresso/55 to-espresso" />
 
       <div className="relative mx-auto max-w-4xl">
-        <p className="mb-16 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/40">
+        <p className="mb-16 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/75">
           {m.kicker}
         </p>
 
         <div className="space-y-6">
           <h2
             data-manifiesto-linea
-            className="font-display text-3xl font-semibold leading-tight tracking-tight text-almond/45 sm:text-5xl"
+            className="font-display text-3xl font-semibold leading-tight tracking-tight text-almond/75 sm:text-5xl"
           >
             <SplitWords text={m.l1} />
           </h2>
@@ -74,7 +74,7 @@ export default function Manifiesto() {
         <div className="mt-24 max-w-2xl space-y-4 sm:mt-32">
           <p
             data-manifiesto-linea
-            className="font-display text-xl font-medium leading-snug tracking-tight text-almond/45 sm:text-2xl"
+            className="font-display text-xl font-medium leading-snug tracking-tight text-almond/75 sm:text-2xl"
           >
             <SplitWords text={m.l3} />
           </p>

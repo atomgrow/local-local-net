@@ -17,9 +17,9 @@ export default function ComoComienza() {
         {cc.intro && (
           <div data-reveal className="mt-8 space-y-4">
             <h3 className="font-display text-2xl font-bold text-espresso">{cc.intro}</h3>
-            <p className="text-base text-espresso/70">{cc.introSub}</p>
+            <p className="text-base text-espresso/75">{cc.introSub}</p>
             <p className="font-display text-lg font-bold text-espresso">{cc.introHighlight}</p>
-            <p className="text-sm leading-relaxed text-espresso/65">{cc.introDesc}</p>
+            <p className="text-sm leading-relaxed text-espresso/75">{cc.introDesc}</p>
           </div>
         )}
 
@@ -36,11 +36,11 @@ export default function ComoComienza() {
               <p className="mt-4 max-w-52 font-display text-sm font-semibold leading-snug text-espresso">
                 {paso.t}
               </p>
-              <p className="mt-1.5 font-mono text-[10px] tracking-wider text-espresso/50">{paso.d}</p>
+              <p className="mt-1.5 font-mono text-[10px] tracking-wider text-espresso/75">{paso.d}</p>
               {i < cc.pasos.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className="absolute right-[-0.75rem] top-4 hidden font-serif text-xl italic text-espresso/30 sm:block"
+                  className="absolute right-[-0.75rem] top-4 hidden font-serif text-xl italic text-espresso/75 sm:block"
                 >
                   →
                 </span>
@@ -49,7 +49,7 @@ export default function ComoComienza() {
           ))}
         </ol>
 
-        <p data-reveal className="mt-12 text-sm italic text-espresso/60">
+        <p data-reveal className="mt-12 text-sm italic text-espresso/75">
           {cc.cierre}
         </p>
       </div>

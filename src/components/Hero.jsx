@@ -56,7 +56,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <p
             data-hero-fade
-            className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/70"
+            className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/75"
           >
             {t.hero.kicker}
           </p>
@@ -80,7 +80,7 @@ export default function Hero() {
             {t.hero.sub}
           </p>
 
-          <p data-hero-fade className="mt-4 max-w-xl text-sm leading-relaxed text-almond/60">
+          <p data-hero-fade className="mt-4 max-w-xl text-sm leading-relaxed text-almond/75">
             {t.hero.apoyo}
           </p>
 
@@ -101,7 +101,7 @@ export default function Hero() {
               {t.hero.ctaSec}
             </button>
           </div>
-          <p data-hero-fade className="mt-4 font-mono text-[11px] tracking-wider text-almond/60">
+          <p data-hero-fade className="mt-4 font-mono text-[11px] tracking-wider text-almond/75">
             {t.hero.micro}
           </p>
         </div>

@@ -28,7 +28,7 @@ export default function Newsletter() {
       <div data-reveal className="mx-auto max-w-3xl rounded-[2.5rem] border border-matcha/25 bg-matcha/[0.08] p-9 sm:p-12">
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-matcha">{nl.kicker}</p>
         <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-espresso">{nl.title}</h2>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-espresso/65">{nl.copy}</p>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-espresso/75">{nl.copy}</p>
 
         {estado === 'ok' ? (
           <p className="mt-7 flex items-center gap-2.5 text-sm font-medium text-matcha">
@@ -36,13 +36,16 @@ export default function Newsletter() {
             {nl.gracias}
           </p>
         ) : (
-          <form onSubmit={enviar} className="mt-7 flex flex-col gap-3 sm:flex-row" noValidate>
+          <form onSubmit={enviar} className="mt-7 flex flex-col gap-3 sm:flex-row">
             <label className="sr-only" htmlFor="ll-newsletter-email">
               Email
             </label>
             <input
               id="ll-newsletter-email"
+              name="email"
               type="email"
+              required
+              autoComplete="email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value)
@@ -50,7 +53,7 @@ export default function Newsletter() {
               }}
               placeholder={nl.placeholder}
               aria-invalid={estado === 'error'}
-              className="w-full rounded-full border border-espresso/15 bg-white/80 px-5 py-3.5 text-sm text-espresso outline-none transition-all placeholder:text-espresso/35 focus:border-matcha focus:ring-2 focus:ring-matcha/25 sm:max-w-xs"
+              className="w-full rounded-full border border-espresso/15 bg-white/80 px-5 py-3.5 text-sm text-espresso outline-none transition-all placeholder:text-espresso/75 focus:border-matcha focus:ring-2 focus:ring-matcha/25 sm:max-w-xs"
             />
             <button
               type="submit"
@@ -64,6 +67,19 @@ export default function Newsletter() {
         {estado === 'error' && (
           <p role="alert" className="mt-3 font-mono text-xs tracking-wide text-terracota">
             {nl.error}
+          </p>
+        )}
+        {estado !== 'ok' && (
+          <p className="mt-4 text-xs leading-relaxed text-espresso/80">
+            {nl.privacidad}{' '}
+            <a
+              href="/legales.html#privacidad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-espresso underline underline-offset-2 hover:text-terracota"
+            >
+              {nl.privacidadLink}
+            </a>
           </p>
         )}
       </div>

@@ -41,7 +41,7 @@ export default function Problema() {
             data-reveal
             className="mx-auto max-w-2xl text-center mb-12"
           >
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-almond/60 mb-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-almond/75 mb-6">
               {p.kicker}
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight text-white">
@@ -116,7 +116,7 @@ export default function Problema() {
             ))}
           </div>
 
-          <p data-reveal className="mt-12 text-center text-sm italic leading-relaxed text-almond/60 max-w-2xl mx-auto">
+          <p data-reveal className="mt-12 text-center text-sm italic leading-relaxed text-almond/75 max-w-2xl mx-auto">
             {p.cierre}
           </p>
         </div>

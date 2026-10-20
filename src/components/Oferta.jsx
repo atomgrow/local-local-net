@@ -52,7 +52,7 @@ export default function Oferta() {
               <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
               {o.cta}
             </button>
-            <p className="mt-4 font-mono text-[11px] tracking-wider text-espresso/60">
+            <p className="mt-4 font-mono text-[11px] tracking-wider text-espresso/75">
               {o.micro}
             </p>
           </div>

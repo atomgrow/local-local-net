@@ -15,8 +15,8 @@ export default function Confidencialidad() {
         <SectionHeader kicker={c.kicker} titleSans={c.titleSans} titleSerif={c.titleSerif} />
 
         <div data-reveal className="mt-7 max-w-3xl space-y-4">
-          <p className="text-base leading-relaxed text-espresso/70">{c.copy}</p>
-          <p className="text-base leading-relaxed text-espresso/70">{c.copy2}</p>
+          <p className="text-base leading-relaxed text-espresso/75">{c.copy}</p>
+          <p className="text-base leading-relaxed text-espresso/75">{c.copy2}</p>
         </div>
 
         <ul data-reveal className="mt-10 grid gap-4 sm:grid-cols-2">

@@ -29,7 +29,7 @@ export default function MicroDecision() {
         <h2 data-reveal className="font-display text-2xl font-bold tracking-tight text-espresso sm:text-3xl">
           {md.title}
         </h2>
-        <p data-reveal className="mt-3 text-sm text-espresso/60">
+        <p data-reveal className="mt-3 text-sm text-espresso/75">
           {md.sub}
         </p>
 

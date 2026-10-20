@@ -33,7 +33,7 @@ export default function Nosotros() {
               />
             </figure>
             <p className="mt-5 font-display text-lg font-bold text-espresso">{n.nombre}</p>
-            <p className="text-sm text-espresso/55">{n.rol}</p>
+            <p className="text-sm text-espresso/75">{n.rol}</p>
             <a
               href={LINKS.linkedin}
               target="_blank"
@@ -60,14 +60,14 @@ export default function Nosotros() {
               <p className="font-display text-sm font-bold text-espresso">{n.expertiseLabel}</p>
               <ul className="mt-4 space-y-2.5">
                 {n.expertise.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-espresso/70">
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-espresso/75">
                     <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-terracota" />
                     {item}
                   </li>
                 ))}
               </ul>
               {n.expertiseCierre.map((p) => (
-                <p key={p.slice(0, 24)} className="mt-4 text-sm leading-relaxed text-espresso/70">
+                <p key={p.slice(0, 24)} className="mt-4 text-sm leading-relaxed text-espresso/75">
                   {p}
                 </p>
               ))}

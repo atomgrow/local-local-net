@@ -121,21 +121,21 @@ export default function Tandil() {
       {/* Closing + Photo Credit */}
       <div className="relative z-10 px-6 py-16 sm:px-10 sm:py-20 bg-almond">
         <div className="mx-auto max-w-3xl text-center space-y-4">
-          <p className="text-lg leading-relaxed text-espresso/70 font-medium italic">
+          <p className="text-lg leading-relaxed text-espresso/75 font-medium italic">
             {td.cierre1}
           </p>
-          <p className="text-lg leading-relaxed text-espresso/70 font-medium italic">
+          <p className="text-lg leading-relaxed text-espresso/75 font-medium italic">
             {td.cierre2}
           </p>
         </div>
 
         <div className="mt-12 pt-8 border-t border-espresso/10 text-center">
-          <p className="font-mono text-[10px] tracking-widest text-espresso/40">
+          <p className="font-mono text-[10px] tracking-widest text-espresso/75">
             <a
               href={LINKS.photographer}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-espresso/70"
+              className="transition-colors hover:text-espresso/75"
             >
               {td.credito}
             </a>
