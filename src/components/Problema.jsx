@@ -65,7 +65,9 @@ export default function Problema() {
               <article
                 key={esc.titulo}
                 data-reveal
-                className="overflow-hidden rounded-2xl border border-white/20 bg-white/[0.08] backdrop-blur-md p-7 transition-all duration-300 hover:border-white/40 hover:bg-white/[0.12]"
+                className={`overflow-hidden rounded-2xl border border-white/20 bg-white/[0.08] backdrop-blur-md p-7 transition-all duration-300 hover:border-white/40 hover:bg-white/[0.12] ${
+                  p.escenarios.length % 2 === 1 && i === p.escenarios.length - 1 ? 'md:col-span-2' : ''
+                }`}
                 style={{
                   transitionDelay: `${i * 100}ms`,
                 }}

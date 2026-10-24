@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Check } from 'lucide-react'
 import { useLang, legalHref } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
+import { useJourney } from '../lib/journey'
 import { LINKS } from '../config'
 import {
   trackQuestionnaireStart,
@@ -26,6 +27,9 @@ export default function Cuestionario() {
   const scope = useReveal()
   const { t, lang } = useLang()
   const c = t.cuestionario
+  const { journey } = useJourney()
+  // Si ya respondió "¿Dónde estás en tu proceso de decisión?", no se repite la pregunta 1.
+  const momentoJourney = journey ? t.microDecision[journey] : ''
 
   const [paso, setPaso] = useState(0) // 0..2 preguntas, 3 datos, 4 gracias
   const [momento, setMomento] = useState('')
@@ -34,6 +38,10 @@ export default function Cuestionario() {
   const [datos, setDatos] = useState({ nombre: '', email: '', whatsapp: '', preferencia: '', origen: '' })
   const [error, setError] = useState('')
   const started = useRef(false)
+
+  useEffect(() => {
+    if (journey && paso === 0) setPaso(1)
+  }, [journey, paso])
 
   const marcarInicio = () => {
     if (!started.current) {
@@ -73,7 +81,7 @@ export default function Cuestionario() {
       datos.whatsapp && `${L.whatsapp}: ${datos.whatsapp}`,
       datos.preferencia && `${L.preferencia}: ${datos.preferencia}`,
       datos.origen && `${L.origen}: ${datos.origen}`,
-      momento && `${L.momento}: ${momento}`,
+      (momento || momentoJourney) && `${L.momento}: ${momento || momentoJourney}`,
       evaluando && `${L.evaluando}: ${evaluando}`,
       plazo && `${L.plazo}: ${plazo}`,
       utm.utm_campaign && `[${L.campania}: ${utm.utm_source || ''}/${utm.utm_campaign}]`,
@@ -105,7 +113,7 @@ export default function Cuestionario() {
 
   const Progreso = ({ actual }) => (
     <p className="font-mono text-[11px] tracking-[0.25em] text-espresso/75" aria-live="polite">
-      {actual} {c.progreso} 3
+      {actual - (journey ? 1 : 0)} {c.progreso} {journey ? 2 : 3}
     </p>
   )
 
@@ -191,7 +199,7 @@ export default function Cuestionario() {
                 ))}
               </div>
               <div className="mt-8 flex justify-between">
-                <BotonAtras a={0} />
+                {journey ? <span /> : <BotonAtras a={0} />}
                 <BotonSiguiente desde={1} disabled={!evaluando} />
               </div>
             </fieldset>

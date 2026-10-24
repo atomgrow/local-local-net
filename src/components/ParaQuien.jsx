@@ -19,7 +19,7 @@ export default function ParaQuien() {
           {pq.intro}
         </p>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {pq.perfiles.map((perfil, i) => {
             const Icon = ICONS[i]
             const principal = i === 0

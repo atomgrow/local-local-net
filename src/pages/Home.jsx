@@ -33,9 +33,9 @@ export default function Home() {
       <Problema />
       <ParaQuien />
       <ComoComienza />
+      <TestimoniosPreview />
       <Cuestionario />
       <Newsletter />
-      <TestimoniosPreview />
       <CtaFinal />
     </main>
   )

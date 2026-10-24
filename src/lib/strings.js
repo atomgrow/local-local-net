@@ -57,7 +57,7 @@ export const STRINGS = {
         { label: 'Método', href: '/metodo' },
         { label: 'Nosotros', href: '/nosotros' },
       ],
-      cta: 'Contanos tu proyecto',
+      cta: 'Quiero mi diagnóstico',
     },
 
     hero: {
@@ -66,7 +66,7 @@ export const STRINGS = {
       titleSerif: 'organizada con método y respaldo local',
       sub: 'Evaluamos tu proyecto, ordenamos cada decisión y te acompañamos con información de primera mano, una estrategia a tu medida y una red local cuidadosamente seleccionada',
       apoyo: '',
-      cta: 'Quiero evaluar mi proyecto',
+      cta: 'Quiero mi diagnóstico',
       ctaSec: 'Conocer el método',
       micro: 'Empecemos con tres preguntas. Sin compromiso de contratación',
       alt: 'Atardecer sobre el valle de Tandil, con casas entre sierras y arboledas',
@@ -76,8 +76,8 @@ export const STRINGS = {
       { t: 'MIRADA LOCAL', d: 'Vivimos en Tandil. Conocemos la ciudad de primera mano.' },
       { t: 'CRITERIO INDEPENDIENTE', d: 'Nuestro único compromiso es ayudarte a tomar la mejor decisión.' },
       { t: 'RED VALIDADA', d: 'Profesionales seleccionados por su trayectoria, estándares de servicio y calidad humana.' },
-      { t: 'AUDITORÍA PREVENTIVA', d: 'Antes de comprometer tiempo o dinero, revisamos los aspectos legales y técnicos de cada operación para detectar riesgos, inconsistencias y costos ocultos.' },
-      { t: 'CONFIDENCIALIDAD', d: 'Tu proyecto no circula por toda la ciudad: tus decisiones y tus tiempos se manejan con absoluta reserva. Nada se comparte sin que lo sepas y lo autorices.' },
+      { t: 'AUDITORÍA PREVENTIVA', d: 'Revisamos los aspectos legales y técnicos antes de que comprometas tiempo o dinero.' },
+      { t: 'CONFIDENCIALIDAD', d: 'Tu proyecto no circula por la ciudad. Nada se comparte sin tu autorización.' },
     ],
 
     microDecision: {
@@ -90,7 +90,7 @@ export const STRINGS = {
       msgAvanzando:
         'Perfecto. Ordenamos tu proceso: diagnóstico personalizado, estrategia a medida y red local para activar el plan.',
       ctaExplorando: 'Quiero recibir novedades',
-      ctaAvanzando: 'Quiero evaluar mi proyecto',
+      ctaAvanzando: 'Quiero mi diagnóstico',
     },
 
     problema: {
@@ -116,17 +116,17 @@ export const STRINGS = {
           ],
         },
         {
-          titulo: 'Información fragmentada',
-          sinLabel: 'Sin método · Lectura incompleta',
-          conLabel: 'Con Local Local · Información ordenada y contrastada',
+          titulo: 'Información y coordinación fragmentadas',
+          sinLabel: 'Sin método · Proceso desordenado',
+          conLabel: 'Con Local Local · Información ordenada y coordinación integral',
           riesgo: false,
           sin: [
-            'La información llega desde distintas fuentes, con criterios y niveles de detalle diferentes',
-            'Sin una mirada de conjunto, es difícil saber qué comparar, qué información falta y qué conviene verificar.',
+            'La información llega desde distintas fuentes y una mudanza involucra distintos profesionales, decisiones y tiempos.',
+            'Sin alguien que articule el conjunto, es difícil saber qué comparar y qué falta: las gestiones se superponen y el proceso pierde dirección.',
           ],
           con: [
-            'Analizamos todas las alternativas bajo los mismos criterios',
-            'Sumamos conocimiento local, información de mercado y una mirada a futuro para construir una visión completa.',
+            'Analizamos todas las alternativas bajo los mismos criterios y sumamos conocimiento local e información de mercado.',
+            'Un único interlocutor ordena y conecta cada etapa, con profesionales, tiempos y decisiones alineados bajo una misma hoja de ruta.',
           ],
         },
         {
@@ -141,20 +141,6 @@ export const STRINGS = {
           con: [
             'Antes de avanzar, auditamos el negocio desde una mirada legal y técnica',
             'Para que sepas qué estás contratando, en qué condiciones y con qué límites.',
-          ],
-        },
-        {
-          titulo: 'Coordinación fragmentada',
-          sinLabel: 'Sin método · Proceso desordenado',
-          conLabel: 'Con Local Local · Coordinación integral',
-          riesgo: false,
-          sin: [
-            'Una mudanza involucra distintos profesionales, decisiones y tiempos.',
-            'Sin alguien que articule el conjunto, la información se dispersa, las gestiones se superponen y el proceso pierde dirección.',
-          ],
-          con: [
-            'Un único interlocutor ordena y conecta cada etapa',
-            'Profesionales, tiempos y decisiones alineados bajo una misma hoja de ruta.',
           ],
         },
       ],
@@ -186,7 +172,7 @@ export const STRINGS = {
           copy: 'Cuando tu proyecto lo requiere, activamos una red local de profesionales y proveedores seleccionados por su experiencia, sus estándares de trabajo y su calidad humana. No pasamos contactos: construimos vínculos relevantes',
         },
       ],
-      cta: 'Quiero evaluar mi proyecto',
+      cta: 'Quiero mi diagnóstico',
     },
 
     servicios: {
@@ -356,12 +342,8 @@ export const STRINGS = {
           d: 'Que están explorando, preparando o concretando una mudanza y necesitan integrar vivienda, educación, trabajo, servicios, tiempos y vida cotidiana dentro de un mismo proyecto.',
         },
         {
-          t: 'Profesionales, emprendedores e inversores',
-          d: 'Que evalúan residir, invertir o desarrollar una actividad en Tandil y necesitan comprender el contexto local antes de comprometer tiempo, dinero o patrimonio.',
-        },
-        {
-          t: 'Empresas',
-          d: 'Que analizan instalarse, trasladar equipos, invertir o desarrollar un proyecto en Tandil y necesitan información, conexiones y profesionales locales para avanzar.',
+          t: 'Profesionales, emprendedores, inversores y empresas',
+          d: 'Que evalúan residir, instalarse, invertir o desarrollar una actividad en Tandil y necesitan comprender el contexto local y contar con profesionales de confianza antes de comprometer tiempo, dinero o patrimonio.',
         },
       ],
       filtro:
@@ -416,7 +398,7 @@ export const STRINGS = {
       cierre1: 'Cada profesional conoce su parte. Nosotros integramos las variables, hacemos las preguntas incómodas y te ayudamos a detectar lo que todavía no estás viendo.',
       cierre2Intro: 'Muchas veces, el mejor resultado de nuestro trabajo es lo que no ocurrió:',
       cierre2Destacado: 'la seña que no perdiste, el viaje que no hiciste, el proveedor que no contrataste y la decisión que no tuviste que lamentar.',
-      cta: 'Evaluá tu proyecto →',
+      cta: 'Quiero mi diagnóstico',
     },
 
     nosotros: {
@@ -451,7 +433,7 @@ export const STRINGS = {
         'El diagnóstico inicial debe aportar claridad y criterio.',
         'Si dentro de las 48 horas de recibir tu hoja de ruta considerás que no cumplió con esa promesa, podés solicitar la devolución total del importe abonado por el diagnóstico.',
       ],
-      ctaEvaluar: 'Quiero evaluar mi proyecto',
+      ctaEvaluar: 'Quiero mi diagnóstico',
       cta: 'Conoceme en LinkedIn',
       fotoAlt: 'Retrato de Bernardo G. Cisterna en Tandil',
     },
@@ -489,7 +471,7 @@ export const STRINGS = {
       titleSans: 'Si Tandil está en tus planes:',
       titleSerif: 'tres preguntas, dos minutos, un primer paso concreto',
       copy: 'Contanos en qué momento está tu proyecto y te contacto dentro de las 24 horas para definir el próximo paso.',
-      cta: 'Contanos tu proyecto',
+      cta: 'Quiero mi diagnóstico',
       ctaSec: 'Conocer el método',
       micro: 'Confidencialidad desde el primer contacto.',
     },
@@ -597,7 +579,7 @@ export const STRINGS = {
       cierre2Intro: 'Muchas veces, el mejor resultado de nuestro trabajo es lo que no ocurrió:',
       cierre2Destacado:
         'la seña que no perdiste, el viaje que no hiciste, el proveedor que no contrataste y la decisión que no tuviste que lamentar.',
-      cta: 'Evaluá tu proyecto →',
+      cta: 'Quiero mi diagnóstico',
     },
 
     newsletter: {
@@ -655,7 +637,7 @@ export const STRINGS = {
     },
 
     sticky: {
-      cta: 'Evaluar mi proyecto',
+      cta: 'Quiero mi diagnóstico',
     },
 
     legales: {
@@ -831,8 +813,8 @@ export const STRINGS = {
       { t: 'LOCAL INSIGHT', d: 'We live in Tandil. We know the city first-hand.' },
       { t: 'INDEPENDENT JUDGMENT', d: 'Our only commitment is to help you make the best decision.' },
       { t: 'VETTED NETWORK', d: 'Professionals selected for their track record, service standards, integrity, and personal approach.' },
-      { t: 'PREVENTIVE REVIEW', d: 'Before you commit time or money, we review the legal and technical aspects of each transaction to detect risks, inconsistencies and hidden costs.' },
-      { t: 'CONFIDENTIALITY', d: 'Your project is not shared around town. Your decisions and timelines are handled with complete discretion. Nothing is shared without your knowledge and consent.' },
+      { t: 'PREVENTIVE REVIEW', d: 'We review the legal and technical aspects before you commit time or money.' },
+      { t: 'CONFIDENTIALITY', d: 'Your project is not shared around town. Nothing is shared without your knowledge and consent.' },
     ],
 
     microDecision: {
@@ -871,17 +853,17 @@ export const STRINGS = {
           ],
         },
         {
-          titulo: 'Fragmented information',
-          sinLabel: 'Without a plan · An incomplete picture',
-          conLabel: 'With Local Local · Structured, cross-checked information',
+          titulo: 'Fragmented information and coordination',
+          sinLabel: 'Without a plan · A disorganized process',
+          conLabel: 'With Local Local · Structured information and end-to-end coordination',
           riesgo: false,
           sin: [
-            'Information arrives from different sources, with different criteria and levels of detail',
-            'Without an overall view, it is hard to know what to compare, what is missing and what should be verified.',
+            'Information arrives from different sources, and a move involves different professionals, decisions and timelines.',
+            'Without someone coordinating the whole process, it is hard to know what to compare and what is missing: tasks overlap and the project loses direction.',
           ],
           con: [
-            'We assess every alternative against the same criteria.',
-            'We combine local knowledge, market information, and a forward-looking perspective to build the full picture.',
+            'We assess every alternative against the same criteria and combine local knowledge with market information.',
+            'A single point of contact coordinates and connects every stage, with professionals, timelines and decisions aligned under one roadmap.',
           ],
         },
         {
@@ -896,20 +878,6 @@ export const STRINGS = {
           con: [
             'Before moving forward, we review the transaction from a legal and technical standpoint.',
             'So you know what you are agreeing to, on what terms, and with what limitations.',
-          ],
-        },
-        {
-          titulo: 'Fragmented coordination',
-          sinLabel: 'Without a plan · A disorganized process',
-          conLabel: 'With Local Local · End-to-end coordination',
-          riesgo: false,
-          sin: [
-            'A move involves different professionals, decisions and timelines.',
-            'Without someone coordinating the whole process, information becomes scattered, tasks overlap, and the project loses direction.',
-          ],
-          con: [
-            'A single point of contact coordinates and connects every stage.',
-            'Professionals, timelines and decisions aligned under one roadmap.',
           ],
         },
       ],
@@ -1111,12 +1079,8 @@ export const STRINGS = {
           d: 'Exploring, preparing or completing a move, needing to integrate housing, education, work, services, timing and daily life into one single project.',
         },
         {
-          t: 'Professionals, entrepreneurs & investors',
-          d: 'Evaluating living, investing or developing an activity in Tandil, needing to understand the local context before committing time, money or assets.',
-        },
-        {
-          t: 'Companies',
-          d: 'Considering setting up, relocating teams, investing or developing a project in Tandil, needing information, connections and local professionals to move forward.',
+          t: 'Professionals, entrepreneurs, investors & companies',
+          d: 'Evaluating living, setting up, investing or developing an activity in Tandil, needing to understand the local context and count on trusted professionals before committing time, money or assets.',
         },
       ],
       filtro:
