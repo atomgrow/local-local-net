@@ -19,10 +19,10 @@ export default function Metodo() {
     <section id="metodo" ref={scope} className="bg-espresso px-6 py-24 text-almond sm:px-10 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark />
+          <SectionHeader kicker={m.kicker} titleSans={m.titleSans} titleSerif={m.titleSerif} dark as="h1" />
 
           <div data-reveal className="mt-12">
-            <p className="font-mono text-sm tracking-[0.15em] font-bold text-terracota whitespace-nowrap sm:tracking-[0.2em] md:text-lg md:tracking-[0.3em] lg:text-xl">
+            <p className="font-mono text-sm tracking-[0.15em] font-bold text-terracota-soft whitespace-nowrap sm:tracking-[0.2em] md:text-lg md:tracking-[0.3em] lg:text-xl">
               {m.formula}
             </p>
           </div>
@@ -36,8 +36,8 @@ export default function Metodo() {
           {/* Componente 1 */}
           <div data-reveal className="rounded-[2rem] border border-almond/15 bg-almond/[0.04] p-8">
             <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs text-terracota">{m.componentes[0].num}</span>
-              <h3 className="font-display text-xl font-bold text-white">{m.componentes[0].titulo}</h3>
+              <span className="font-mono text-xs text-terracota-soft">{m.componentes[0].num}</span>
+              <h2 className="font-display text-xl font-bold text-white">{m.componentes[0].titulo}</h2>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[0].copy}</p>
           </div>
@@ -59,8 +59,8 @@ export default function Metodo() {
           {/* Componente 2 */}
           <div data-reveal className="rounded-[2rem] border border-almond/15 bg-almond/[0.04] p-8">
             <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs text-terracota">{m.componentes[1].num}</span>
-              <h3 className="font-display text-xl font-bold text-white">{m.componentes[1].titulo}</h3>
+              <span className="font-mono text-xs text-terracota-soft">{m.componentes[1].num}</span>
+              <h2 className="font-display text-xl font-bold text-white">{m.componentes[1].titulo}</h2>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[1].copy}</p>
           </div>
@@ -68,8 +68,8 @@ export default function Metodo() {
           {/* Componente 3 (span 2 cols en desktop) */}
           <div data-reveal className="md:col-span-2 rounded-[2rem] border border-almond/15 bg-almond/[0.04] p-8">
             <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs text-terracota">{m.componentes[2].num}</span>
-              <h3 className="font-display text-xl font-bold text-white">{m.componentes[2].titulo}</h3>
+              <span className="font-mono text-xs text-terracota-soft">{m.componentes[2].num}</span>
+              <h2 className="font-display text-xl font-bold text-white">{m.componentes[2].titulo}</h2>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-almond/75">{m.componentes[2].copy}</p>
           </div>
@@ -108,7 +108,7 @@ export default function Metodo() {
                       className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-almond/[0.04] focus-visible:bg-almond/[0.06] focus-visible:outline-none"
                     >
                       <span className="flex items-center gap-4">
-                        <span className="font-mono text-xs text-terracota">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="font-mono text-xs text-terracota-soft">{String(i + 1).padStart(2, '0')}</span>
                         <span className="font-display text-sm font-semibold text-almond sm:text-base">{etapa.t}</span>
                       </span>
                       <ChevronDown

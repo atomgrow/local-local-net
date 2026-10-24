@@ -1,5 +1,5 @@
 // Encabezado estándar de sección: kicker mono + título sans/serif.
-export default function SectionHeader({ kicker, titleSans, titleSerif, center = false, dark = false }) {
+export default function SectionHeader({ kicker, titleSans, titleSerif, center = false, dark = false, as: Heading = 'h2' }) {
   return (
     <div data-reveal className={center ? 'text-center' : ''}>
       {kicker && (
@@ -12,7 +12,7 @@ export default function SectionHeader({ kicker, titleSans, titleSerif, center = 
           {kicker}
         </p>
       )}
-      <h2
+      <Heading
         className={[
           'font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl',
           dark ? 'text-white' : 'text-espresso',
@@ -24,7 +24,7 @@ export default function SectionHeader({ kicker, titleSans, titleSerif, center = 
         >
           {titleSerif}
         </span>
-      </h2>
+      </Heading>
     </div>
   )
 }

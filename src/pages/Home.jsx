@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLang } from '../lib/i18n'
+import { useSeo } from '../lib/useSeo'
 import Hero from '../components/Hero'
 import TrustBar from '../components/TrustBar'
 import MicroDecision from '../components/MicroDecision'
@@ -16,6 +17,7 @@ import { initAnalytics } from '../lib/tracking'
 
 export default function Home() {
   const { lang } = useLang()
+  useSeo('home')
 
   useEffect(() => {
     initAnalytics()

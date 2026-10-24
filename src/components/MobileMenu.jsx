@@ -4,7 +4,7 @@ import { X } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 
 export default function MobileMenu({ isOpen, onClose }) {
-  const { t, lang } = useLang()
+  const { t, lang, localize } = useLang()
   const menuRef = useRef(null)
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         {t.nav.links.map((link, idx) => (
           <Link
             key={link.href}
-            to={link.href}
+            to={localize(link.href)}
             onClick={onClose}
             className={`px-6 py-4 font-semibold text-espresso transition-colors hover:bg-terracota/10 hover:text-terracota ${
               idx !== t.nav.links.length - 1 ? 'border-b border-espresso/10' : ''

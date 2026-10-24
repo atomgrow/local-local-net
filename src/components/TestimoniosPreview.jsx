@@ -1,18 +1,18 @@
 import { useNavigate } from 'react-router-dom'
-import { useLang } from '../lib/i18n'
+import { useLang, legalHref } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { TESTIMONIALS } from '../content/testimonials'
 import SectionHeader from './SectionHeader'
 
 export default function TestimoniosPreview() {
   const scope = useReveal()
-  const { t, lang } = useLang()
+  const { t, lang, localize } = useLang()
   const navigate = useNavigate()
   const ts = t.testimonios
   const items = TESTIMONIALS[lang] || TESTIMONIALS.es
 
   const handleSeeMore = () => {
-    navigate('/nosotros#testimonios')
+    navigate(localize('/nosotros#testimonios'))
   }
 
   return (
@@ -57,7 +57,7 @@ export default function TestimoniosPreview() {
             </button>
             <span className="hidden sm:inline text-espresso/75">·</span>
             <a
-              href="/legales#confidencialidad"
+              href={legalHref(lang, 'confidencialidad')}
               className="text-sm text-espresso/75 transition-colors hover:text-terracota underline"
             >
               {lang === 'es' ? 'Leer sobre confidencialidad' : 'Read about confidentiality'}

@@ -1,121 +1,66 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useMemo, useCallback } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { STRINGS } from './strings'
 import { trackLanguageChange } from './tracking'
 
 // ============================================================
-//  Idioma por ubicación (sin APIs externas):
-//  - EE.UU. / Canadá        → inglés
-//  - Latinoamérica          → español
-//  - España                 → español
-//  - Resto de Europa        → inglés
-//  - Resto del mundo        → inglés (salvo navegador en español)
-//  La elección manual del usuario se guarda y pisa la detección.
+//  Idioma por URL:
+//  - /, /metodo, /nosotros            → español
+//  - /en, /en/metodo, /en/nosotros    → inglés
+//  Cada versión tiene su propia URL (indexable, compartible y con
+//  hreflang). El selector ES/EN navega a la URL equivalente.
+//  No hay redirección automática por zona horaria: los buscadores
+//  siempre ven la misma URL para el mismo contenido.
 // ============================================================
 
-const LANG_STORAGE_KEY = 'll_lang'
+export function splitLocale(pathname) {
+  const isEn = pathname === '/en' || pathname.startsWith('/en/')
+  const base = isEn ? pathname.slice(3) || '/' : pathname
+  return { lang: isEn ? 'en' : 'es', base }
+}
 
-// Zonas horarias de EE.UU. y Canadá (el resto de "America/*" es Latam).
-const US_CANADA_TZ = new Set([
-  'America/New_York',
-  'America/Detroit',
-  'America/Chicago',
-  'America/Menominee',
-  'America/Denver',
-  'America/Boise',
-  'America/Phoenix',
-  'America/Los_Angeles',
-  'America/Anchorage',
-  'America/Juneau',
-  'America/Sitka',
-  'America/Metlakatla',
-  'America/Yakutat',
-  'America/Nome',
-  'America/Adak',
-  'America/Toronto',
-  'America/Montreal',
-  'America/Winnipeg',
-  'America/Vancouver',
-  'America/Edmonton',
-  'America/Regina',
-  'America/Halifax',
-  'America/St_Johns',
-  'America/Moncton',
-  'America/Whitehorse',
-  'America/Dawson',
-  'America/Dawson_Creek',
-  'America/Fort_Nelson',
-  'America/Iqaluit',
-  'America/Yellowknife',
-  'America/Cambridge_Bay',
-  'America/Inuvik',
-  'America/Rankin_Inlet',
-  'America/Resolute',
-  'America/Glace_Bay',
-  'America/Goose_Bay',
-  'America/Blanc-Sablon',
-  'America/Thunder_Bay',
-  'America/Nipigon',
-  'America/Rainy_River',
-  'America/Atikokan',
-  'America/Swift_Current',
-  'America/Creston',
-  'Pacific/Honolulu',
-])
+export function localizedPath(lang, path) {
+  if (lang !== 'en') return path
+  return path === '/' ? '/en' : `/en${path}`
+}
 
-// Prefijos de subzonas de EE.UU.
-const US_TZ_PREFIXES = ['America/Indiana/', 'America/Kentucky/', 'America/North_Dakota/']
+// Páginas legales estáticas (public/). Los anclajes EN son distintos.
+const LEGAL_ANCHORS = {
+  es: { privacidad: 'privacidad', confidencialidad: 'confidencialidad' },
+  en: { privacidad: 'privacy', confidencialidad: 'confidentiality' },
+}
 
-// España (península, Canarias, Ceuta/Melilla)
-const SPAIN_TZ = new Set(['Europe/Madrid', 'Atlantic/Canary', 'Africa/Ceuta'])
-
-export function detectLang() {
-  try {
-    const saved = localStorage.getItem(LANG_STORAGE_KEY)
-    if (saved === 'es' || saved === 'en') return saved
-  } catch {
-    /* sin storage: seguimos con detección */
-  }
-
-  let tz = ''
-  try {
-    tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''
-  } catch {
-    tz = ''
-  }
-
-  if (SPAIN_TZ.has(tz)) return 'es'
-  if (tz.startsWith('Europe/')) return 'en'
-  if (US_CANADA_TZ.has(tz) || US_TZ_PREFIXES.some((p) => tz.startsWith(p))) return 'en'
-  if (tz.startsWith('America/')) return 'es' // Latam
-
-  // Resto del mundo: inglés, salvo que el navegador esté en español.
-  const navLang = (navigator.language || '').toLowerCase()
-  return navLang.startsWith('es') ? 'es' : 'en'
+export function legalHref(lang, section) {
+  return lang === 'en'
+    ? `/en/legal.html#${LEGAL_ANCHORS.en[section]}`
+    : `/legales.html#${LEGAL_ANCHORS.es[section]}`
 }
 
 const LangContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(() => detectLang())
+  const { pathname, search, hash } = useLocation()
+  const navigate = useNavigate()
+  const { lang, base } = splitLocale(pathname)
 
-  const setLang = (next) => {
-    setLangState(next)
-    trackLanguageChange(next)
-    try {
-      localStorage.setItem(LANG_STORAGE_KEY, next)
-    } catch {
-      /* sin storage: el cambio vale solo para esta visita */
-    }
-  }
+  const setLang = useCallback(
+    (next) => {
+      if (next === lang) return
+      trackLanguageChange(next)
+      navigate(`${localizedPath(next, base)}${search}${hash}`)
+    },
+    [lang, base, search, hash, navigate],
+  )
 
-  useEffect(() => {
-    document.documentElement.lang = lang === 'es' ? 'es-AR' : 'en'
-    document.title = STRINGS[lang].meta.title
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', STRINGS[lang].meta.description)
-  }, [lang])
-
-  const value = useMemo(() => ({ lang, setLang, t: STRINGS[lang] }), [lang])
+  const value = useMemo(
+    () => ({
+      lang,
+      setLang,
+      t: STRINGS[lang],
+      localize: (path) => localizedPath(lang, path),
+    }),
+    [lang, setLang],
+  )
 
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>
 }

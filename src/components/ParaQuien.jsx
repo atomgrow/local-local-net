@@ -51,7 +51,7 @@ export default function ParaQuien() {
           })}
         </div>
 
-        <p data-reveal className="mt-10 max-w-2xl text-sm italic leading-relaxed text-espresso/75">
+        <p data-reveal className="mt-14 max-w-3xl border-l-4 border-terracota pl-6 font-display text-xl font-semibold leading-snug text-espresso sm:text-2xl">
           {pq.filtro}
         </p>
       </div>

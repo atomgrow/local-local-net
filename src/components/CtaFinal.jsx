@@ -2,6 +2,7 @@ import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import ctaFinalImg from '../assets/cta-final-bg.jpg'
+import ResponsiveImage from './ResponsiveImage'
 
 // CTA Final: Fondo cinematográfico (atardecer Tandil) + tarjeta semi-transparente
 
@@ -21,8 +22,12 @@ export default function CtaFinal() {
       className="relative flex min-h-[600px] items-center justify-center overflow-hidden py-24 sm:py-32"
     >
       {/* Fondo cinematográfico */}
-      <img
-        src={ctaFinalImg}
+      <ResponsiveImage
+        name="cta-final-bg"
+        fallback={ctaFinalImg}
+        width={683}
+        height={1024}
+        sizes="100vw"
         alt={lang === 'es' ? 'Atardecer sobre Tandil' : 'Sunset over Tandil'}
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
@@ -74,7 +79,7 @@ export default function CtaFinal() {
             </button>
           </div>
 
-          <p className="mt-6 font-mono text-[10px] tracking-wider text-white/50">
+          <p className="mt-6 font-mono text-[10px] tracking-wider text-white/75">
             {cf.micro}
           </p>
         </div>

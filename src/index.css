@@ -5,6 +5,7 @@
   --color-almond: #e5e0d8;
   --color-espresso: #2e2a20;
   --color-terracota: #8f3f20;
+  --color-terracota-soft: #e0906a; /* terracota legible sobre fondos oscuros (>= 4,5:1 sobre espresso) */
   --color-vanilla: #e5d2b8;
 
   --font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;

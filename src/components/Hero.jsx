@@ -9,6 +9,7 @@ import { useCtaNavigate } from '../lib/useCtaNavigate'
 // archivos en src/assets manteniendo los nombres.
 import heroLandscape from '../assets/tandil-hero.jpg'
 import heroPortrait from '../assets/tandil-barrio-sierras.jpg'
+import { webpSrcSet } from '../lib/responsive'
 
 export default function Hero() {
   const scope = useRef(null)
@@ -40,8 +41,12 @@ export default function Hero() {
       {/* Vertical (barrio entre sierras) en pantallas altas; panorámica al
           atardecer en pantallas apaisadas. */}
       <picture>
+        <source type="image/webp" media="(orientation: portrait)" srcSet={webpSrcSet('tandil-barrio-sierras')} sizes="100vw" />
         <source media="(orientation: portrait)" srcSet={heroPortrait} />
+        <source type="image/webp" srcSet={webpSrcSet('tandil-hero')} sizes="100vw" />
         <img
+          width={1024}
+          height={683}
           src={heroLandscape}
           alt={t.hero.alt}
           fetchPriority="high"

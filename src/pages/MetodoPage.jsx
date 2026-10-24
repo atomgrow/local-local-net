@@ -1,4 +1,5 @@
 import { useLang } from '../lib/i18n'
+import { useSeo } from '../lib/useSeo'
 import Metodo from '../components/Metodo'
 import Servicios from '../components/Servicios'
 import Red from '../components/Red'
@@ -6,6 +7,7 @@ import CtaFinal from '../components/CtaFinal'
 
 export default function MetodoPage() {
   const { lang } = useLang()
+  useSeo('metodo')
 
   return (
     <main id="contenido" key={lang} className="bg-espresso">

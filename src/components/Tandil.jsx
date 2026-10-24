@@ -3,6 +3,7 @@ import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
 import SectionHeader from './SectionHeader'
+import ResponsiveImage from './ResponsiveImage'
 
 import fotoPanorama from '../assets/tandil-panorama.jpg'
 import fotoAtardecerCiudad from '../assets/tandil-atardecer-ciudad.jpg'
@@ -11,11 +12,11 @@ import fotoTorre from '../assets/tandil-torre.jpg'
 import fotoBarrio from '../assets/tandil-barrio-sierras.jpg'
 
 const IMAGEN_SECUENCIA = [
-  { src: fotoPanorama, alt: 0, textos: [0] },
-  { src: fotoBarrio, alt: 1, textos: [1, 2] },
-  { src: fotoAtardecerCiudad, alt: 3, textos: [3, 4] },
-  { src: fotoCieloAtardecer, alt: 4, textos: [5, 6] },
-  { src: fotoTorre, alt: 5, textos: [7, 8, 9] },
+  { name: 'tandil-panorama', src: fotoPanorama, alt: 0, textos: [0] },
+  { name: 'tandil-barrio-sierras', src: fotoBarrio, alt: 1, textos: [1, 2] },
+  { name: 'tandil-atardecer-ciudad', src: fotoAtardecerCiudad, alt: 3, textos: [3, 4] },
+  { name: 'tandil-cielo-atardecer', src: fotoCieloAtardecer, alt: 4, textos: [5, 6] },
+  { name: 'tandil-torre', src: fotoTorre, alt: 5, textos: [7, 8, 9] },
 ]
 
 export default function Tandil() {
@@ -48,10 +49,16 @@ export default function Tandil() {
       </div>
 
       {/* Fullscreen Image Sequence */}
-      <div className="relative h-screen bg-espresso overflow-hidden">
+      <div
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={lang === 'es' ? 'Galería de Tandil' : 'Tandil gallery'}
+        className="relative h-screen bg-espresso overflow-hidden"
+      >
         {/* Imagen actual */}
-        <img
-          src={currentSequence.src}
+        <ResponsiveImage
+          name={currentSequence.name}
+          fallback={currentSequence.src}
           alt={td.galleryAlts[currentSequence.alt]}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
@@ -83,7 +90,7 @@ export default function Tandil() {
           aria-label={lang === 'es' ? 'Imagen anterior' : 'Previous image'}
           className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" aria-hidden="true" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -94,13 +101,13 @@ export default function Tandil() {
           aria-label={lang === 'es' ? 'Imagen siguiente' : 'Next image'}
           className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur text-white transition-colors flex items-center justify-center"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" aria-hidden="true" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Indicador (X de Y) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex">
           {IMAGEN_SECUENCIA.map((_, idx) => (
             <button
               key={idx}
@@ -108,12 +115,17 @@ export default function Tandil() {
               onClick={() => goToImage(idx)}
               aria-label={`${lang === 'es' ? 'Ir a imagen' : 'Go to image'} ${idx + 1}`}
               aria-current={currentImg === idx}
-              className={`h-2 rounded-full transition-all ${
-                currentImg === idx
-                  ? 'w-8 bg-white'
-                  : 'w-2 bg-white/50 hover:bg-white/75'
-              }`}
-            />
+              className="flex h-6 items-center justify-center px-2"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-2 rounded-full transition-all ${
+                  currentImg === idx
+                    ? 'w-8 bg-white'
+                    : 'w-2 bg-white/50 hover:bg-white/75'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../lib/i18n'
 import { useCtaNavigate } from '../lib/useCtaNavigate'
 import Logo from './Logo'
@@ -42,8 +42,9 @@ export default function Navbar() {
   const [scrollOpacity, setScrollOpacity] = useState(0)
   const [isOverLightBg, setIsOverLightBg] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { t, lang } = useLang()
+  const { t, lang, localize } = useLang()
   const ctaNavigate = useCtaNavigate()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => {
@@ -71,9 +72,14 @@ export default function Navbar() {
       }
     }
     onScroll()
+    // Al cambiar de página el contenido nuevo (carga diferida) aparece un instante después.
+    const timers = [150, 500].map((ms) => setTimeout(onScroll, ms))
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    return () => {
+      timers.forEach(clearTimeout)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [pathname])
 
   const goEvaluar = () => {
     ctaNavigate('evaluar', 'nav')
@@ -94,7 +100,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link
-          to="/"
+          to={localize('/')}
           aria-label={lang === 'es' ? 'Local Local, ir al inicio' : 'Local Local, go to home'}
           className="flex h-16 w-16 flex-shrink-0 items-center justify-center"
         >
@@ -109,7 +115,7 @@ export default function Navbar() {
           {t.nav.links.map((link) => (
             <Link
               key={link.href}
-              to={link.href}
+              to={localize(link.href)}
               className="text-[12px] font-semibold transition-colors duration-300"
               style={{
                 color: isOverLightBg ? 'rgba(93, 64, 55, 0.8)' : 'rgba(255, 255, 255, 0.95)',
@@ -129,14 +135,14 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden flex items-center justify-center p-1.5 transition-colors"
-            aria-label={lang === 'es' ? 'Menú' : 'Menu'}
+            className="md:hidden flex items-center justify-center gap-1.5 p-1.5 transition-colors"
             aria-expanded={isMenuOpen}
             style={{
               color: isOverLightBg ? 'rgba(93, 64, 55, 0.8)' : 'rgba(255, 255, 255, 0.95)',
             }}
           >
             <HouseIcon isActive={isMenuOpen} color="currentColor" />
+            <span className="text-[12px] font-semibold">{lang === 'es' ? 'Menú' : 'Menu'}</span>
           </button>
 
           {/* Lang Toggle */}

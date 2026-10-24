@@ -6,7 +6,7 @@ import Logo from './Logo'
 
 export default function Footer() {
   const year = new Date().getFullYear()
-  const { t } = useLang()
+  const { t, localize } = useLang()
   const ft = t.footer
 
   return (
@@ -27,7 +27,7 @@ export default function Footer() {
             {t.nav.links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={localize(link.href)}
                 className="text-sm text-almond/75 transition-colors hover:text-white"
               >
                 {link.label}
@@ -66,7 +66,7 @@ export default function Footer() {
             <button
               type="button"
               onClick={() => openWhatsApp('footer', t.whatsappMessage)}
-              className="inline-flex items-center gap-2 text-left text-sm text-terracota transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-left text-sm text-terracota-soft transition-colors hover:text-white"
             >
               <MessageCircle size={15} strokeWidth={2} aria-hidden="true" />
               {ft.whatsapp}
@@ -122,7 +122,7 @@ export default function Footer() {
               className="inline-block font-mono text-[11px] tracking-wider transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:text-vanilla"
             >
               <span className="text-almond/75">Powered by </span>
-              <span className="text-terracota">Atomgrow</span>
+              <span className="text-terracota-soft">Atomgrow</span>
             </a>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function ComoComienza() {
 
         {cc.intro && (
           <div data-reveal className="mt-8 space-y-4">
-            <h3 className="font-display text-2xl font-bold text-espresso">{cc.intro}</h3>
+            <p className="font-display text-2xl font-bold text-espresso">{cc.intro}</p>
             <p className="text-base text-espresso/75">{cc.introSub}</p>
             <p className="font-display text-lg font-bold text-espresso">{cc.introHighlight}</p>
             <p className="text-sm leading-relaxed text-espresso/75">{cc.introDesc}</p>

@@ -25,7 +25,7 @@ export const STRINGS = {
       'entrega dentro de los tres días hábiles posteriores a la entrevista',
     ],
     valorLabel: 'Valor final:',
-    valor: '$300.000 finales',
+    valor: '$150.000 finales',
     garantia: 'Si dentro de las 48 horas de recibir el documento considerás que no te aportó claridad, información relevante ni una hoja de ruta útil, podés solicitar la devolución del importe abonado.',
     cta: 'QUIERO MI DIAGNÓSTICO',
     visita: 'Visita estratégica a Tandil y activación de la red local, desde $500.000 finales para dos personas.',
@@ -208,7 +208,7 @@ export const STRINGS = {
             'Análisis integral del proyecto.',
             'Entrega de diagnóstico y propuesta de hoja de ruta por escrito, con prioridades, escenarios y próximos pasos dentro de los tres días hábiles posteriores a la entrevista.',
           ],
-          valor: 'Valor final: $300.000 finales',
+          valor: 'Valor final: $150.000 finales',
           notas: [],
         },
         {
@@ -349,7 +349,7 @@ export const STRINGS = {
       titleSans: 'Para quienes reconocen el valor del asesoramiento preventivo:',
       titleSerif: 'ordenar antes de avanzar, verificar antes de comprometerse y decidir con una mirada integral',
       intro:
-        'Local Local está pensado para personas, familias y empresas que valoran su tiempo, su patrimonio, la confidencialidad y el acceso a una red local seleccionada.',
+        'Local Local acompaña a personas, profesionales y familias que están evaluando relocalizarse en Tandil y valoran su tiempo, su patrimonio, la confidencialidad y el acceso a una red local seleccionada.',
       perfiles: [
         {
           t: 'Personas y familias',
@@ -605,6 +605,11 @@ export const STRINGS = {
       title: 'Sigamos pensando juntos',
       copy: 'Compartimos ideas, experiencias y herramientas para quienes están atravesando una mudanza, evaluando un cambio de ciudad o imaginando una nueva etapa para su familia o su proyecto.',
       cta: 'Suscribite para recibir nuestras próximas historias y novedades',
+      placeholder: 'Tu correo electrónico',
+      enviando: 'Enviando…',
+      gracias: '¡Listo! Te sumamos a la lista y te vamos a escribir por email.',
+      error: 'Ingresá un correo electrónico válido.',
+      errorEnvio: 'No pudimos suscribirte ahora. Probá de nuevo en unos minutos o escribinos por WhatsApp.',
       privacidad: 'Al suscribirte aceptás recibir novedades por email. Podés darte de baja en cualquier momento desde el enlace incluido en cada envío.',
       privacidadLink: 'Política de privacidad',
     },
@@ -775,10 +780,10 @@ export const STRINGS = {
       'delivery within three business days of the interview',
     ],
     valorLabel: 'Final price:',
-    valor: 'ARS 300,000',
+    valor: 'USD 100',
     garantia: 'If within 48 hours of receiving the document you feel it did not bring you clarity, relevant information, or a useful roadmap, you can request a refund of the amount paid.',
     cta: 'Book my assessment',
-    visita: 'Strategic visit to Tandil & introductions to our local network, starting at ARS 500,000 for two people.',
+    visita: 'Strategic visit to Tandil & introductions to our local network, starting at USD 350 for two people.',
     visitaDetalle: 'Includes a personalized itinerary of one to three days and up to two nights of accommodation. Transfers are not included. The final proposal is prepared after the assessment.',
   },
 
@@ -797,7 +802,7 @@ export const STRINGS = {
         'Your move to Tandil, planned with a clear process and trusted local support. Assessment, strategy, and a carefully vetted local network.',
     },
     whatsappMessage:
-      "Hi, I am evaluating a project in Tandil and I would like to schedule a assessment interview.",
+      "Hi, I am evaluating a project in Tandil and I would like to schedule an assessment interview.",
     newsletterWhatsappMessage:
       "Hi, I would like to subscribe to the Local Local newsletter.",
 
@@ -848,7 +853,7 @@ export const STRINGS = {
       titleSans: 'Moving is much more than',
       titleSerif: 'finding a property',
       intro:
-        'Changing cities sets many variables in motion at once: schools, distances, family routines, costs, housing and the way you inhabit the city. When those decisions are made in a fragmented way, the project loses coherence: trips multiply, biased information appears, unreliable providers get chosen and mistakes become hard to fix.',
+        'Moving to a new city affects many parts of your life at once: schools, distances, family routines, costs, housing, and how you live day to day. When those decisions are made separately, the project loses coherence: trips multiply, information may be biased, unreliable providers get chosen, and mistakes become difficult to fix.',
       intro2: 'At Local Local, we bring those variables together before they turn into problems.',
       escenarios: [
         {
@@ -941,7 +946,7 @@ export const STRINGS = {
 
     servicios: {
       kicker: 'Services',
-      titleSans: 'The full journey,',
+      titleSans: 'The full journey',
       titleSerif: 'at a glance',
       etapas: [
         {
@@ -958,7 +963,7 @@ export const STRINGS = {
             'Comprehensive project analysis.',
             'Written assessment and roadmap proposal, with priorities, scenarios and next steps, delivered within three business days of the interview.',
           ],
-          valor: 'Final price: ARS $300,000.-',
+          valor: 'Final price: USD 100',
           notas: [],
         },
         {
@@ -980,7 +985,7 @@ export const STRINGS = {
             'Final debrief and roadmap update.',
             'Up to two nights of accommodation, subject to availability and capacity.',
           ],
-          valor: 'Base price: ARS $500,000.- final for two people, including up to two nights of accommodation.',
+          valor: 'Starting at USD 350 for two people, including up to two nights of accommodation.',
           notas: [
             'The final proposal is set after the assessment, based on the number of people, planned activities and the complexity of the agenda. Before confirming the visit, we inform you of the final price and accommodation details.',
             'For groups of more than two people, or when a different accommodation option is required, any difference is quoted in advance.',
@@ -1029,7 +1034,7 @@ export const STRINGS = {
       ],
       flexibleTitulo: 'A flexible journey',
       flexible: [
-        'The service is designed to move forward in stages: each stage prepares you for the next. That is the journey we recommend to avoid isolated decisions and move forward with greater clarity.',
+        'The service is designed to move forward in stages: each stage organizes and prepares you for the next. That is the journey we recommend to avoid isolated decisions and move forward with greater clarity.',
         'If your project is already underway and you need a specific intervention, we can step in at the stage that best fits your needs.',
       ],
       cta: 'Tell us your case on WhatsApp',
@@ -1099,7 +1104,7 @@ export const STRINGS = {
       titleSans: 'For those who recognize the value of preventive advice:',
       titleSerif: 'planning before moving forward, verifying before committing, and making decisions with the full picture',
       intro:
-        'Local Local is designed for people, families and companies who value their time, their assets, confidentiality and access to a curated local network.',
+        'Local Local supports people, professionals and families who are evaluating a move to Tandil and value their time, their assets, confidentiality and access to a curated local network.',
       perfiles: [
         {
           t: 'People & families',
@@ -1195,9 +1200,8 @@ export const STRINGS = {
         'I explain the reasoning behind each recommendation so you can decide with clarity.',
       ],
       expertiseCierre: [
-        'When the project includes an asset transaction, I lead the legal, notarial and technical due diligence stage.',
-        'Every recommendation carries my name, my criteria and my professional responsibility.',
-        'I am licensed with the Buenos Aires City Bar Association and the Azul Judicial Department Bar Association, Province of Buenos Aires. This allows me to personally take on the legal work each case requires and integrate it into the rest of the process.',
+        'When the project includes an asset transaction, I lead the legal, notarial, and technical due diligence stage. Every recommendation carries my name, my professional judgment, and my responsibility.',
+        'I am licensed with the Buenos Aires City Bar Association and the Azul Judicial Department Bar Association in the Province of Buenos Aires. This allows me to personally handle the legal work required by each case and integrate it into the rest of the process.',
       ],
       compromisoLabel: 'My commitment',
       compromiso: [
@@ -1358,6 +1362,11 @@ export const STRINGS = {
       title: 'Let’s keep exploring together',
       copy: 'We share ideas, experiences, and practical tools for people going through a move, considering a new city, or imagining a new chapter for their family or project.',
       cta: 'Subscribe for stories, insights, and updates',
+      placeholder: 'Your email address',
+      enviando: 'Sending…',
+      gracias: 'Done! You are on the list and we will email you.',
+      error: 'Please enter a valid email address.',
+      errorEnvio: 'We could not subscribe you right now. Please try again in a few minutes or message us on WhatsApp.',
       privacidad: 'By subscribing you agree to receive updates by email. You can unsubscribe at any time using the link included in each message.',
       privacidadLink: 'Privacy policy',
     },
@@ -1411,7 +1420,7 @@ export const STRINGS = {
       navLabel: 'Navigation',
       legalLabel: 'Legal',
       legales: [
-        { label: 'Legal information — available in Spanish', href: '/legales.html' },
+        { label: 'Legal information', href: '/en/legal.html' },
       ],
       contactoLabel: 'Contact',
       whatsapp: 'Message us on WhatsApp →',

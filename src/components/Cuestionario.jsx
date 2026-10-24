@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Check } from 'lucide-react'
-import { useLang } from '../lib/i18n'
+import { useLang, legalHref } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { LINKS } from '../config'
 import {
@@ -24,7 +24,7 @@ const LABEL_CLASS = 'mb-2 block font-mono text-[11px] uppercase tracking-[0.18em
 // ramificaciones futuras según la respuesta 1.
 export default function Cuestionario() {
   const scope = useReveal()
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const c = t.cuestionario
 
   const [paso, setPaso] = useState(0) // 0..2 preguntas, 3 datos, 4 gracias
@@ -83,6 +83,11 @@ export default function Cuestionario() {
 
     window.open(buildWhatsAppUrl(t.whatsappMessage, lineas), '_blank', 'noopener')
     setPaso(4)
+  }
+
+  const enviarDesdeForm = (e) => {
+    e.preventDefault()
+    enviar()
   }
 
   const postDiagnostico = () => {
@@ -222,8 +227,8 @@ export default function Cuestionario() {
           )}
 
           {paso === 3 && (
-            <fieldset>
-              <legend className="font-display text-xl font-bold text-espresso">{c.datos.label}</legend>
+            <form onSubmit={enviarDesdeForm} aria-labelledby="ll-datos-titulo">
+              <h3 id="ll-datos-titulo" className="font-display text-xl font-bold text-espresso">{c.datos.label}</h3>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className={LABEL_CLASS} htmlFor="ll-nombre">
@@ -277,6 +282,7 @@ export default function Cuestionario() {
                   </label>
                   <select
                     id="ll-preferencia"
+                    name="preferencia"
                     value={datos.preferencia}
                     onChange={(e) => setDatos((d) => ({ ...d, preferencia: e.target.value }))}
                     className={`${INPUT_CLASS} appearance-none ${datos.preferencia ? '' : 'text-espresso/75'}`}
@@ -319,7 +325,7 @@ export default function Cuestionario() {
               <p className="mt-6 text-xs leading-relaxed text-espresso/80">
                 {c.confid}{' '}
                 <a
-                  href="/legales.html#privacidad"
+                  href={legalHref(lang, 'privacidad')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-espresso underline underline-offset-2 hover:text-terracota"
@@ -331,8 +337,7 @@ export default function Cuestionario() {
               <div className="mt-8 flex justify-between">
                 <BotonAtras a={2} />
                 <button
-                  type="button"
-                  onClick={enviar}
+                  type="submit"
                   disabled={!datos.nombre.trim() || (!datos.email.trim() && !datos.whatsapp.trim())}
                   className="btn-magnetic rounded-full bg-terracota px-9 py-3.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
                 >
@@ -340,7 +345,7 @@ export default function Cuestionario() {
                   {c.enviar}
                 </button>
               </div>
-            </fieldset>
+            </form>
           )}
 
           {paso === 4 && (

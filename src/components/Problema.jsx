@@ -2,6 +2,7 @@ import { X, Check } from 'lucide-react'
 import { useLang } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import problemaImg from '../assets/problema-bg.jpg'
+import ResponsiveImage from './ResponsiveImage'
 
 // [MEJORA #2] Fondo cinematográfico + tarjetas glass effect
 
@@ -16,10 +17,13 @@ export default function Problema() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden py-24 sm:py-32"
     >
       {/* Fondo parallax */}
-      <img
-        loading="lazy"
-        src={problemaImg}
-        alt="Tandil landscape"
+      <ResponsiveImage
+        name="problema-bg"
+        fallback={problemaImg}
+        width={683}
+        height={1024}
+        sizes="100vw"
+        alt=""
         className="absolute inset-0 h-full w-full object-cover"
         style={{
           backgroundAttachment: 'fixed',
@@ -116,7 +120,7 @@ export default function Problema() {
             ))}
           </div>
 
-          <p data-reveal className="mt-12 text-center text-sm italic leading-relaxed text-almond/75 max-w-2xl mx-auto">
+          <p data-reveal className="mx-auto mt-16 max-w-3xl text-center font-display text-2xl font-semibold leading-snug text-white sm:text-3xl">
             {p.cierre}
           </p>
         </div>

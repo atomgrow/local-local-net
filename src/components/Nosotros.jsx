@@ -5,6 +5,7 @@ import { LINKS } from '../config'
 import { trackEvent } from '../lib/tracking'
 import SectionHeader from './SectionHeader'
 import bernardoRetrato from '../assets/bernardo-retrato.jpg'
+import ResponsiveImage from './ResponsiveImage'
 
 // [MEJORA #4] Bernardo: humanización + autoridad + compromiso personal.
 const BERNARDO_PHOTO = bernardoRetrato
@@ -17,18 +18,21 @@ export default function Nosotros() {
   return (
     <section id="nosotros" ref={scope} className="bg-vanilla/50 px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-5xl">
-        <SectionHeader kicker={n.kicker} titleSans={n.titleSans} titleSerif={n.titleSerif} />
+        <SectionHeader kicker={n.kicker} titleSans={n.titleSans} titleSerif={n.titleSerif} as="h1" />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
           {/* Foto + tarjeta de identidad */}
           <div data-reveal>
             <figure className="overflow-hidden rounded-[2rem] shadow-xl shadow-espresso/10">
-              <img
-                src={BERNARDO_PHOTO}
+              <ResponsiveImage
+                name="bernardo-retrato"
+                fallback={BERNARDO_PHOTO}
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 alt={n.fotoAlt}
                 width="1254"
                 height="1254"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 className="aspect-[4/5] w-full object-cover"
               />
             </figure>

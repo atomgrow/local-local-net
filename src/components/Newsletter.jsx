@@ -1,25 +1,49 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
-import { useLang } from '../lib/i18n'
+import { useLang, legalHref } from '../lib/i18n'
 import { useReveal } from '../lib/useReveal'
 import { trackNewsletterSignup, openWhatsApp } from '../lib/tracking'
+import { LINKS } from '../config'
 
-// Newsletter: suscripción por WhatsApp con mensaje personalizado.
+// Alta en el servicio de email vía /api/subscribe. Devuelve 'ok', 'fallback'
+// (el servicio todavía no está configurado) o 'fail' (error real).
+async function subscribe(email, lang, website) {
+  try {
+    const response = await fetch(LINKS.newsletterEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, lang, website }),
+    })
+    if (response.ok) return 'ok'
+    return response.status === 503 || response.status === 404 ? 'fallback' : 'fail'
+  } catch {
+    return 'fallback'
+  }
+}
+
+// Newsletter: alta por email. Si el servicio no está configurado, respaldo por WhatsApp.
 export default function Newsletter() {
   const scope = useReveal()
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const nl = t.newsletter
   const [email, setEmail] = useState('')
-  const [estado, setEstado] = useState('idle') // idle | ok | error
+  const [website, setWebsite] = useState('') // campo trampa para bots
+  const [estado, setEstado] = useState('idle') // idle | sending | ok | error | fail
 
-  const enviar = (e) => {
+  const enviar = async (e) => {
     e.preventDefault()
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setEstado('error')
       return
     }
+    setEstado('sending')
+    const result = LINKS.newsletterEndpoint ? await subscribe(email, lang, website) : 'fallback'
+    if (result === 'fail') {
+      setEstado('fail')
+      return
+    }
     trackNewsletterSignup()
-    openWhatsApp('newsletter', t.newsletterWhatsappMessage)
+    if (result === 'fallback') openWhatsApp('newsletter', t.newsletterWhatsappMessage)
     setEstado('ok')
   }
 
@@ -37,6 +61,16 @@ export default function Newsletter() {
           </p>
         ) : (
           <form onSubmit={enviar} className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              className="absolute -left-[9999px] h-0 w-0 opacity-0"
+            />
             <label className="sr-only" htmlFor="ll-newsletter-email">
               Email
             </label>
@@ -57,23 +91,24 @@ export default function Newsletter() {
             />
             <button
               type="submit"
-              className="btn-magnetic shrink-0 rounded-full bg-matcha px-7 py-3.5 text-sm font-semibold text-white"
+              disabled={estado === 'sending'}
+              className="btn-magnetic shrink-0 rounded-full bg-matcha px-7 py-3.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60"
             >
               <span className="btn-sheen bg-espresso/25" aria-hidden="true" />
-              {nl.cta}
+              {estado === 'sending' ? nl.enviando : nl.cta}
             </button>
           </form>
         )}
-        {estado === 'error' && (
+        {(estado === 'error' || estado === 'fail') && (
           <p role="alert" className="mt-3 font-mono text-xs tracking-wide text-terracota">
-            {nl.error}
+            {estado === 'fail' ? nl.errorEnvio : nl.error}
           </p>
         )}
         {estado !== 'ok' && (
           <p className="mt-4 text-xs leading-relaxed text-espresso/80">
             {nl.privacidad}{' '}
             <a
-              href="/legales.html#privacidad"
+              href={legalHref(lang, 'privacidad')}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-espresso underline underline-offset-2 hover:text-terracota"

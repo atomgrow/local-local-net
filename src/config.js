@@ -40,13 +40,13 @@ export const LINKS = {
   // Página completa de preguntas frecuentes. [PENDIENTE]
   faqPage: '/preguntas-frecuentes',
 
-  // Endpoint de newsletter (Mailchimp, Brevo, etc.). [PENDIENTE]
-  // Mientras esté vacío, el alta se registra solo como evento + WhatsApp.
-  newsletterEndpoint: '',
+  // Función de Vercel que da de alta el email en Brevo (api/subscribe.js).
+  // Si Brevo todavía no está configurado, el sitio usa el respaldo por WhatsApp.
+  newsletterEndpoint: '/api/subscribe',
 }
 
 // URL canónica del sitio.
-export const CANONICAL_URL = 'https://locallocal.net'
+export const CANONICAL_URL = 'https://www.locallocal.net'
 
 // ------------------------------------------------------------
 // Precio del diagnóstico. [PENDIENTE — definir antes de publicar]
