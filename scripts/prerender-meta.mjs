@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { PAGES, SITE_URL, OG_IMAGE, alternatesFor } from '../src/lib/seo-data.js'
 import { LINKS } from '../src/config.js'
+import { GUIDES_UPDATED } from '../src/content/guides.js'
 
 const DIST = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist')
 const template = await readFile(join(DIST, 'index.html'), 'utf8')
@@ -61,6 +62,7 @@ const BUSINESS = {
     jobTitle: 'Abogado y fundador de Local Local',
     serviceType: 'Servicio de relocalización',
     home: 'Inicio',
+    guides: 'Guías',
   },
   en: {
     description:
@@ -68,6 +70,7 @@ const BUSINESS = {
     jobTitle: 'Lawyer and founder of Local Local',
     serviceType: 'Relocation service',
     home: 'Home',
+    guides: 'Guides',
   },
 }
 
@@ -77,12 +80,14 @@ function jsonLd(page, lang) {
   const url = `${SITE_URL}${m.path}`
   const inLanguage = lang === 'es' ? 'es-AR' : 'en'
   const sameAs = [LINKS.linkedin, LINKS.instagram].filter(Boolean)
+  const isGuide = page.startsWith('guide:')
   const businessId = `${SITE_URL}/#business`
   const graph = [
     {
       '@type': 'ProfessionalService',
       '@id': businessId,
       name: 'Local Local',
+      alternateName: ['LocalLocal', 'Local Local Tandil', 'locallocal.net'],
       url: SITE_URL,
       description: b.description,
       serviceType: b.serviceType,
@@ -115,7 +120,7 @@ function jsonLd(page, lang) {
       publisher: { '@id': businessId },
     },
     {
-      '@type': page === 'nosotros' ? 'AboutPage' : 'WebPage',
+      '@type': isGuide ? 'Article' : page === 'nosotros' ? 'AboutPage' : page === 'guias' ? 'CollectionPage' : 'WebPage',
       '@id': `${url}#webpage`,
       url,
       name: m.title,
@@ -123,15 +128,24 @@ function jsonLd(page, lang) {
       inLanguage,
       isPartOf: { '@id': `${SITE_URL}/#website` },
       about: { '@id': businessId },
+      ...(isGuide && {
+        headline: m.title.split(' | ')[0],
+        datePublished: GUIDES_UPDATED,
+        dateModified: GUIDES_UPDATED,
+        mainEntityOfPage: url,
+        image: `${SITE_URL}${OG_IMAGE.path}`,
+        author: { '@id': `${SITE_URL}/nosotros#bernardo` },
+        publisher: { '@id': businessId },
+      }),
     },
   ]
   if (page !== 'home') {
+    const trail = [{ name: b.home, url: `${SITE_URL}${PAGES.home[lang].path}` }]
+    if (isGuide) trail.push({ name: b.guides, url: `${SITE_URL}${PAGES.guias[lang].path}` })
+    trail.push({ name: m.title.split(' | ')[0], url })
     graph.push({
       '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: b.home, item: `${SITE_URL}${PAGES.home[lang].path}` },
-        { '@type': 'ListItem', position: 2, name: m.title.split(' | ')[0], item: url },
-      ],
+      itemListElement: trail.map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: item.url })),
     })
   }
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`
@@ -187,3 +201,23 @@ for (const page of Object.keys(PAGES)) {
 const notFound = inject(setLang(template, 'es'), '<title>404 | Local Local</title>\n    <meta name="robots" content="noindex" />')
 await writeFile(join(DIST, '404.html'), notFound, 'utf8')
 console.log('prerender 404.html')
+
+// sitemap.xml: todas las páginas con sus equivalentes en el otro idioma (hreflang).
+const urls = []
+for (const page of Object.keys(PAGES)) {
+  const alt = alternatesFor(page)
+  for (const lang of ['es', 'en']) urls.push({ loc: PAGES[page][lang].path, es: alt.es, en: alt.en, priority: page === 'home' ? '1.0' : page.startsWith('guide:') ? '0.7' : '0.8' })
+}
+urls.push({ loc: '/legales.html', es: '/legales.html', en: '/en/legal.html', priority: '0.3' }, { loc: '/en/legal.html', es: '/legales.html', en: '/en/legal.html', priority: '0.3' })
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls.map((u) => `  <url>
+    <loc>${SITE_URL}${u.loc === '/' ? '/' : u.loc}</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}${u.es}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${u.en}" />
+    <priority>${u.priority}</priority>
+  </url>`).join('\n')}
+</urlset>
+`
+await writeFile(join(DIST, 'sitemap.xml'), xml, 'utf8')
+console.log(`sitemap.xml (${urls.length} URLs)`)

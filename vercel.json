@@ -3,28 +3,75 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "locallocal.net" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "locallocal.net"
+        }
+      ],
       "destination": "https://www.locallocal.net/$1",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/en", "destination": "/en/index.html" },
-    { "source": "/metodo", "destination": "/metodo/index.html" },
-    { "source": "/en/metodo", "destination": "/en/metodo/index.html" },
-    { "source": "/nosotros", "destination": "/nosotros/index.html" },
-    { "source": "/en/nosotros", "destination": "/en/nosotros/index.html" }
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/metodo",
+      "destination": "/metodo/index.html"
+    },
+    {
+      "source": "/en/metodo",
+      "destination": "/en/metodo/index.html"
+    },
+    {
+      "source": "/nosotros",
+      "destination": "/nosotros/index.html"
+    },
+    {
+      "source": "/en/nosotros",
+      "destination": "/en/nosotros/index.html"
+    },
+    {
+      "source": "/guias",
+      "destination": "/guias/index.html"
+    },
+    {
+      "source": "/en/guides",
+      "destination": "/en/guides/index.html"
+    },
+    {
+      "source": "/guias/:slug",
+      "destination": "/guias/:slug/index.html"
+    },
+    {
+      "source": "/en/guides/:slug",
+      "destination": "/en/guides/:slug/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]
