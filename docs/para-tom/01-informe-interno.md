@@ -1,17 +1,20 @@
 # Local Local: informe interno (Tom)
 
+**ACTUALIZACIÓN 25/10/2026: la versión B (rama `v4`) fue la elegida y ya está publicada en https://www.locallocal.net.** Verificado en producción: portada en español e inglés, guías, sitemap (22 URLs), 404 real y función del newsletter (cae al respaldo por WhatsApp hasta configurar Resend).
+**Falta:** el dominio sin www (`locallocal.net`) todavía no abre por HTTPS: hay que agregarlo en el panel de Vercel (ver paso 2 de `02-guia-paso-a-paso.md`).
+
 Estado al 25/10/2026. Documento para vos. El detalle de **todas** las correcciones de Bernardo, punto por punto, está en `../para-bernardo/02-correcciones-realizadas.md`.
 
 ## 1. Cómo quedó armado
 
-**Etapa 1 (correcciones): terminada.** Lo único que falta es que Bernardo elija una versión y publicar.
+**Etapa 1 (correcciones): terminada y publicada** (versión B).
 
 | Rama | Qué es | Dónde se ve |
 |---|---|---|
 | `v3-final` (igual a `main`) | **Versión A**, la oficial: todas las correcciones del PDF | Vista previa de Vercel |
 | `v4` | **Versión B**: la A más 6 ajustes mínimos de la auditoría | Vista previa de Vercel |
 
-El sitio publicado hoy en locallocal.net sigue siendo la versión anterior. Cuando Bernardo elija, la ganadora pasa a `main` y se publica (ver `02-guia-paso-a-paso.md`).
+`main` ya contiene la versión B. Las ramas `v3-final` y `v4` quedan como respaldo de las dos versiones.
 
 **Las dos versiones incluyen** (lo nuevo de esta ronda): precio $150.000 / USD 100 y visita USD 350 en inglés, URLs en inglés (`/en`), Legales en inglés, 6 guías en ES/EN, newsletter por email con Resend, y las mejoras de SEO descritas abajo.
 

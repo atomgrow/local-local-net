@@ -8,7 +8,7 @@
 - Precios: diagnóstico **$150.000** (ES) / **USD 100** (EN); visita **$500.000** (ES) / **USD 350** (EN).
 - Newsletter por email con Resend: listo en el código; falta configurarlo (ver `docs/para-tom/02-guia-paso-a-paso.md`).
 - Seis guías en ES y EN (`/guias`, `/en/guides`); Bernardo debe revisarlas antes de publicar.
-- Dos versiones para elegir: rama `v3-final` (oficial) y `v4` (con los ajustes de la auditoría).
+- Versión B (rama `v4`) elegida por Bernardo y **publicada el 25/10/2026** en www.locallocal.net. La versión A queda en la rama `v3-final`.
 - Versión EN con URLs propias: `/en`, `/en/metodo`, `/en/nosotros`, con hreflang cruzado y canonical propio.
 - Título, descripción, canonical y Open Graph por página e idioma (`src/lib/seo-data.js`); HTML estático generado en el build (`scripts/prerender-meta.mjs`).
 - Legales en inglés: `public/en/legal.html` (con aviso de que prevalece la versión en español). Selector ES/EN en ambas versiones de Legales.
@@ -32,7 +32,7 @@
 
 ## Pendiente — fuera del código
 
-- [ ] **Dominio en Vercel:** agregar `locallocal.net` al proyecto y reparar el certificado (el 502 del apex). La redirección 301 ya está en `vercel.json`.
+- [ ] **Dominio sin www:** `www.locallocal.net` funciona; `locallocal.net` todavía falla por HTTPS. Agregarlo en Vercel (equipo atomgrow-projects → local-local-net → Settings → Domains) y ajustar el registro A en Porkbun. La redirección a www ya está en `vercel.json`.
 - [ ] **Search Console:** verificar `www.locallocal.net` y enviar el sitemap (requiere la cuenta de Tom o Bernardo).
 - [ ] **Fotos (opcional):** las de la carpeta compartida miden 1024 px como máximo y funcionan. Si se quieren más nítidas, pedir los originales al fotógrafo, copiarlos a `src/assets` y correr `npm run images`.
 - [ ] **Retrato de Bernardo:** Bernardo lo reemplaza por la foto de perfil definitiva.

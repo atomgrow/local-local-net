@@ -1,5 +1,7 @@
 # Guía paso a paso (Tom)
 
+> **Estado 25/10/2026:** el paso 1 está hecho (versión B publicada en www.locallocal.net). Faltan los pasos 2 en adelante. El token de GitHub ya se resolvió (paso 0).
+
 Las pantallas de Vercel, Google, Resend y Bing cambian de nombre con frecuencia. Si un botón no se llama igual, buscá el equivalente y avisame.
 
 **Orden recomendado:** 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8.
@@ -70,7 +72,11 @@ Vercel publica en producción en un par de minutos.
 2. Vercel muestra los registros DNS. Cargalos donde esté el DNS del dominio (en el registrador, o en Vercel si le delegaste los nameservers). Usá siempre los valores que te muestre Vercel; suelen ser:
    - `locallocal.net` → registro **A** a la IP que indique
    - `www` → registro **CNAME** a `cname.vercel-dns.com`
-3. Esperá al certificado (minutos a unas horas) hasta ver *Valid Configuration*.
+3. **Dominio sin www (`locallocal.net`): es lo que hoy falla.** En Vercel, entrá al **equipo atomgrow-projects** (arriba a la izquierda), proyecto **local-local-net** → Settings → Domains.
+   - Si `locallocal.net` no figura: **Add** → `locallocal.net` → elegí la opción que lo **redirige a www.locallocal.net**.
+   - Si figura con un error rojo, abrí **Configure** y copiá el registro DNS que muestra.
+   - En **Porkbun** (donde está el DNS): Domain Management → `locallocal.net` → DNS. Dejá el registro **A** de la raíz con el valor que indique Vercel (hoy apunta a `76.76.19.0` y `76.76.19.1`, que son direcciones antiguas). El registro de `www` ya está bien.
+   - Esperá al certificado (minutos a unas horas) hasta ver *Valid Configuration*.
 4. Marcá `www.locallocal.net` como principal. `locallocal.net` redirige solo.
 5. **Verificá:**
    - `https://locallocal.net` salta a `https://www.locallocal.net`.
