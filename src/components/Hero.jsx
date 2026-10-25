@@ -59,14 +59,11 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 pt-40 sm:px-10 sm:pb-24">
         <div className="max-w-2xl">
-          <p
-            data-hero-fade
-            className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-almond/75"
-          >
-            {t.hero.kicker}
-          </p>
-
+          {/* El kicker ("Relocalización en Tandil") va dentro del H1: es la frase que la gente busca. */}
           <h1 data-hero-fade className="text-white">
+            <span className="mb-6 block font-mono text-[11px] font-normal uppercase tracking-[0.3em] text-almond/75">
+              {t.hero.kicker}
+            </span>
             <span className="block font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
               {t.hero.titleSans}
             </span>

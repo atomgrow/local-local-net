@@ -2,6 +2,7 @@ import { createContext, useContext, useMemo, useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { STRINGS } from './strings'
 import { trackLanguageChange } from './tracking'
+import { equivalentPath } from './seo-data'
 
 // ============================================================
 //  Idioma por URL:
@@ -47,9 +48,11 @@ export function LanguageProvider({ children }) {
     (next) => {
       if (next === lang) return
       trackLanguageChange(next)
-      navigate(`${localizedPath(next, base)}${search}${hash}`)
+      // Las guías tienen una URL distinta en cada idioma: se busca la equivalente.
+      const target = equivalentPath(pathname, next) ?? localizedPath(next, base)
+      navigate(`${target}${search}${hash}`)
     },
-    [lang, base, search, hash, navigate],
+    [lang, base, pathname, search, hash, navigate],
   )
 
   const value = useMemo(

@@ -14,6 +14,8 @@ import SkipLink from './components/SkipLink'
 // Método y Nosotros se cargan al visitarlas: la home no descarga su código.
 const MetodoPage = lazy(() => import('./pages/MetodoPage'))
 const NosotrosPage = lazy(() => import('./pages/NosotrosPage'))
+const GuiasPage = lazy(() => import('./pages/GuiasPage'))
+const GuiaPage = lazy(() => import('./pages/GuiaPage'))
 
 export default function App() {
   useEffect(() => {
@@ -36,6 +38,10 @@ export default function App() {
               <Route path="/en/metodo" element={<MetodoPage />} />
               <Route path="/nosotros" element={<NosotrosPage />} />
               <Route path="/en/nosotros" element={<NosotrosPage />} />
+              <Route path="/guias" element={<GuiasPage />} />
+              <Route path="/en/guides" element={<GuiasPage />} />
+              <Route path="/guias/:slug" element={<GuiaPage />} />
+              <Route path="/en/guides/:slug" element={<GuiaPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

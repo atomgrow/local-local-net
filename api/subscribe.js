@@ -1,14 +1,31 @@
-// Vercel Function: alta del newsletter en Brevo.
+// Vercel Function: alta del newsletter con Resend.
+//
+// Qué hace cuando alguien deja su email en el sitio:
+//   1. Le envía el primer correo (Newsletter 01) desde bernardo@locallocal.net.
+//   2. Le avisa a Bernardo que hay una nueva suscripción (así queda un registro).
+//   3. Si hay lista (audiencia) configurada, guarda el contacto ahí.
 //
 // Variables de entorno (Vercel → Project → Settings → Environment Variables):
-//   BREVO_API_KEY      clave de API de Brevo (obligatoria)
-//   BREVO_LIST_ID_ES   id numérico de la lista en español (obligatoria)
-//   BREVO_LIST_ID_EN   id de la lista en inglés (opcional; si falta se usa la de español)
+//   RESEND_API_KEY        clave de API de Resend (obligatoria)
+//   NEWSLETTER_FROM       remitente, ej.: Bernardo Cisterna <bernardo@locallocal.net> (obligatoria;
+//                         el dominio debe estar verificado en Resend)
+//   NEWSLETTER_NOTIFY     a quién avisar de cada alta (opcional; por defecto, bernardo@locallocal.net)
+//   RESEND_AUDIENCE_ID    id de la audiencia/lista donde guardar contactos (opcional)
 //
 // Si falta la configuración responde 503 `not_configured` y el sitio usa el
-// respaldo por WhatsApp, así que se puede publicar antes de tener Brevo listo.
+// respaldo por WhatsApp, así que se puede publicar antes de tener Resend listo.
+import { newsletterEmail } from './_emails.js'
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const REPLY_TO = 'bernardo@locallocal.net'
+
+async function resend(path, apiKey, body) {
+  return fetch(`https://api.resend.com${path}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -27,21 +44,39 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'invalid_email' })
   }
 
-  const apiKey = process.env.BREVO_API_KEY
-  const listId = Number(lang === 'en' ? process.env.BREVO_LIST_ID_EN || process.env.BREVO_LIST_ID_ES : process.env.BREVO_LIST_ID_ES)
-  if (!apiKey || !listId) {
+  const apiKey = process.env.RESEND_API_KEY
+  const from = process.env.NEWSLETTER_FROM
+  if (!apiKey || !from) {
     return res.status(503).json({ error: 'not_configured' })
   }
 
+  const notify = process.env.NEWSLETTER_NOTIFY || REPLY_TO
+  const audienceId = process.env.RESEND_AUDIENCE_ID
+  const { subject, html } = newsletterEmail(lang)
+
   try {
-    const response = await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: { 'api-key': apiKey, 'content-type': 'application/json', accept: 'application/json' },
-      // updateEnabled: si la persona ya estaba en Brevo, solo se la suma a la lista.
-      body: JSON.stringify({ email, listIds: [listId], updateEnabled: true }),
+    const welcome = await resend('/emails', apiKey, {
+      from,
+      to: [email],
+      reply_to: REPLY_TO,
+      subject,
+      html,
+      headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=BAJA>` },
     })
-    if (response.status === 201 || response.status === 204) return res.status(200).json({ ok: true })
-    return res.status(502).json({ error: 'provider_error' })
+    if (!welcome.ok) return res.status(502).json({ error: 'provider_error' })
+
+    // El aviso y el guardado del contacto no deben hacer fallar el alta.
+    await Promise.allSettled([
+      resend('/emails', apiKey, {
+        from,
+        to: [notify],
+        subject: `Nueva suscripción al newsletter (${lang.toUpperCase()}): ${email}`,
+        text: `Se suscribió ${email} desde locallocal.net (idioma: ${lang}).`,
+      }),
+      audienceId ? resend(`/audiences/${audienceId}/contacts`, apiKey, { email, unsubscribed: false }) : null,
+    ])
+
+    return res.status(200).json({ ok: true })
   } catch {
     return res.status(502).json({ error: 'provider_unreachable' })
   }
