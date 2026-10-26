@@ -1,7 +1,8 @@
 # Local Local: informe interno (Tom)
 
 **ACTUALIZACIÓN 25/10/2026: la versión B (rama `v4`) fue la elegida y ya está publicada en https://www.locallocal.net.** Verificado en producción: portada en español e inglés, guías, sitemap (22 URLs), 404 real y función del newsletter (cae al respaldo por WhatsApp hasta configurar Resend).
-**Falta:** el dominio sin www (`locallocal.net`) todavía no abre por HTTPS: hay que agregarlo en el panel de Vercel (ver paso 2 de `02-guia-paso-a-paso.md`).
+**Dominio terminado:** `locallocal.net` redirige a `www.locallocal.net` (308), el certificado está emitido y el CNAME de `www` usa el registro recomendado por Vercel. Verificado el 25/10/2026.
+**Siguiente paso tuyo:** Search Console (paso 3 de `02-guia-paso-a-paso.md`).
 
 Estado al 25/10/2026. Documento para vos. El detalle de **todas** las correcciones de Bernardo, punto por punto, está en `../para-bernardo/02-correcciones-realizadas.md`.
 
@@ -85,13 +86,14 @@ Pasos detallados en `02-guia-paso-a-paso.md`.
 - [ ] Rotar el token de GitHub y publicar las dos versiones.
 - [ ] Enviarle a Bernardo el mensaje y los documentos de `../para-bernardo/`.
 - [ ] Cuando elija: publicar en `main`.
-- [ ] Dominio en Vercel (www y apex).
 - [ ] Search Console y Bing.
 - [ ] Resend: dominio, clave y variables en Vercel.
 - [ ] GA4 (ID en `src/config.js`) y, cuando haya pauta, Píxel de Meta.
 - [ ] Enlaces con UTM en Instagram, LinkedIn y firma de email.
 
 ## 8. Para la etapa siguiente (no iniciar todavía)
+
+**Propiedad de las cuentas:** Bernardo como dueño y Tom como co-propietario o administrador en todo (Search Console, GA4, Google Business Profile, dominio en Porkbun, Vercel, GitHub, Resend, redes). El detalle está en `../para-bernardo/03-lo-que-necesitamos.md`, sección 2.10. Hasta entonces Tom opera todo.
 
 Ficha de Google con Bernardo, reseñas, foto de perfil, LinkedIn de empresa, más guías, medios locales, pauta y agenda/pago. Está detallado en `../para-bernardo/03-lo-que-necesitamos.md`.
 

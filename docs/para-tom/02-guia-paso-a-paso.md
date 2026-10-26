@@ -1,6 +1,6 @@
 # Guía paso a paso (Tom)
 
-> **Estado 25/10/2026:** el paso 1 está hecho (versión B publicada en www.locallocal.net). Faltan los pasos 2 en adelante. El token de GitHub ya se resolvió (paso 0).
+> **Estado 25/10/2026:** hechos el paso 0 (token), el paso 1 (versión B publicada) y el paso 2 (dominio con y sin www funcionando). Seguís con el paso 3, Search Console.
 
 Las pantallas de Vercel, Google, Resend y Bing cambian de nombre con frecuencia. Si un botón no se llama igual, buscá el equivalente y avisame.
 
@@ -88,6 +88,8 @@ Vercel publica en producción en un par de minutos.
 ## 3. Google Search Console
 
 Es **el paso que hace que aparezcas en Google**. Sin esto, el sitio no existe para el buscador.
+
+**Propiedad:** el plan es que Bernardo quede como propietario verificado y Tom como propietario delegado (co-propietario). Se hace verificando primero con la cuenta de Tom, para no perder tiempo, y después agregando a Bernardo como propietario; él verifica con su propio código. Detalle en `../para-bernardo/03-lo-que-necesitamos.md`, sección 2.10.
 
 1. search.google.com/search-console → **Agregar propiedad** → **Dominio** → `locallocal.net`.
 2. Google da un registro **TXT**: cargalo en el DNS (como en el paso 2) y pulsá **Verificar**.

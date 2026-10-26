@@ -83,6 +83,28 @@ Quedaste en cambiar tu retrato. Con la foto nueva actualizamos la web y la usamo
 
 - Las fotos actuales funcionan bien. Si más adelante queremos que se vean más nítidas en pantallas grandes, hay que pedirle al fotógrafo los **archivos originales**, sin pasar por WhatsApp.
 
+### 2.10 Propiedad de las cuentas: Bernardo dueño, Tom co-propietario
+
+**Objetivo:** que Bernardo tenga el control de todo lo que es de su marca y que Tom conserve acceso completo para seguir trabajando.
+
+**Regla general:** Bernardo = propietario principal. Tom = administrador o co-propietario (el rol más alto disponible después del propietario).
+
+| Cuenta | Bernardo | Tom |
+|---|---|---|
+| **Google Search Console** | Propietario verificado (verifica con su propio código en el DNS) | Propietario delegado |
+| **Google Analytics 4** | Administrador de la cuenta | Administrador de la cuenta |
+| **Google Business Profile** | Propietario principal | Administrador |
+| **Dominio en Porkbun** | Registrante (a su nombre) | Acceso delegado o contacto técnico |
+| **Vercel** (proyecto del sitio) | Dueño del equipo o proyecto | Miembro con permisos de administración |
+| **GitHub** (repositorio) | Dueño | Colaborador con acceso de administración |
+| **Resend** (correo) | Dueño de la cuenta | Miembro |
+| **Instagram y LinkedIn** | Dueño | Acceso de administración, si corresponde |
+
+**Notas:**
+- Search Console no tiene un rol "administrador": el máximo es "propietario". Para que ambos tengan control, los dos quedan como propietarios.
+- Quien controla en la práctica el sitio es quien tiene el **dominio** y el **DNS**. Mover el dominio al nombre de Bernardo es el paso más importante.
+- Mientras tanto Tom puede seguir operando todo; nada se rompe por dejarlo así hasta que se haga la transferencia.
+
 ---
 
 ## Resumen por orden de prioridad
@@ -95,5 +117,6 @@ Quedaste en cambiar tu retrato. Con la foto nueva actualizamos la web y la usamo
 | 4 | Contenido (próximas guías) | **Muy alto**, a mediano plazo |
 | 5 | Medios y cámaras de Tandil | Alto |
 | 6 | Pauta paga | Alto, con presupuesto |
-| 7 | Agenda y pago | Cuando haya volumen |
-| 8 | Fotos en mayor resolución | Bajo |
+| 7 | Propiedad de las cuentas a nombre de Bernardo (2.10) | Medio, conviene hacerlo temprano |
+| 8 | Agenda y pago | Cuando haya volumen |
+| 9 | Fotos en mayor resolución | Bajo |
