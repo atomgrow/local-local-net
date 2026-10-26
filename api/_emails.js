@@ -1,3 +1,5 @@
+import { welcomeBlock } from "./_notifications.js";
+
 // Primer correo del newsletter (Newsletter 01) en español e inglés.
 // El texto en español es el que entregó Bernardo; la versión en inglés es una
 // traducción que Bernardo debe revisar. El archivo empieza con "_" para que
@@ -92,6 +94,7 @@ export function newsletterEmail(lang) {
 <tr><td style="padding:32px 36px 8px 36px;font-family:Georgia,'Times New Roman',serif;font-size:15px;letter-spacing:3px;color:#8f3f20;text-transform:uppercase;">Local Local</td></tr>
 <tr><td style="padding:8px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:26px;line-height:1.3;font-weight:bold;color:#2e2a20;">${c.title.map(esc).join('<br />')}</td></tr>
 <tr><td style="padding:16px 36px 8px 36px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:#2e2a20;">
+${welcomeBlock(lang)}
 ${c.paragraphs.map(renderParagraph).join('\n')}
 </td></tr>
 <tr><td style="padding:8px 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#2e2a20;"><strong>${esc(c.signature[0])}</strong><br />${esc(c.signature[1])}</td></tr>

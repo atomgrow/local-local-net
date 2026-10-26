@@ -67,12 +67,7 @@ export default async function handler(req, res) {
 
     // El aviso y el guardado del contacto no deben hacer fallar el alta.
     await Promise.allSettled([
-      resend('/emails', apiKey, {
-        from,
-        to: [notify],
-        subject: `Nueva suscripción al newsletter (${lang.toUpperCase()}): ${email}`,
-        text: `Se suscribió ${email} desde locallocal.net (idioma: ${lang}).`,
-      }),
+      resend("/emails", apiKey, { from, to: [notify], reply_to: email, ...adminNotice({ email, lang }) }),
       audienceId ? resend(`/audiences/${audienceId}/contacts`, apiKey, { email, unsubscribed: false }) : null,
     ])
 
